@@ -14,7 +14,7 @@ const VARIANT_NAMES: Record<number, string> = {
   6: "Cinematic Video Hero",
   7: "Interactive Tabs",
   8: "Scroll Storytelling",
-  9: "Hero Carousel",
+  9: "Patient Portal",
   10: "Bento Grid",
 };
 

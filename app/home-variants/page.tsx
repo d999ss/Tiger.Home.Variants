@@ -64,10 +64,10 @@ const variants = [
   },
   {
     id: 9,
-    title: "Hero Carousel",
+    title: "Patient Portal",
     description:
-      "Auto-rotating hero with 6 variations and video backgrounds, progress dots, neumorphic pillars, and a cinematic partnership CTA.",
-    tags: ["Carousel", "Video", "Multi-Slide"],
+      "Pfizer-style patient-facing gateway — audience switcher, bold hero with testimonial, four service tiles, AI \"Ask Tiger\" search, condition cards, savings band, and resource links.",
+    tags: ["Patient", "DTC", "Healthcare"],
   },
   {
     id: 10,

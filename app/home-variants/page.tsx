@@ -43,10 +43,10 @@ const variants = [
   },
   {
     id: 6,
-    title: "Editorial Spread",
+    title: "Corporate Healthcare",
     description:
-      "Magazine-style nameplate, cover image with drop-cap lede, table of contents, alternating feature articles with pull quotes, and an editorial colophon.",
-    tags: ["Editorial", "Magazine", "Long-form"],
+      "J&J-style corporate homepage — full-bleed hero with CEO signature, four-pillar division grid, dark impact stats, editorial newsroom row, leadership quote, and audience CTAs.",
+    tags: ["Corporate", "Annual Report", "Enterprise"],
   },
   {
     id: 7,

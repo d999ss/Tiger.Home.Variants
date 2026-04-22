@@ -11,7 +11,7 @@ const VARIANT_NAMES: Record<number, string> = {
   3: "Typography Minimal",
   4: "Product Showcase",
   5: "Dark Premium",
-  6: "Editorial Spread",
+  6: "Corporate Healthcare",
   7: "Interactive Tabs",
   8: "Scroll Storytelling",
   9: "Hero Carousel",

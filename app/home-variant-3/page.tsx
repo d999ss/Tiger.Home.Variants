@@ -250,8 +250,8 @@ export default function HomeVariant3() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] as const }}
-                className="font-display font-bold text-[#231010] tracking-[-1.5px] leading-[1]"
-                style={{ fontSize: "clamp(40px, 5.2vw, 76px)", fontWeight: 700 }}
+                className="font-display font-light text-[#231010] tracking-[-1.5px] leading-[1]"
+                style={{ fontSize: "clamp(40px, 5.2vw, 76px)", fontWeight: 300 }}
               >
                 Find the right care, for the life you live.
               </motion.h1>
@@ -328,8 +328,8 @@ export default function HomeVariant3() {
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-16 md:py-24">
           <div className="flex items-end justify-between flex-wrap gap-4 mb-10 md:mb-12">
             <h2
-              className="font-display font-bold text-[#231010] tracking-[-1px] leading-[1]"
-              style={{ fontSize: "clamp(28px, 3.4vw, 44px)", fontWeight: 700 }}
+              className="font-display font-light text-[#231010] tracking-[-1px] leading-[1]"
+              style={{ fontSize: "clamp(28px, 3.4vw, 44px)", fontWeight: 300 }}
             >
               What can we help you with?
             </h2>
@@ -354,7 +354,7 @@ export default function HomeVariant3() {
                   <div className="size-12 rounded-full bg-white group-hover:bg-white/20 flex items-center justify-center mb-6 transition-colors">
                     <s.icon className="size-5 text-[#D5101F] group-hover:text-white transition-colors" strokeWidth={2} />
                   </div>
-                  <h3 className="font-display font-bold text-[20px] text-[#231010] group-hover:text-white tracking-[-0.3px] leading-[1.2] mb-3" style={{ fontWeight: 700 }}>
+                  <h3 className="font-display font-light text-[20px] text-[#231010] group-hover:text-white tracking-[-0.3px] leading-[1.2] mb-3" style={{ fontWeight: 300 }}>
                     {s.title}
                   </h3>
                   <p className="text-[14px] text-[#231010]/70 group-hover:text-white/85 leading-[1.55] mb-6 flex-1">
@@ -383,8 +383,8 @@ export default function HomeVariant3() {
                 Ask Tiger · AI-assisted answers
               </div>
               <h2
-                className="font-display font-bold tracking-[-1px] leading-[1.05]"
-                style={{ fontSize: "clamp(30px, 3.6vw, 52px)", fontWeight: 700 }}
+                className="font-display font-light tracking-[-1px] leading-[1.05]"
+                style={{ fontSize: "clamp(30px, 3.6vw, 52px)", fontWeight: 300 }}
               >
                 Have a question? Ask in plain English.
               </h2>
@@ -454,8 +454,8 @@ export default function HomeVariant3() {
                 Browse by condition
               </div>
               <h2
-                className="font-display font-bold text-[#231010] tracking-[-1px] leading-[1]"
-                style={{ fontSize: "clamp(28px, 3.4vw, 48px)", fontWeight: 700 }}
+                className="font-display font-light text-[#231010] tracking-[-1px] leading-[1]"
+                style={{ fontSize: "clamp(28px, 3.4vw, 48px)", fontWeight: 300 }}
               >
                 Care pathways for the questions you&rsquo;re actually asking.
               </h2>
@@ -495,7 +495,7 @@ export default function HomeVariant3() {
                     <div className="text-[11px] uppercase tracking-[1.5px] text-[#D5101F] font-semibold">
                       {c.tag}
                     </div>
-                    <h3 className="font-display font-bold text-[22px] text-[#231010] tracking-[-0.3px] leading-[1.2]" style={{ fontWeight: 700 }}>
+                    <h3 className="font-display font-light text-[22px] text-[#231010] tracking-[-0.3px] leading-[1.2]" style={{ fontWeight: 300 }}>
                       {c.title}
                     </h3>
                     <p className="text-[14px] text-[#231010]/70 leading-[1.6]">
@@ -524,8 +524,8 @@ export default function HomeVariant3() {
               Our impact
             </div>
             <h2
-              className="font-display font-bold tracking-[-1px] leading-[1.05]"
-              style={{ fontSize: "clamp(30px, 3.6vw, 52px)", fontWeight: 700 }}
+              className="font-display font-light tracking-[-1px] leading-[1.05]"
+              style={{ fontSize: "clamp(30px, 3.6vw, 52px)", fontWeight: 300 }}
             >
               Fifteen years of outcomes — measured, published, and peer-reviewed.
             </h2>
@@ -547,8 +547,8 @@ export default function HomeVariant3() {
                 className="space-y-2 border-t border-white/15 pt-5"
               >
                 <div
-                  className="font-display font-bold tracking-[-1.5px] leading-none"
-                  style={{ fontSize: "clamp(44px, 4.6vw, 76px)", fontWeight: 700 }}
+                  className="font-display font-light tracking-[-1.5px] leading-none"
+                  style={{ fontSize: "clamp(44px, 4.6vw, 76px)", fontWeight: 300 }}
                 >
                   {s.v}
                 </div>
@@ -576,8 +576,8 @@ export default function HomeVariant3() {
                 Patient stories
               </div>
               <h2
-                className="font-display font-bold text-[#231010] tracking-[-1px] leading-[1.05]"
-                style={{ fontSize: "clamp(28px, 3.4vw, 48px)", fontWeight: 700 }}
+                className="font-display font-light text-[#231010] tracking-[-1px] leading-[1.05]"
+                style={{ fontSize: "clamp(28px, 3.4vw, 48px)", fontWeight: 300 }}
               >
                 What healing looks like, in their own words.
               </h2>
@@ -632,8 +632,8 @@ export default function HomeVariant3() {
                 How it works
               </div>
               <h2
-                className="font-display font-bold text-[#231010] tracking-[-1px] leading-[1.05]"
-                style={{ fontSize: "clamp(28px, 3.4vw, 48px)", fontWeight: 700 }}
+                className="font-display font-light text-[#231010] tracking-[-1px] leading-[1.05]"
+                style={{ fontSize: "clamp(28px, 3.4vw, 48px)", fontWeight: 300 }}
               >
                 Getting started takes four steps.
               </h2>
@@ -651,12 +651,12 @@ export default function HomeVariant3() {
                 className="relative bg-white border border-[#231010]/[0.08] rounded-[20px] p-7 md:p-8"
               >
                 <div
-                  className="font-display font-bold text-[#D5101F] tracking-[-1px] leading-none mb-5"
-                  style={{ fontSize: "clamp(40px, 3.4vw, 52px)", fontWeight: 700 }}
+                  className="font-display font-light text-[#D5101F] tracking-[-1px] leading-none mb-5"
+                  style={{ fontSize: "clamp(40px, 3.4vw, 52px)", fontWeight: 300 }}
                 >
                   {step.n}
                 </div>
-                <h3 className="font-display font-bold text-[18px] md:text-[20px] text-[#231010] tracking-[-0.3px] leading-[1.2] mb-3" style={{ fontWeight: 700 }}>
+                <h3 className="font-display font-light text-[18px] md:text-[20px] text-[#231010] tracking-[-0.3px] leading-[1.2] mb-3" style={{ fontWeight: 300 }}>
                   {step.title}
                 </h3>
                 <p className="text-[14px] text-[#231010]/70 leading-[1.6]">
@@ -680,8 +680,8 @@ export default function HomeVariant3() {
                 Health insights
               </div>
               <h2
-                className="font-display font-bold text-[#231010] tracking-[-1px] leading-[1.05]"
-                style={{ fontSize: "clamp(28px, 3.4vw, 48px)", fontWeight: 700 }}
+                className="font-display font-light text-[#231010] tracking-[-1px] leading-[1.05]"
+                style={{ fontSize: "clamp(28px, 3.4vw, 48px)", fontWeight: 300 }}
               >
                 Explainers to help you make informed decisions.
               </h2>
@@ -719,7 +719,7 @@ export default function HomeVariant3() {
                     <span className="w-1 h-1 rounded-full bg-[#231010]/30" />
                     <span className="text-[#231010]/55 font-medium">{insight.readTime}</span>
                   </div>
-                  <h3 className="font-display font-bold text-[#231010] tracking-[-0.3px] leading-[1.25] group-hover:text-[#D5101F] transition-colors" style={{ fontSize: "clamp(18px, 1.5vw, 22px)", fontWeight: 700 }}>
+                  <h3 className="font-display font-light text-[#231010] tracking-[-0.3px] leading-[1.25] group-hover:text-[#D5101F] transition-colors" style={{ fontSize: "clamp(18px, 1.5vw, 22px)", fontWeight: 300 }}>
                     {insight.title}
                   </h3>
                 </Link>
@@ -740,8 +740,8 @@ export default function HomeVariant3() {
               Frequently asked
             </div>
             <h2
-              className="font-display font-bold text-[#231010] tracking-[-1px] leading-[1.05]"
-              style={{ fontSize: "clamp(28px, 3.4vw, 48px)", fontWeight: 700 }}
+              className="font-display font-light text-[#231010] tracking-[-1px] leading-[1.05]"
+              style={{ fontSize: "clamp(28px, 3.4vw, 48px)", fontWeight: 300 }}
             >
               Answers to common questions.
             </h2>
@@ -751,7 +751,7 @@ export default function HomeVariant3() {
             {faqs.map((f, i) => (
               <details key={f.q} className="group" {...(i === 0 ? { open: true } : {})}>
                 <summary className="flex items-center justify-between gap-6 py-5 md:py-6 cursor-pointer list-none">
-                  <span className="font-display font-bold text-[17px] md:text-[19px] text-[#231010] tracking-[-0.2px]" style={{ fontWeight: 700 }}>
+                  <span className="font-display font-light text-[17px] md:text-[19px] text-[#231010] tracking-[-0.2px]" style={{ fontWeight: 300 }}>
                     {f.q}
                   </span>
                   <ChevronDown className="size-5 text-[#D5101F] shrink-0 transition-transform group-open:rotate-180" />
@@ -791,8 +791,8 @@ export default function HomeVariant3() {
                   Patient assistance
                 </div>
                 <h3
-                  className="font-display font-bold tracking-[-1px] leading-[1.05]"
-                  style={{ fontSize: "clamp(28px, 3.4vw, 48px)", fontWeight: 700 }}
+                  className="font-display font-light tracking-[-1px] leading-[1.05]"
+                  style={{ fontSize: "clamp(28px, 3.4vw, 48px)", fontWeight: 300 }}
                 >
                   Eligible patients may pay as little as $0 per treatment.
                 </h3>
@@ -827,7 +827,7 @@ export default function HomeVariant3() {
               <div className="text-[11px] uppercase tracking-[1.5px] text-[#D5101F] font-semibold">
                 Patients
               </div>
-              <h4 className="font-display font-bold text-[22px] text-[#231010] tracking-[-0.3px]" style={{ fontWeight: 700 }}>
+              <h4 className="font-display font-light text-[22px] text-[#231010] tracking-[-0.3px]" style={{ fontWeight: 300 }}>
                 Understand your treatment.
               </h4>
               <p className="text-[14px] text-[#231010]/70 leading-[1.6]">
@@ -841,7 +841,7 @@ export default function HomeVariant3() {
               <div className="text-[11px] uppercase tracking-[1.5px] text-[#D5101F] font-semibold">
                 Clinicians
               </div>
-              <h4 className="font-display font-bold text-[22px] text-[#231010] tracking-[-0.3px]" style={{ fontWeight: 700 }}>
+              <h4 className="font-display font-light text-[22px] text-[#231010] tracking-[-0.3px]" style={{ fontWeight: 300 }}>
                 Clinical evidence and dosing.
               </h4>
               <p className="text-[14px] text-[#231010]/70 leading-[1.6]">
@@ -855,7 +855,7 @@ export default function HomeVariant3() {
               <div className="text-[11px] uppercase tracking-[1.5px] text-[#D5101F] font-semibold">
                 Donors
               </div>
-              <h4 className="font-display font-bold text-[22px] text-[#231010] tracking-[-0.3px]" style={{ fontWeight: 700 }}>
+              <h4 className="font-display font-light text-[22px] text-[#231010] tracking-[-0.3px]" style={{ fontWeight: 300 }}>
                 The gift behind every graft.
               </h4>
               <p className="text-[14px] text-[#231010]/70 leading-[1.6]">

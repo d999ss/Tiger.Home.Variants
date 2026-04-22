@@ -1,6 +1,7 @@
 "use client";
 import { VariantNav } from "@/components/ui/variant-nav";
 import { VariantTopNav } from "@/components/ui/variant-top-nav";
+import { VariantFooter } from "@/components/ui/variant-footer";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -770,6 +771,7 @@ export default function HomeVariant10() {
         </div>
       </section>
 
+      <VariantFooter theme="dark" tagline="Science that heals. A modern mosaic of regenerative medicine." />
       <VariantNav current={10} />
     </main>
   );

@@ -1,6 +1,7 @@
 "use client";
 import { VariantNav } from "@/components/ui/variant-nav";
 import { VariantTopNav } from "@/components/ui/variant-top-nav";
+import { VariantFooter } from "@/components/ui/variant-footer";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -476,6 +477,7 @@ export default function HomeVariant2() {
           </div>
         </motion.div>
       </TigerSection>
+      <VariantFooter theme="light" tagline="Four divisions. One mission. Regenerative therapies used across every care setting." />
       <VariantNav current={2} />
     </main>
   );

@@ -1,6 +1,7 @@
 "use client";
 import { VariantNav } from "@/components/ui/variant-nav";
 import { VariantTopNav } from "@/components/ui/variant-top-nav";
+import { VariantFooter } from "@/components/ui/variant-footer";
 
 import { Award, Building2, Globe, Heart, CheckCircle, ArrowRight } from "lucide-react";
 import Image from "next/image";
@@ -481,6 +482,7 @@ export default function HomeVariant7() {
         </motion.div>
       </TigerSection>
 
+      <VariantFooter theme="light" tagline="Clinical excellence in regenerative medicine. Trust badges, tested science." />
       <VariantNav current={7} />
     </main>
   );

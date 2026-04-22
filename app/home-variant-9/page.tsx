@@ -1,6 +1,7 @@
 "use client";
 import { VariantNav } from "@/components/ui/variant-nav";
 import { VariantTopNav } from "@/components/ui/variant-top-nav";
+import { VariantFooter } from "@/components/ui/variant-footer";
 
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
@@ -680,6 +681,7 @@ export default function HomeVariant9() {
         </motion.div>
       </TigerSection>
 
+      <VariantFooter theme="editorial" tagline="The Leader in Regenerative Medicine. Setting the global standard for care." />
       <VariantNav current={9} />
     </main>
   );

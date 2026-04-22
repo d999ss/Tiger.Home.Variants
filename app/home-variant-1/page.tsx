@@ -1,6 +1,7 @@
 "use client";
 import { VariantNav } from "@/components/ui/variant-nav";
 import { VariantTopNav } from "@/components/ui/variant-top-nav";
+import { VariantFooter } from "@/components/ui/variant-footer";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -496,6 +497,7 @@ export default function HomeVariant1() {
         </div>
       </section>
 
+      <VariantFooter theme="light" tagline="Medicine made more human. The regenerative portfolio serving eighteen countries." />
       <VariantNav current={1} />
     </main>
   );

@@ -1,6 +1,7 @@
 "use client";
 import { VariantNav } from "@/components/ui/variant-nav";
 import { VariantTopNav } from "@/components/ui/variant-top-nav";
+import { VariantFooter } from "@/components/ui/variant-footer";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -455,6 +456,7 @@ export default function HomeVariant4() {
           </div>
         </motion.div>
       </section>
+      <VariantFooter theme="light" tagline="Innovation across every division. Products, partners, and people." />
       <VariantNav current={4} />
     </main>
   );

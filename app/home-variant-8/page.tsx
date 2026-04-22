@@ -1,6 +1,7 @@
 "use client";
 import { VariantNav } from "@/components/ui/variant-nav";
 import { VariantTopNav } from "@/components/ui/variant-top-nav";
+import { VariantFooter } from "@/components/ui/variant-footer";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -781,6 +782,7 @@ export default function HomeVariant8() {
       <ImpactSection />
       <ReachSection />
       <FutureSection />
+      <VariantFooter theme="cream" tagline="Every innovation begins with a gift. A six-chapter story, told over fifteen years." />
       <VariantNav current={8} />
     </main>
   );

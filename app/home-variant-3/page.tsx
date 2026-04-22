@@ -1,6 +1,7 @@
 "use client";
 import { VariantNav } from "@/components/ui/variant-nav";
 import { VariantTopNav } from "@/components/ui/variant-top-nav";
+import { VariantFooter } from "@/components/ui/variant-footer";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -868,6 +869,7 @@ export default function HomeVariant3() {
         </div>
       </section>
 
+      <VariantFooter theme="patient" tagline="Care for patients. Tools for clinicians. Respect for every donor." />
       <VariantNav current={3} />
     </main>
   );

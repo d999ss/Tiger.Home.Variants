@@ -15,6 +15,11 @@ export default withMDX({
         destination: '/people',
         permanent: true,
       },
+      {
+        source: '/',
+        destination: '/home-variants',
+        permanent: false,
+      },
     ]
   },
   typescript: {

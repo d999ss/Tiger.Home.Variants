@@ -39,7 +39,24 @@ const fadeIn = {
 
 function HeroSection() {
   return (
-    <section className="relative min-h-[88vh] flex flex-col items-center justify-center text-center px-6 pt-[101px] bg-[#ffffff] overflow-hidden">
+    <section className="relative isolate min-h-[88vh] flex flex-col items-center justify-center text-center px-6 pt-[101px] bg-[#ffffff] overflow-hidden">
+      {/* Background watermark image — upper-right, subtle */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <Image
+          src="/images/tiger-hero-original.png"
+          alt=""
+          fill
+          className="object-cover object-[80%_20%] opacity-[0.10]"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 70% 60% at 50% 55%, #ffffff 30%, rgba(255,255,255,0.8) 70%, rgba(255,255,255,0.3) 100%)",
+          }}
+        />
+      </div>
+
       {/* Background texture gradient */}
       <div
         className="pointer-events-none absolute inset-0"
@@ -56,6 +73,18 @@ function HeroSection() {
         transition={{ duration: 1.1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
         className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D5101F]/30 to-transparent origin-left"
       />
+
+      {/* Chapter indicator */}
+      <motion.div
+        initial={{ opacity: 0, y: -8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.15 }}
+        className="flex items-center gap-3 mb-8"
+      >
+        <span className="text-[10px] uppercase tracking-[3px] text-[#D5101F] font-medium">Chapter 01</span>
+        <span className="w-8 h-[1px] bg-[#231010]/20" />
+        <span className="text-[10px] uppercase tracking-[3px] text-[#231010]/35">Six-Part Story</span>
+      </motion.div>
 
       <motion.span
         variants={fadeUp}

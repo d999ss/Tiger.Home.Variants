@@ -100,12 +100,12 @@ export default function HomeVariant5() {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="relative z-10 bg-[#231010]/80 backdrop-blur-[20px] border-b border-[#ffffff]/[0.06]"
       >
-        <div className="container mx-auto max-w-7xl px-6 py-2.5 flex items-center justify-center md:justify-between gap-6 flex-nowrap overflow-x-auto scrollbar-none md:flex-wrap">
+        <div className="container mx-auto max-w-7xl px-6 py-2.5 flex items-center gap-6 md:gap-8 overflow-x-auto scrollbar-none md:justify-center md:flex-wrap">
           {trustBadges.map((b) => {
             const Icon = b.icon;
             return (
-              <div key={b.label} className="flex items-center gap-2 text-[11px] text-[#ffffff]/40 font-light tracking-[0.3px]">
-                <Icon className="size-3.5 text-[#D5101F]/70" />
+              <div key={b.label} className="flex items-center gap-2 text-[11px] text-[#ffffff]/55 font-light tracking-[0.3px] whitespace-nowrap shrink-0">
+                <Icon className="size-3.5 text-[#D5101F]/80 shrink-0" />
                 {b.label}
               </div>
             );
@@ -118,12 +118,21 @@ export default function HomeVariant5() {
 
         {/* Video background */}
         <div className="absolute inset-0 -z-10">
+          {/* Poster fallback — shows if video blocks or loads slowly */}
+          <Image
+            src="/images/tiger-hero.png"
+            alt=""
+            fill
+            priority
+            className="object-cover object-[70%_40%]"
+          />
           <video
             autoPlay
             loop
             muted
             playsInline
             preload="auto"
+            poster="/images/tiger-hero.png"
             className="absolute inset-0 h-full w-full object-cover"
           >
             <source

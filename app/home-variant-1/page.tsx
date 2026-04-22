@@ -76,7 +76,17 @@ export default function HomeVariant1() {
       {/* ═══════════════════════════════════════════════════════════
           HERO — Full-viewport cinematic video
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative min-h-[100dvh] w-full overflow-hidden flex items-center justify-center pt-[101px]">
+      <section className="relative min-h-[100dvh] w-full overflow-hidden flex items-center justify-center pt-[101px] bg-[#1a0b0b]">
+
+        {/* Poster image — plays when video is loading or blocked */}
+        <Image
+          src="/images/tiger-hero.png"
+          alt=""
+          fill
+          priority
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: "75% 35%" }}
+        />
 
         {/* Video background */}
         <video
@@ -84,6 +94,7 @@ export default function HomeVariant1() {
           loop
           muted
           playsInline
+          poster="/images/tiger-hero.png"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: "center 20%" }}
         >
@@ -94,7 +105,7 @@ export default function HomeVariant1() {
         </video>
 
         {/* Gradient overlays — layered for cinematic depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/40 pointer-events-none" />
         <div
           className="absolute bottom-0 left-0 right-0 h-[55%] pointer-events-none"
           style={{
@@ -102,7 +113,13 @@ export default function HomeVariant1() {
               "linear-gradient(to top, #ffffff 0%, rgba(239,237,234,0.9) 20%, rgba(239,237,234,0.5) 55%, transparent 100%)",
           }}
         />
-        <div className="absolute inset-0 bg-[#231010]/20 pointer-events-none" />
+        {/* Subtle vignette for cinematic focus */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: "radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.35) 100%)",
+          }}
+        />
 
         {/* Centered headline — staggered entrance */}
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">

@@ -252,14 +252,14 @@ export default function HomeVariant9() {
           transition={{ duration: 0.7, delay: 0.2 }}
         >
           <div className="mx-auto max-w-7xl px-6 md:px-12">
-            <div className="flex flex-wrap items-center justify-center gap-4 md:gap-10 py-3">
+            <div className="flex items-center gap-6 md:gap-10 py-3 overflow-x-auto scrollbar-none md:justify-center md:flex-wrap">
               {[
                 { icon: Shield, text: "FDA Registered Facility" },
                 { icon: Award, text: "ISO 13485:2016 Certified" },
                 { icon: Award, text: "AATB Accredited" },
                 { icon: Heart, text: "500,000+ Grafts" },
-              ].map(({ icon: Icon, text }, idx) => (
-                <div key={text} className={`flex items-center gap-2 text-[11px] font-light tracking-widest text-white/70 uppercase${idx >= 2 ? " hidden md:flex" : ""}`}>
+              ].map(({ icon: Icon, text }) => (
+                <div key={text} className="flex items-center gap-2 text-[11px] font-light tracking-widest text-white/70 uppercase whitespace-nowrap shrink-0">
                   <Icon className="size-3.5 shrink-0" />
                   <span>{text}</span>
                 </div>

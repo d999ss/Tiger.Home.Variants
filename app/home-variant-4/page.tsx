@@ -120,13 +120,20 @@ export default function HomeVariant4() {
             alt=""
             fill
             priority
-            className="object-cover object-center opacity-[0.07]"
+            className="object-cover object-[70%_30%] opacity-[0.18]"
           />
-          {/* Gradient fade to cream at bottom */}
+          {/* Gradient mask — keep tiger visible on the right, fade to cream elsewhere */}
           <div
             className="absolute inset-0"
             style={{
-              background: "linear-gradient(to top, #ffffff 20%, transparent 70%)",
+              background:
+                "linear-gradient(to right, #ffffff 10%, rgba(255,255,255,0.82) 45%, rgba(255,255,255,0.35) 80%, transparent 100%)",
+            }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "linear-gradient(to top, #ffffff 12%, transparent 60%)",
             }}
           />
         </div>

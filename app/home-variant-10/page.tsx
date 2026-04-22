@@ -59,7 +59,7 @@ export default function HomeVariant10() {
       {/* ═══════════════════════════════════════════════════════════════
           HERO — Short 60vh with centered text + background image
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative flex items-center justify-center overflow-hidden min-h-[500px] md:min-h-[60vh] pt-[101px]">
+      <section className="relative isolate flex items-center justify-center overflow-hidden min-h-[500px] md:min-h-[60vh] pt-[101px]">
         {/* Subtle background image */}
         <div className="absolute inset-0 -z-10">
           <Image
@@ -67,11 +67,12 @@ export default function HomeVariant10() {
             alt="Tiger BioSciences hero"
             fill
             priority
-            className="object-cover object-center opacity-90"
+            className="object-cover object-[72%_30%]"
           />
-          {/* Layered overlays for depth */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#231010]/65 via-[#231010]/50 to-[#ffffff]/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#D5101F]/10 via-transparent to-transparent" />
+          {/* Layered overlays for depth — stronger top gradient for legibility */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0e0606]/80 via-[#231010]/60 to-[#231010]/35" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0e0606]/70 via-[#231010]/30 to-transparent" />
+          <div className="absolute inset-0 bg-[#D5101F]/[0.05]" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-[896px] px-6 md:px-12 py-16 md:py-32 text-center">

@@ -200,15 +200,29 @@ export default function HomeVariant3() {
       ═══════════════════════════════════════════════════════════ */}
       <section
         ref={heroRef}
-        className="relative min-h-[100dvh] flex flex-col justify-center px-6 md:px-16 xl:px-24 pt-[calc(101px+2rem)] md:pt-[calc(101px+4rem)] pb-24"
+        className="relative isolate min-h-[100dvh] flex flex-col justify-center px-6 md:px-16 xl:px-24 pt-[calc(101px+2rem)] md:pt-[calc(101px+4rem)] pb-24"
       >
-        {/* Subtle background image */}
-        <div className="absolute inset-0 -z-10 opacity-[0.04]">
+        {/* Subtle background image — reveal tiger on right third */}
+        <div className="absolute inset-0 -z-10">
           <Image
             src="/images/tiger-hero-original.png"
             alt=""
             fill
-            className="object-cover object-center"
+            className="object-cover object-[72%_30%]"
+          />
+          {/* Gradient mask — solid white on left two-thirds, tiger visible on right */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to right, #ffffff 0%, #ffffff 48%, rgba(255,255,255,0.85) 62%, rgba(255,255,255,0.45) 78%, rgba(255,255,255,0.2) 100%)",
+            }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "linear-gradient(to top, #ffffff 5%, transparent 35%, transparent 75%, rgba(255,255,255,0.4) 100%)",
+            }}
           />
         </div>
 

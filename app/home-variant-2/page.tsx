@@ -124,26 +124,56 @@ export default function HomeVariant2() {
 
   return (
     <main className="bg-[#ffffff] min-h-screen">
-      <VariantTopNav theme="light" ctaLabel="Explore Divisions" ctaHref="#tabs" />
+      <VariantTopNav theme="transparent" ctaLabel="Explore Divisions" ctaHref="#tabs" />
       {/* ------------------------------------------------------------------ */}
-      {/* HERO                                                                 */}
+      {/* HERO — Cinematic video background                                    */}
       {/* ------------------------------------------------------------------ */}
-      <section className="relative flex flex-col items-center justify-center text-center px-6 pt-[calc(72px+3rem)] pb-24 md:pt-[calc(72px+5rem)] md:pb-36 overflow-hidden">
-        {/* Subtle radial glow */}
+      <section className="relative isolate flex flex-col items-center justify-center text-center px-6 min-h-[88vh] pt-[calc(72px+3rem)] pb-24 md:pt-[calc(72px+5rem)] md:pb-36 overflow-hidden bg-[#1a0b0b]">
+
+        {/* Poster image — shows before video loads or if blocked */}
+        <Image
+          src="/images/tiger-hero.png"
+          alt=""
+          fill
+          priority
+          className="absolute inset-0 w-full h-full object-cover -z-20"
+          style={{ objectPosition: "70% 30%" }}
+        />
+
+        {/* Video background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          poster="/images/tiger-hero.png"
+          className="absolute inset-0 w-full h-full object-cover -z-10"
+          style={{ objectPosition: "center 25%" }}
+        >
+          <source
+            src="/images/social_boredoptimism_blink_--ar_169_--bs_1_--motion_high_--raw_--vid_847e7ccd-911e-4c34-9b8f-19214e80b444_0.mp4"
+            type="video/mp4"
+          />
+        </video>
+
+        {/* Cinematic overlays — dark gradient for legibility + vignette */}
+        <div className="absolute inset-0 -z-[5] bg-gradient-to-b from-black/60 via-black/40 to-black/70 pointer-events-none" />
         <div
-          className="pointer-events-none absolute inset-0"
+          className="absolute inset-0 -z-[5] pointer-events-none"
           style={{
-            background:
-              "radial-gradient(ellipse 70% 55% at 50% 60%, rgba(213,16,31,0.06) 0%, transparent 70%)",
+            background: "radial-gradient(ellipse at center, transparent 25%, rgba(0,0,0,0.5) 100%)",
           }}
         />
+        {/* Subtle red wash for brand warmth */}
+        <div className="absolute inset-0 -z-[5] bg-[#D5101F]/[0.06] pointer-events-none" />
 
         <motion.span
           variants={fadeUp}
           initial="hidden"
           animate="visible"
           custom={0}
-          className="inline-block text-[11px] uppercase tracking-[3.5px] text-[#231010]/40 mb-6"
+          className="inline-block text-[11px] uppercase tracking-[3.5px] text-[#fbfcff]/75 mb-6"
         >
           Tiger BioSciences · Regenerative Medicine
         </motion.span>
@@ -153,7 +183,7 @@ export default function HomeVariant2() {
           initial="hidden"
           animate="visible"
           custom={1}
-          className="font-display font-light text-[#231010] text-[clamp(38px,7vw,88px)] tracking-[-1px] md:tracking-[-2px] leading-none max-w-[800px] mb-8"
+          className="font-display font-light text-[#fbfcff] text-[clamp(38px,7vw,96px)] tracking-[-1px] md:tracking-[-2px] leading-[0.98] max-w-[900px] mb-8 drop-shadow-[0_4px_24px_rgba(0,0,0,0.5)]"
         >
           Explore Tiger&nbsp;BioSciences
         </motion.h1>
@@ -163,7 +193,7 @@ export default function HomeVariant2() {
           initial="hidden"
           animate="visible"
           custom={2}
-          className="text-[16px] md:text-[18px] font-light text-[#231010]/60 max-w-[560px] leading-[1.75] mb-12"
+          className="text-[16px] md:text-[18px] font-light text-[#fbfcff]/85 max-w-[560px] leading-[1.75] mb-12 drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
         >
           Four divisions. One mission. Transforming donated tissue into therapies
           that heal patients across every care setting — and around the world.
@@ -179,7 +209,7 @@ export default function HomeVariant2() {
           <TigerButton href="/products" variant="primary" arrow>
             Explore Products
           </TigerButton>
-          <TigerButton href="/science" variant="secondary">
+          <TigerButton href="/science" variant="outline-light">
             Our Science
           </TigerButton>
         </motion.div>
@@ -192,11 +222,11 @@ export default function HomeVariant2() {
           custom={5}
           className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
-          <span className="text-[10px] uppercase tracking-[2.5px] text-[#231010]/30">Explore Divisions</span>
+          <span className="text-[10px] uppercase tracking-[2.5px] text-[#fbfcff]/60">Explore Divisions</span>
           <motion.div
             animate={{ y: [0, 6, 0] }}
             transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
-            className="w-px h-8 bg-gradient-to-b from-[#231010]/20 to-transparent"
+            className="w-px h-8 bg-gradient-to-b from-[#fbfcff]/50 to-transparent"
           />
         </motion.div>
       </section>

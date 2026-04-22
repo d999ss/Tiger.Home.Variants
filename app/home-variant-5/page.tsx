@@ -172,8 +172,8 @@ export default function HomeVariant5() {
   const prevStory = () => setStoryIdx((i) => (i - 1 + stories.length) % stories.length);
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#ffffff] text-[#231010]">
-      <VariantTopNav theme="premium" ctaLabel="Get Started" ctaHref="/paths/wound-care" />
+    <main className="min-h-screen overflow-x-hidden bg-[#0e0606] text-[#fbfcff]">
+      <VariantTopNav theme="dark" ctaLabel="Get Started" ctaHref="/paths/wound-care" />
 
       {/* ═══════════════════════════════════════════════════════════
           CREDENTIAL STRIP — Thin top bar
@@ -194,16 +194,52 @@ export default function HomeVariant5() {
       </div>
 
       {/* ═══════════════════════════════════════════════════════════
-          HERO — Text-forward Hone-style statement
+          HERO — Cinematic video with dark Tiger premium vibe
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative bg-[#ffffff]">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-20 md:py-32 text-center">
+      <section className="relative isolate bg-[#0e0606] overflow-hidden">
+        {/* Poster image fallback */}
+        <Image
+          src="/images/tiger-hero.png"
+          alt=""
+          fill
+          priority
+          className="absolute inset-0 w-full h-full object-cover -z-20 opacity-70"
+          style={{ objectPosition: "72% 30%" }}
+        />
+        {/* Video background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          poster="/images/tiger-hero.png"
+          className="absolute inset-0 w-full h-full object-cover -z-10 opacity-70"
+          style={{ objectPosition: "center 25%" }}
+        >
+          <source
+            src="/images/social_boredoptimism_blink_--ar_169_--bs_1_--motion_high_--raw_--vid_847e7ccd-911e-4c34-9b8f-19214e80b444_0.mp4"
+            type="video/mp4"
+          />
+        </video>
+        {/* Dark overlays for text legibility */}
+        <div className="absolute inset-0 -z-[5] bg-gradient-to-b from-[#0e0606]/85 via-[#0e0606]/70 to-[#0e0606] pointer-events-none" />
+        <div
+          className="absolute inset-0 -z-[5] pointer-events-none"
+          style={{
+            background: "radial-gradient(ellipse at center, transparent 20%, rgba(14,6,6,0.55) 85%)",
+          }}
+        />
+        {/* Subtle red wash */}
+        <div className="absolute inset-0 -z-[5] bg-[#D5101F]/[0.04] pointer-events-none" />
+
+        <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-24 md:py-40 text-center relative z-10">
 
           <motion.div
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-[#231010]/[0.05] rounded-full px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[2px] text-[#231010]/70 mb-8"
+            className="inline-flex items-center gap-2 bg-white/10 border border-white/15 backdrop-blur-sm rounded-full px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[2px] text-[#fbfcff]/85 mb-8"
           >
             <span className="size-1.5 rounded-full bg-[#D5101F]" />
             Regenerative medicine, measured
@@ -213,7 +249,7 @@ export default function HomeVariant5() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] as const }}
-            className="font-display font-bold text-[#231010] tracking-[-2px] leading-[0.95] mb-8 mx-auto max-w-[1000px]"
+            className="font-display font-bold text-[#fbfcff] tracking-[-2px] leading-[0.95] mb-8 mx-auto max-w-[1000px] drop-shadow-[0_4px_24px_rgba(0,0,0,0.6)]"
             style={{ fontSize: "clamp(44px, 6.4vw, 96px)", fontWeight: 700 }}
           >
             Healing engineered around your biology.
@@ -223,7 +259,7 @@ export default function HomeVariant5() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-[17px] md:text-[19px] font-light text-[#231010]/65 leading-[1.65] max-w-[680px] mx-auto mb-10"
+            className="text-[17px] md:text-[19px] font-light text-[#fbfcff]/70 leading-[1.65] max-w-[680px] mx-auto mb-10"
           >
             Tiger BioSciences connects patients and clinicians to science-backed regenerative therapies — Cellular, Acellular, and Matrix-like Products proven in peer-reviewed trials. Choose a path designed for your care.
           </motion.p>
@@ -237,14 +273,14 @@ export default function HomeVariant5() {
           >
             <Link
               href="/paths/wound-care"
-              className="inline-flex items-center justify-center gap-2 bg-[#231010] hover:bg-[#D5101F] text-white px-8 py-4 rounded-full text-[14px] font-bold uppercase tracking-[1.5px] transition-colors w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 bg-[#D5101F] hover:bg-[#A00D17] text-white px-8 py-4 rounded-full text-[14px] font-bold uppercase tracking-[1.5px] transition-colors w-full sm:w-auto"
             >
               For Patients
               <ArrowRight className="size-4" />
             </Link>
             <Link
               href="/hcp"
-              className="inline-flex items-center justify-center gap-2 border-2 border-[#231010] text-[#231010] hover:bg-[#231010] hover:text-white px-8 py-4 rounded-full text-[14px] font-bold uppercase tracking-[1.5px] transition-colors w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 border-2 border-[#fbfcff]/60 text-[#fbfcff] hover:bg-[#fbfcff] hover:text-[#0e0606] px-8 py-4 rounded-full text-[14px] font-bold uppercase tracking-[1.5px] transition-colors w-full sm:w-auto"
             >
               For Clinicians
               <ArrowRight className="size-4" />
@@ -256,7 +292,7 @@ export default function HomeVariant5() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.65 }}
-            className="flex items-center justify-center gap-6 text-[12px] text-[#231010]/55 font-medium"
+            className="flex items-center justify-center gap-6 text-[12px] text-[#fbfcff]/55 font-medium"
           >
             <div className="flex items-center gap-1.5">
               <Star className="size-3.5 fill-[#D5101F] text-[#D5101F]" />
@@ -266,7 +302,7 @@ export default function HomeVariant5() {
               <Star className="size-3.5 fill-[#D5101F] text-[#D5101F]" />
               <span className="ml-2">4.9 from 2,100+ patients</span>
             </div>
-            <span className="hidden md:inline text-[#231010]/20">·</span>
+            <span className="hidden md:inline text-[#fbfcff]/20">·</span>
             <span className="hidden md:inline">500,000+ grafts processed</span>
           </motion.div>
         </div>
@@ -275,7 +311,7 @@ export default function HomeVariant5() {
       {/* ═══════════════════════════════════════════════════════════
           FOUR-STEP PROCESS — Numbered cards
       ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#fbfcff] border-y border-[#231010]/[0.08]">
+      <section className="bg-[#1a0b0b] border-y border-white/10">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-20 md:py-28">
 
           <div className="text-center max-w-[720px] mx-auto mb-14 md:mb-20 space-y-4">
@@ -283,7 +319,7 @@ export default function HomeVariant5() {
               How it works
             </div>
             <h2
-              className="font-display font-bold text-[#231010] tracking-[-1.2px] leading-[1.05]"
+              className="font-display font-bold text-[#fbfcff] tracking-[-1.2px] leading-[1.05]"
               style={{ fontSize: "clamp(30px, 4vw, 56px)", fontWeight: 700 }}
             >
               Your care in four measured steps.
@@ -298,7 +334,7 @@ export default function HomeVariant5() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.6, delay: i * 0.08 }}
-                className="relative bg-white border border-[#231010]/[0.08] rounded-[20px] p-7 md:p-8 h-full"
+                className="relative bg-[#1a0b0b] border border-white/10 rounded-[20px] p-7 md:p-8 h-full"
               >
                 <div className="flex items-start justify-between mb-6">
                   <div className="size-12 rounded-full bg-[#231010] text-white flex items-center justify-center">
@@ -308,13 +344,13 @@ export default function HomeVariant5() {
                     Step {step.n}
                   </div>
                 </div>
-                <div className="text-[11px] uppercase tracking-[1.8px] text-[#231010]/45 font-semibold mb-2">
+                <div className="text-[11px] uppercase tracking-[1.8px] text-[#fbfcff]/45 font-semibold mb-2">
                   {step.label}
                 </div>
-                <h3 className="font-display font-bold text-[#231010] text-[22px] md:text-[24px] tracking-[-0.3px] leading-[1.2] mb-3" style={{ fontWeight: 700 }}>
+                <h3 className="font-display font-bold text-[#fbfcff] text-[22px] md:text-[24px] tracking-[-0.3px] leading-[1.2] mb-3" style={{ fontWeight: 700 }}>
                   {step.title}
                 </h3>
-                <p className="text-[14px] text-[#231010]/65 leading-[1.6]">
+                <p className="text-[14px] text-[#fbfcff]/70 leading-[1.6]">
                   {step.body}
                 </p>
               </motion.div>
@@ -326,7 +362,7 @@ export default function HomeVariant5() {
       {/* ═══════════════════════════════════════════════════════════
           CARE PATHS — Two tiered path cards (Basic vs Premium feel)
       ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#ffffff]">
+      <section className="bg-[#0e0606]">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-20 md:py-28">
 
           <div className="text-center max-w-[720px] mx-auto mb-14 md:mb-20 space-y-4">
@@ -334,7 +370,7 @@ export default function HomeVariant5() {
               Care paths
             </div>
             <h2
-              className="font-display font-bold text-[#231010] tracking-[-1.2px] leading-[1.05]"
+              className="font-display font-bold text-[#fbfcff] tracking-[-1.2px] leading-[1.05]"
               style={{ fontSize: "clamp(30px, 4vw, 56px)", fontWeight: 700 }}
             >
               Two clinical tracks. Same science behind each.
@@ -352,7 +388,7 @@ export default function HomeVariant5() {
                 className={`relative rounded-[24px] p-8 md:p-10 ${
                   p.featured
                     ? "bg-[#231010] text-white"
-                    : "bg-[#fbfcff] border border-[#231010]/[0.1] text-[#231010]"
+                    : "bg-[#1a0b0b] border border-white/15 text-[#fbfcff]"
                 }`}
               >
                 {p.featured && p.featuredLabel && (
@@ -366,7 +402,7 @@ export default function HomeVariant5() {
                 <h3 className="font-display font-bold tracking-[-0.5px] leading-[1.1] mb-4" style={{ fontSize: "clamp(26px, 2.4vw, 34px)", fontWeight: 700 }}>
                   {p.title}
                 </h3>
-                <div className={`text-[14px] mb-8 ${p.featured ? "text-white/70" : "text-[#231010]/60"}`}>
+                <div className={`text-[14px] mb-8 ${p.featured ? "text-white/70" : "text-[#fbfcff]/65"}`}>
                   {p.price}
                 </div>
 
@@ -374,7 +410,7 @@ export default function HomeVariant5() {
                   {p.features.map((feat) => (
                     <li key={feat} className="flex items-start gap-3 text-[14.5px] leading-[1.55]">
                       <Check className={`size-4 mt-1 shrink-0 ${p.featured ? "text-[#D5101F]" : "text-[#D5101F]"}`} strokeWidth={2.5} />
-                      <span className={p.featured ? "text-white/85" : "text-[#231010]/80"}>
+                      <span className={p.featured ? "text-white/85" : "text-[#fbfcff]/85"}>
                         {feat}
                       </span>
                     </li>
@@ -401,7 +437,7 @@ export default function HomeVariant5() {
       {/* ═══════════════════════════════════════════════════════════
           PATIENT STORIES — Numbered carousel
       ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#fbfcff] border-y border-[#231010]/[0.08]">
+      <section className="bg-[#1a0b0b] border-y border-white/10">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-20 md:py-28">
 
           <div className="flex items-center justify-between mb-10 md:mb-14">
@@ -410,7 +446,7 @@ export default function HomeVariant5() {
                 Patient outcomes
               </div>
               <h2
-                className="font-display font-bold text-[#231010] tracking-[-1px] leading-[1.05]"
+                className="font-display font-bold text-[#fbfcff] tracking-[-1px] leading-[1.05]"
                 style={{ fontSize: "clamp(26px, 3.4vw, 48px)", fontWeight: 700 }}
               >
                 Stories from the people we serve.
@@ -420,7 +456,7 @@ export default function HomeVariant5() {
               <button
                 type="button"
                 onClick={prevStory}
-                className="size-11 rounded-full border border-[#231010]/15 hover:border-[#D5101F] hover:text-[#D5101F] text-[#231010] transition-colors flex items-center justify-center"
+                className="size-11 rounded-full border border-white/15 hover:border-[#D5101F] hover:text-[#D5101F] text-[#fbfcff] transition-colors flex items-center justify-center"
                 aria-label="Previous story"
               >
                 <ChevronLeft className="size-5" />
@@ -428,7 +464,7 @@ export default function HomeVariant5() {
               <button
                 type="button"
                 onClick={nextStory}
-                className="size-11 rounded-full border border-[#231010]/15 hover:border-[#D5101F] hover:text-[#D5101F] text-[#231010] transition-colors flex items-center justify-center"
+                className="size-11 rounded-full border border-white/15 hover:border-[#D5101F] hover:text-[#D5101F] text-[#fbfcff] transition-colors flex items-center justify-center"
                 aria-label="Next story"
               >
                 <ChevronRight className="size-5" />
@@ -443,27 +479,27 @@ export default function HomeVariant5() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.4 }}
-              className="bg-white border border-[#231010]/[0.08] rounded-[28px] p-10 md:p-16 lg:p-20 max-w-[960px] mx-auto"
+              className="bg-[#1a0b0b] border border-white/10 rounded-[28px] p-10 md:p-16 lg:p-20 max-w-[960px] mx-auto"
             >
               <div className="text-[12px] font-semibold uppercase tracking-[2.5px] text-[#D5101F] mb-6">
                 Story {stories[storyIdx].n}
               </div>
               <blockquote
-                className="font-display text-[#231010] tracking-[-0.5px] leading-[1.25] mb-10"
+                className="font-display text-[#fbfcff] tracking-[-0.5px] leading-[1.25] mb-10"
                 style={{ fontSize: "clamp(26px, 3vw, 44px)", fontWeight: 400 }}
               >
                 &ldquo;{stories[storyIdx].quote}&rdquo;
               </blockquote>
-              <figcaption className="flex items-center justify-between flex-wrap gap-4 pt-6 border-t border-[#231010]/10">
+              <figcaption className="flex items-center justify-between flex-wrap gap-4 pt-6 border-t border-white/10">
                 <div>
-                  <div className="text-[15px] font-semibold text-[#231010]">
+                  <div className="text-[15px] font-semibold text-[#fbfcff]">
                     {stories[storyIdx].name}
                   </div>
-                  <div className="text-[12px] uppercase tracking-[1.5px] text-[#231010]/55 font-medium">
+                  <div className="text-[12px] uppercase tracking-[1.5px] text-[#fbfcff]/55 font-medium">
                     {stories[storyIdx].detail}
                   </div>
                 </div>
-                <div className="text-[11px] text-[#231010]/40 italic">
+                <div className="text-[11px] text-[#fbfcff]/40 italic">
                   *Verified Tiger BioSciences patient
                 </div>
               </figcaption>
@@ -478,7 +514,7 @@ export default function HomeVariant5() {
                 type="button"
                 onClick={() => setStoryIdx(i)}
                 className={`h-1.5 rounded-full transition-all ${
-                  i === storyIdx ? "w-8 bg-[#D5101F]" : "w-1.5 bg-[#231010]/20 hover:bg-[#231010]/40"
+                  i === storyIdx ? "w-8 bg-[#D5101F]" : "w-1.5 bg-[#fbfcff]/20 hover:bg-[#fbfcff]/40"
                 }`}
                 aria-label={`Go to story ${i + 1}`}
               />
@@ -490,7 +526,7 @@ export default function HomeVariant5() {
       {/* ═══════════════════════════════════════════════════════════
           CLINICIAN VOICES — Ambassador cards
       ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#ffffff]">
+      <section className="bg-[#0e0606]">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-20 md:py-28">
 
           <div className="text-center max-w-[720px] mx-auto mb-14 md:mb-20 space-y-4">
@@ -498,7 +534,7 @@ export default function HomeVariant5() {
               Trusted by clinicians
             </div>
             <h2
-              className="font-display font-bold text-[#231010] tracking-[-1.2px] leading-[1.05]"
+              className="font-display font-bold text-[#fbfcff] tracking-[-1.2px] leading-[1.05]"
               style={{ fontSize: "clamp(30px, 4vw, 56px)", fontWeight: 700 }}
             >
               The specialists who use Tiger every day.
@@ -513,20 +549,20 @@ export default function HomeVariant5() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.6, delay: i * 0.08 }}
-                className="bg-[#fbfcff] rounded-[20px] p-8 border border-[#231010]/[0.06]"
+                className="bg-[#1a0b0b] rounded-[20px] p-8 border border-white/10"
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="size-14 rounded-full bg-[#231010] text-white font-bold text-[14px] tracking-[1px] flex items-center justify-center">
                     {a.avatar}
                   </div>
                   <div>
-                    <div className="font-display font-bold text-[17px] text-[#231010]" style={{ fontWeight: 700 }}>
+                    <div className="font-display font-bold text-[17px] text-[#fbfcff]" style={{ fontWeight: 700 }}>
                       {a.name}
                     </div>
-                    <div className="text-[12px] text-[#231010]/55 font-medium">{a.title}</div>
+                    <div className="text-[12px] text-[#fbfcff]/55 font-medium">{a.title}</div>
                   </div>
                 </div>
-                <p className="text-[14.5px] text-[#231010]/75 leading-[1.65]">
+                <p className="text-[14.5px] text-[#fbfcff]/75 leading-[1.65]">
                   &ldquo;{a.body}&rdquo;
                 </p>
               </motion.div>
@@ -597,15 +633,15 @@ export default function HomeVariant5() {
       {/* ═══════════════════════════════════════════════════════════
           FINAL CTA — Path selector
       ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#fbfcff]">
+      <section className="bg-[#1a0b0b]">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-20 md:py-28 text-center">
           <h2
-            className="font-display font-bold text-[#231010] tracking-[-1.2px] leading-[1.05] max-w-[820px] mx-auto mb-6"
+            className="font-display font-bold text-[#fbfcff] tracking-[-1.2px] leading-[1.05] max-w-[820px] mx-auto mb-6"
             style={{ fontSize: "clamp(30px, 4.2vw, 60px)", fontWeight: 700 }}
           >
             Take the next measured step.
           </h2>
-          <p className="text-[16px] text-[#231010]/65 leading-[1.65] max-w-[560px] mx-auto mb-10">
+          <p className="text-[16px] text-[#fbfcff]/70 leading-[1.65] max-w-[560px] mx-auto mb-10">
             Whether you&rsquo;re a patient seeking care or a clinician evaluating regenerative options, Tiger BioSciences meets you with the same evidence.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
@@ -618,7 +654,7 @@ export default function HomeVariant5() {
             </Link>
             <Link
               href="/hcp"
-              className="inline-flex items-center justify-center gap-2 border-2 border-[#231010] text-[#231010] hover:bg-[#231010] hover:text-white px-8 py-4 rounded-full text-[14px] font-bold uppercase tracking-[1.5px] transition-colors w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 border-2 border-[#fbfcff]/70 text-[#fbfcff] hover:bg-[#231010] hover:text-white px-8 py-4 rounded-full text-[14px] font-bold uppercase tracking-[1.5px] transition-colors w-full sm:w-auto"
             >
               Start clinician path
               <ArrowRight className="size-4" />

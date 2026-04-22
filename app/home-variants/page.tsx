@@ -96,7 +96,7 @@ export default function HomeVariants() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Tiger BioSciences · 10 Designs
+          Tiger BioSciences · 9 Designs
         </motion.span>
         <motion.h1
           className="font-display font-light text-[#231010] tracking-[-1.5px] leading-[1.02]"
@@ -113,7 +113,7 @@ export default function HomeVariants() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.25 }}
         >
-          10 unique homepage designs for review. Click any variant to preview
+          9 unique homepage designs for review. Click any variant to preview
           it live.
         </motion.p>
       </div>
@@ -138,7 +138,7 @@ export default function HomeVariants() {
                     className="shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-[13px] font-medium text-white"
                     style={{ backgroundColor: "#D5101F" }}
                   >
-                    {v.id}
+                    {i + 1}
                   </span>
                   <div className="flex-1 min-w-0">
                     <h2 className="font-display font-light text-[22px] text-[#231010] tracking-[-0.5px] leading-[1.2] group-hover:text-[#D5101F] transition-colors duration-200">

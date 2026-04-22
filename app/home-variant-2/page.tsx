@@ -79,7 +79,7 @@ export default function HomeVariant2() {
       {/* ═══════════════════════════════════════════════════════════
           HERO — 50/50 Split
       ═══════════════════════════════════════════════════════════ */}
-      <section className="min-h-[100dvh] grid grid-cols-1 lg:grid-cols-2">
+      <section className="min-h-[100dvh] grid grid-cols-1 lg:grid-cols-2 pt-[101px]">
 
         {/* Left — Cream with headline and CTAs */}
         <div className="flex flex-col justify-center px-8 md:px-14 xl:px-20 py-12 md:py-16 lg:py-0 bg-[#ffffff] relative z-10 order-2 lg:order-1">
@@ -182,7 +182,7 @@ export default function HomeVariant2() {
             alt="Tiger BioSciences"
             fill
             priority
-            className="object-cover object-[65%_20%]"
+            className="object-cover object-[78%_45%]"
             sizes="(min-width: 1024px) 50vw, 100vw"
           />
           {/* Left edge fade into cream — desktop only */}

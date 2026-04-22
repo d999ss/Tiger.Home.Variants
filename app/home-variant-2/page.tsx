@@ -261,13 +261,13 @@ export default function HomeVariant2() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as const }}
                   className={`relative rounded-[12px] overflow-hidden ${isRight ? "lg:order-2" : "lg:order-1"}`}
-                  style={{ aspectRatio: "3/2", clipPath: "inset(0 0 round 12px)" }}
+                  style={{ aspectRatio: "3/2", clipPath: "inset(0 0 round 12px)", backgroundColor: `${div.color}14` }}
                 >
                   <Image
                     src={div.image}
                     alt={div.tagline}
                     fill
-                    className="object-cover transition-transform duration-500 hover:scale-[1.04]"
+                    className="object-cover mix-blend-multiply transition-transform duration-500 hover:scale-[1.04]"
                     sizes="(min-width: 1024px) 50vw, 100vw"
                   />
                   {/* Accent top bar */}

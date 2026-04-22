@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
@@ -39,6 +40,13 @@ const variants = [
     description:
       "Dark deep-brown theme with video hero, glowing division cards, large tiger-red clinical stats, and a contrasting white CTA.",
     tags: ["Dark Mode", "Premium", "Video"],
+  },
+  {
+    id: 6,
+    title: "Editorial Spread",
+    description:
+      "Magazine-style nameplate, cover image with drop-cap lede, table of contents, alternating feature articles with pull quotes, and an editorial colophon.",
+    tags: ["Editorial", "Magazine", "Long-form"],
   },
   {
     id: 7,
@@ -96,7 +104,7 @@ export default function HomeVariants() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Tiger BioSciences · 9 Designs
+          Tiger BioSciences · 10 Designs
         </motion.span>
         <motion.h1
           className="font-display font-light text-[#231010] tracking-[-1.5px] leading-[1.02]"
@@ -113,7 +121,7 @@ export default function HomeVariants() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.25 }}
         >
-          9 unique homepage designs for review. Click any variant to preview
+          10 unique homepage designs for review. Click any variant to preview
           it live.
         </motion.p>
       </div>
@@ -130,39 +138,52 @@ export default function HomeVariants() {
             >
               <Link
                 href={`/home-variant-${v.id}`}
-                className="group block rounded-[12px] bg-[#fbfcff] border border-[#231010]/[0.06] p-7 hover:shadow-[0_8px_32px_rgba(71,63,56,0.12)] hover:border-[#231010]/[0.12] transition-all duration-300 cursor-pointer"
+                className="group block rounded-[12px] bg-[#fbfcff] border border-[#231010]/[0.06] overflow-hidden hover:shadow-[0_8px_32px_rgba(71,63,56,0.12)] hover:border-[#231010]/[0.12] transition-all duration-300 cursor-pointer"
               >
-                {/* Number + Title */}
-                <div className="flex items-start gap-4 mb-4">
-                  <span
-                    className="shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-[13px] font-medium text-white"
-                    style={{ backgroundColor: "#D5101F" }}
-                  >
-                    {i + 1}
-                  </span>
-                  <div className="flex-1 min-w-0">
-                    <h2 className="font-display font-light text-[22px] text-[#231010] tracking-[-0.5px] leading-[1.2] group-hover:text-[#D5101F] transition-colors duration-200">
-                      {v.title}
-                    </h2>
-                  </div>
-                  <ArrowRight className="shrink-0 size-5 text-[#231010]/20 group-hover:text-[#D5101F] group-hover:translate-x-1 transition-all duration-200 mt-1" />
+                {/* Thumbnail */}
+                <div className="relative w-full aspect-[16/10] bg-[#231010]/[0.04] overflow-hidden border-b border-[#231010]/[0.06]">
+                  <Image
+                    src={`/variant-thumbs/v${v.id}.jpg`}
+                    alt={`${v.title} preview`}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
                 </div>
 
-                {/* Description */}
-                <p className="text-[13.5px] font-light text-[#231010]/65 leading-[1.65] ml-14">
-                  {v.description}
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mt-4 ml-14">
-                  {v.tags.map((tag) => (
+                <div className="p-7">
+                  {/* Number + Title */}
+                  <div className="flex items-start gap-4 mb-4">
                     <span
-                      key={tag}
-                      className="text-[10px] uppercase tracking-[1.5px] text-[#231010]/40 border border-[#231010]/10 rounded-full px-3 py-1"
+                      className="shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-[13px] font-medium text-white"
+                      style={{ backgroundColor: "#D5101F" }}
                     >
-                      {tag}
+                      {i + 1}
                     </span>
-                  ))}
+                    <div className="flex-1 min-w-0">
+                      <h2 className="font-display font-light text-[22px] text-[#231010] tracking-[-0.5px] leading-[1.2] group-hover:text-[#D5101F] transition-colors duration-200">
+                        {v.title}
+                      </h2>
+                    </div>
+                    <ArrowRight className="shrink-0 size-5 text-[#231010]/20 group-hover:text-[#D5101F] group-hover:translate-x-1 transition-all duration-200 mt-1" />
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-[13.5px] font-light text-[#231010]/65 leading-[1.65] ml-14">
+                    {v.description}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mt-4 ml-14">
+                    {v.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[10px] uppercase tracking-[1.5px] text-[#231010]/40 border border-[#231010]/10 rounded-full px-3 py-1"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </Link>
             </motion.div>

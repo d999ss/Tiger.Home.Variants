@@ -39,7 +39,7 @@ const fadeIn = {
 
 function HeroSection() {
   return (
-    <section className="relative min-h-[88vh] flex flex-col items-center justify-center text-center px-6 bg-[#ffffff] overflow-hidden">
+    <section className="relative min-h-[88vh] flex flex-col items-center justify-center text-center px-6 pt-[101px] bg-[#ffffff] overflow-hidden">
       {/* Background texture gradient */}
       <div
         className="pointer-events-none absolute inset-0"

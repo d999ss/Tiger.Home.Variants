@@ -59,7 +59,7 @@ export default function HomeVariant10() {
       {/* ═══════════════════════════════════════════════════════════════
           HERO — Short 60vh with centered text + background image
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative flex items-center justify-center overflow-hidden min-h-[500px] md:min-h-[60vh]">
+      <section className="relative flex items-center justify-center overflow-hidden min-h-[500px] md:min-h-[60vh] pt-[101px]">
         {/* Subtle background image */}
         <div className="absolute inset-0 -z-10">
           <Image

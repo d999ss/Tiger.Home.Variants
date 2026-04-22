@@ -91,14 +91,14 @@ const staggerContainer = {
 
 export default function HomeVariant5() {
   return (
-    <main className="min-h-screen bg-[#231010] text-[#ffffff]">
+    <main className="min-h-screen bg-[#231010] text-[#ffffff] pt-[101px]">
 
       {/* ── Trust Bar ─────────────────────────────────────────────────────── */}
       <motion.div
         initial={{ opacity: 0, y: -8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="fixed top-0 inset-x-0 z-50 bg-[#231010]/80 backdrop-blur-[20px] border-b border-[#ffffff]/[0.06] pt-[72px]"
+        className="relative z-10 bg-[#231010]/80 backdrop-blur-[20px] border-b border-[#ffffff]/[0.06]"
       >
         <div className="container mx-auto max-w-7xl px-6 py-2.5 flex items-center justify-center md:justify-between gap-6 flex-nowrap overflow-x-auto scrollbar-none md:flex-wrap">
           {trustBadges.map((b) => {

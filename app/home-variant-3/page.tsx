@@ -200,7 +200,7 @@ export default function HomeVariant3() {
       ═══════════════════════════════════════════════════════════ */}
       <section
         ref={heroRef}
-        className="relative min-h-[100dvh] flex flex-col justify-center px-6 md:px-16 xl:px-24 pt-32 pb-24"
+        className="relative min-h-[100dvh] flex flex-col justify-center px-6 md:px-16 xl:px-24 pt-[calc(101px+2rem)] md:pt-[calc(101px+4rem)] pb-24"
       >
         {/* Subtle background image */}
         <div className="absolute inset-0 -z-10 opacity-[0.04]">

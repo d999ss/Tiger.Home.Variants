@@ -76,7 +76,7 @@ export default function HomeVariant1() {
       {/* ═══════════════════════════════════════════════════════════
           HERO — Full-viewport cinematic video
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative h-[100dvh] w-full overflow-hidden flex items-center justify-center">
+      <section className="relative min-h-[100dvh] w-full overflow-hidden flex items-center justify-center pt-[101px]">
 
         {/* Video background */}
         <video

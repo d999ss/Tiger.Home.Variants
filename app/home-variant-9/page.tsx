@@ -216,7 +216,7 @@ export default function HomeVariant9() {
       {/* ═══════════════════════════════════════════════════════════════
           HERO CAROUSEL — Full-screen cinematic with rotating content
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative h-screen min-h-[640px] w-full overflow-hidden">
+      <section className="relative min-h-screen w-full overflow-hidden pt-[101px] bg-[#231010]">
 
         {/* Video Background — crossfades between slides */}
         <AnimatePresence mode="sync">
@@ -246,7 +246,7 @@ export default function HomeVariant9() {
 
         {/* Trust bar — top strip */}
         <motion.div
-          className="absolute top-0 left-0 right-0 z-20 border-b border-white/10 bg-black/20 backdrop-blur-sm pt-20"
+          className="absolute top-[101px] left-0 right-0 z-20 border-b border-white/10 bg-black/20 backdrop-blur-sm"
           initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}

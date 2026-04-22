@@ -112,7 +112,7 @@ export default function HomeVariant4() {
     <main className="min-h-screen bg-[#ffffff]">
 
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-[101px]">
         {/* Background image — low opacity watermark */}
         <div className="absolute inset-0 pointer-events-none select-none">
           <Image

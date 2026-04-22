@@ -125,7 +125,7 @@ export default function HomeVariant7() {
       {/* ------------------------------------------------------------------ */}
       {/* HERO                                                                 */}
       {/* ------------------------------------------------------------------ */}
-      <section className="relative flex flex-col items-center justify-center text-center px-6 pt-32 pb-24 md:pt-44 md:pb-36 overflow-hidden">
+      <section className="relative flex flex-col items-center justify-center text-center px-6 pt-[calc(101px+2rem)] pb-24 md:pt-[calc(101px+4rem)] md:pb-36 overflow-hidden">
         {/* Subtle radial glow */}
         <div
           className="pointer-events-none absolute inset-0"

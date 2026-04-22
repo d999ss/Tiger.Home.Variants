@@ -1,5 +1,6 @@
 "use client";
 import { VariantNav } from "@/components/ui/variant-nav";
+import { VariantTopNav } from "@/components/ui/variant-top-nav";
 
 import { Award, Globe, Shield, Microscope, ChevronRight } from "lucide-react";
 import Image from "next/image";
@@ -45,7 +46,7 @@ const divisions = [
     id: "wound-care",
     label: "Wound Care",
     color: "#DF5630",
-    image: "/images/tiger-assets/home-ex-care.jpeg",
+    image: "/images/figma/division-wound-care.png",
     summary: "Advanced CAMPs for chronic and acute wound management.",
     href: "/solutions/wound-care",
   },
@@ -72,11 +73,12 @@ const divisions = [
 export default function HomeVariant6() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#ffffff]">
+      <VariantTopNav theme="transparent" ctaLabel="View Solutions" ctaHref="/products" />
 
       {/* ═══════════════════════════════════════════════════════════
           HERO — Full-viewport cinematic video
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative min-h-[100dvh] w-full overflow-hidden flex items-center justify-center pt-[101px] bg-[#1a0b0b]">
+      <section className="relative min-h-[100dvh] w-full overflow-hidden flex items-center justify-center bg-[#1a0b0b]">
 
         {/* Poster image — plays when video is loading or blocked */}
         <Image

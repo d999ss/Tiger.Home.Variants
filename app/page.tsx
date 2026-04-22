@@ -175,7 +175,7 @@ const divisions = [
     description: "Tiger Wound Care provides Cellular, Acellular, and Matrix-like Products (CAMPs) tailored for chronic and acute wounds. Innovative research and development drive technologies suitable for all care settings with clinically validated outcomes.",
     companies: ["Tiger Wound Care", "Extremity Care", "Encore Surgical Dressings"],
     href: "/solutions/wound-care",
-    image: "/images/tiger-assets/home-ex-care.jpeg",
+    image: "/images/figma/division-wound-care.png",
     imageRight: true
   },
   {

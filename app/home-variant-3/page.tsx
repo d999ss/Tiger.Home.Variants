@@ -1,5 +1,6 @@
 "use client";
 import { VariantNav } from "@/components/ui/variant-nav";
+import { VariantTopNav } from "@/components/ui/variant-top-nav";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -68,7 +69,7 @@ const conditions = [
     tag: "Chronic Wounds",
     title: "Diabetic foot ulcers",
     body: "Learn how CAMP-based allografts can accelerate closure of complex chronic wounds.",
-    image: "/images/tiger-assets/home-ex-care.jpeg",
+    image: "/images/figma/division-wound-care.png",
     href: "/conditions/diabetic-ulcers",
     color: "#D5101F",
   },
@@ -198,11 +199,12 @@ export default function HomeVariant3() {
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#ffffff] text-[#231010]">
+      <VariantTopNav theme="patient" ctaLabel="Find a Provider" ctaHref="/find-a-provider" />
 
       {/* ═══════════════════════════════════════════════════════════
-          AUDIENCE SWITCHER — thin blue utility bar
+          AUDIENCE SWITCHER — thin utility bar
       ═══════════════════════════════════════════════════════════ */}
-      <div className="pt-[101px]">
+      <div className="pt-[72px]">
         <div className="bg-[#231010] text-[#ffffff]">
           <div className="max-w-[1440px] mx-auto px-6 md:px-10">
             <div className="flex items-center gap-6 md:gap-10 py-2.5 overflow-x-auto scrollbar-none">

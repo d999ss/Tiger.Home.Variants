@@ -1,5 +1,6 @@
 "use client";
 import { VariantNav } from "@/components/ui/variant-nav";
+import { VariantTopNav } from "@/components/ui/variant-top-nav";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -24,7 +25,7 @@ const tabs = [
     headline: "Closing Wounds That Won't Close",
     description:
       "Our advanced cellular allograft matrices give clinicians the regenerative scaffold that conventional therapy lacks. Proven in peer-reviewed trials with 89% complete wound closure at 12 weeks — nearly 25 percentage points above standard of care.",
-    image: "/images/tiger-assets/home-ex-care.jpeg",
+    image: "/images/figma/division-wound-care.png",
     stats: [
       { value: "89%", label: "Wound closure at 12 weeks" },
       { value: "6.5M", label: "Americans with chronic wounds" },
@@ -122,10 +123,11 @@ export default function HomeVariant2() {
 
   return (
     <main className="bg-[#ffffff] min-h-screen">
+      <VariantTopNav theme="light" ctaLabel="Explore Divisions" ctaHref="#tabs" />
       {/* ------------------------------------------------------------------ */}
       {/* HERO                                                                 */}
       {/* ------------------------------------------------------------------ */}
-      <section className="relative flex flex-col items-center justify-center text-center px-6 pt-[calc(101px+2rem)] pb-24 md:pt-[calc(101px+4rem)] md:pb-36 overflow-hidden">
+      <section className="relative flex flex-col items-center justify-center text-center px-6 pt-[calc(72px+3rem)] pb-24 md:pt-[calc(72px+5rem)] md:pb-36 overflow-hidden">
         {/* Subtle radial glow */}
         <div
           className="pointer-events-none absolute inset-0"

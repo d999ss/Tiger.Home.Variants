@@ -1,5 +1,6 @@
 "use client";
 import { VariantNav } from "@/components/ui/variant-nav";
+import { VariantTopNav } from "@/components/ui/variant-top-nav";
 
 import { Award, Building2, Globe, Heart, CheckCircle, ArrowRight } from "lucide-react";
 import Image from "next/image";
@@ -25,7 +26,7 @@ const divisions = [
     divisionLabel: "Wound Care",
     color: "#DF5630",
     imageRight: true,
-    image: "/images/tiger-assets/home-ex-care.jpeg",
+    image: "/images/figma/division-wound-care.png",
     tagline: "Advanced Wound Care Solutions",
     body: "Tiger Wound Care provides Cellular, Acellular, and Matrix-like Products (CAMPs) tailored for chronic and acute wounds. Innovative research and clinically validated outcomes across all care settings.",
     companies: ["Tiger Wound Care", "Extremity Care", "Encore Surgical Dressings"],
@@ -75,11 +76,12 @@ const donationPrograms = [
 export default function HomeVariant7() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#ffffff]">
+      <VariantTopNav theme="light" ctaLabel="View Solutions" ctaHref="/products" />
 
       {/* ═══════════════════════════════════════════════════════════
           HERO — 50/50 Split
       ═══════════════════════════════════════════════════════════ */}
-      <section className="min-h-[100dvh] grid grid-cols-1 lg:grid-cols-2 pt-[101px]">
+      <section className="min-h-[100dvh] grid grid-cols-1 lg:grid-cols-2 pt-[72px]">
 
         {/* Left — Cream with headline and CTAs */}
         <div className="flex flex-col justify-center px-8 md:px-14 xl:px-20 py-12 md:py-16 lg:py-0 bg-[#ffffff] relative z-10 order-2 lg:order-1">

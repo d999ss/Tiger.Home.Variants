@@ -1,5 +1,6 @@
 "use client";
 import { VariantNav } from "@/components/ui/variant-nav";
+import { VariantTopNav } from "@/components/ui/variant-top-nav";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -110,9 +111,10 @@ const staggerContainer = {
 export default function HomeVariant4() {
   return (
     <main className="min-h-screen bg-[#ffffff]">
+      <VariantTopNav theme="light" ctaLabel="View Products" ctaHref="/products" />
 
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-[101px]">
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-[72px]">
         {/* Background image — low opacity watermark */}
         <div className="absolute inset-0 pointer-events-none select-none">
           <Image

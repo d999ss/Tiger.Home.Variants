@@ -1,5 +1,6 @@
 "use client";
 import { VariantNav } from "@/components/ui/variant-nav";
+import { VariantTopNav } from "@/components/ui/variant-top-nav";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -55,11 +56,12 @@ const CEO_QUOTE =
 export default function HomeVariant10() {
   return (
     <main className="min-h-screen bg-[#ffffff]">
+      <VariantTopNav theme="transparent" ctaLabel="Explore Products" ctaHref="/products" />
 
       {/* ═══════════════════════════════════════════════════════════════
           HERO — Short 60vh with centered text + background image
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative isolate flex items-center justify-center overflow-hidden min-h-[500px] md:min-h-[60vh] pt-[101px]">
+      <section className="relative isolate flex items-center justify-center overflow-hidden min-h-[500px] md:min-h-[60vh] pt-[72px]">
         {/* Subtle background image */}
         <div className="absolute inset-0 -z-10">
           <Image
@@ -189,7 +191,7 @@ export default function HomeVariant10() {
                 {/* Image */}
                 <div className="relative overflow-hidden aspect-[16/9] md:aspect-auto md:h-[340px]">
                   <Image
-                    src="/images/tiger-assets/home-ex-care.jpeg"
+                    src="/images/figma/division-wound-care.png"
                     alt="Wound Care Division"
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"

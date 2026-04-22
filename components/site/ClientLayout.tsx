@@ -7,7 +7,7 @@ import { ScrollAnimations } from '@/components/site/ScrollAnimations';
 import { SmoothScroll } from '@/components/site/SmoothScroll';
 
 
-const STANDALONE_ROUTES = ['/style', '/home-variants'];
+const STANDALONE_ROUTES = ['/style', '/home-variants', '/home-variant-'];
 
 export function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();

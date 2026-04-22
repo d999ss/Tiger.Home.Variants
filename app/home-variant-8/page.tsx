@@ -1,5 +1,6 @@
 "use client";
 import { VariantNav } from "@/components/ui/variant-nav";
+import { VariantTopNav } from "@/components/ui/variant-top-nav";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -39,7 +40,7 @@ const fadeIn = {
 
 function HeroSection() {
   return (
-    <section className="relative isolate min-h-[88vh] flex flex-col items-center justify-center text-center px-6 pt-[101px] bg-[#ffffff] overflow-hidden">
+    <section className="relative isolate min-h-[88vh] flex flex-col items-center justify-center text-center px-6 pt-[72px] bg-[#ffffff] overflow-hidden">
       {/* Background watermark image — upper-right, subtle */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <Image
@@ -519,7 +520,7 @@ const divisions = [
     icon: Activity,
     color: "#DF5630",
     href: "/divisions/wound-care",
-    image: "/images/tiger-assets/home-ex-care.jpeg",
+    image: "/images/figma/division-wound-care.png",
   },
   {
     name: "Aesthetics",
@@ -773,6 +774,7 @@ function FutureSection() {
 export default function HomeVariant8() {
   return (
     <main>
+      <VariantTopNav theme="cream" ctaLabel="Our Story" ctaHref="/company/about" />
       <HeroSection />
       <GiftSection />
       <ScienceSection />

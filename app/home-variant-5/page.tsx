@@ -1,5 +1,6 @@
 "use client";
 import { VariantNav } from "@/components/ui/variant-nav";
+import { VariantTopNav } from "@/components/ui/variant-top-nav";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -171,11 +172,12 @@ export default function HomeVariant5() {
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#ffffff] text-[#231010]">
+      <VariantTopNav theme="premium" ctaLabel="Get Started" ctaHref="/paths/wound-care" />
 
       {/* ═══════════════════════════════════════════════════════════
           CREDENTIAL STRIP — Thin top bar
       ═══════════════════════════════════════════════════════════ */}
-      <div className="pt-[101px]">
+      <div className="pt-[72px]">
         <div className="bg-[#231010] text-white">
           <div className="max-w-[1440px] mx-auto px-6 md:px-10">
             <div className="flex items-center gap-8 md:gap-14 py-2.5 overflow-x-auto scrollbar-none">

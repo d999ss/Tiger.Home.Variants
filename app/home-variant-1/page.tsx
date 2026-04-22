@@ -1,5 +1,6 @@
 "use client";
 import { VariantNav } from "@/components/ui/variant-nav";
+import { VariantTopNav } from "@/components/ui/variant-top-nav";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -16,7 +17,7 @@ const pillars = [
     title: "Engineering healing where it has stalled.",
     body:
       "Cellular, Acellular, and Matrix-like Products for chronic and acute wounds — tested across hospitals, surgical centers, and specialty clinics.",
-    image: "/images/tiger-assets/home-ex-care.jpeg",
+    image: "/images/figma/division-wound-care.png",
     href: "/solutions/wound-care",
     color: "#DF5630",
   },
@@ -68,7 +69,7 @@ const newsroom = [
     tag: "Clinical Evidence",
     date: "March 28, 2026",
     title: "Phase III data: CAMP platform shows 38% improvement in diabetic ulcer closure.",
-    image: "/images/tiger-assets/home-ex-care.jpeg",
+    image: "/images/figma/division-wound-care.png",
     href: "/press/phase-iii-camp-data",
   },
   {
@@ -91,11 +92,12 @@ const audienceCtas = [
 export default function HomeVariant1() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#ffffff] text-[#231010]">
+      <VariantTopNav theme="light" ctaLabel="Contact" ctaHref="/contact" />
 
       {/* ═══════════════════════════════════════════════════════════
           BRAND RIBBON — thin red accent under nav
       ═══════════════════════════════════════════════════════════ */}
-      <div className="pt-[101px]">
+      <div className="pt-[72px]">
         <div className="h-[3px] bg-[#D5101F]" />
       </div>
 

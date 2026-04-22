@@ -1,5 +1,6 @@
 "use client";
 import { VariantNav } from "@/components/ui/variant-nav";
+import { VariantTopNav } from "@/components/ui/variant-top-nav";
 
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
@@ -45,7 +46,7 @@ const divisions = [
       "Cellular, acellular, and matrix-like products (CAMPs) for chronic and acute wound management across all care settings.",
     href: "/solutions/wound-care",
     companies: "Tiger Wound Care · Extremity Care · Encore Surgical Dressings",
-    image: "/images/tiger-assets/home-ex-care.jpeg",
+    image: "/images/figma/division-wound-care.png",
   },
   {
     id: "aesthetics",
@@ -194,13 +195,14 @@ export default function HomeVariant9() {
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#ffffff]">
+      <VariantTopNav theme="editorial" ctaLabel="Read" ctaHref="/company/about" />
 
       {/* ═══════════════════════════════════════════════════════════
           HERO — Typography-forward, full cream, no image
       ═══════════════════════════════════════════════════════════ */}
       <section
         ref={heroRef}
-        className="relative isolate min-h-[100dvh] flex flex-col justify-center px-6 md:px-16 xl:px-24 pt-[calc(101px+2rem)] md:pt-[calc(101px+4rem)] pb-24"
+        className="relative isolate min-h-[100dvh] flex flex-col justify-center px-6 md:px-16 xl:px-24 pt-[calc(72px+2rem)] md:pt-[calc(72px+4rem)] pb-24"
       >
         {/* Subtle background image — reveal tiger on right third */}
         <div className="absolute inset-0 -z-10">
@@ -373,7 +375,7 @@ export default function HomeVariant9() {
         style={{ aspectRatio: "21/7" }}
       >
         <Image
-          src="/images/tiger-assets/home-ex-care.jpeg"
+          src="/images/figma/division-wound-care.png"
           alt="Tiger BioSciences — Wound Care"
           fill
           className="object-cover"

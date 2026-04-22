@@ -6,12 +6,12 @@ import { ArrowLeft, ArrowRight, Grid3X3 } from "lucide-react";
 const VARIANT_IDS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const VARIANT_NAMES: Record<number, string> = {
-  1: "Cinematic Video Hero",
+  1: "Corporate Healthcare",
   2: "Split Hero",
   3: "Typography Minimal",
   4: "Product Showcase",
   5: "Dark Premium",
-  6: "Corporate Healthcare",
+  6: "Cinematic Video Hero",
   7: "Interactive Tabs",
   8: "Scroll Storytelling",
   9: "Hero Carousel",

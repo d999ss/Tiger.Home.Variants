@@ -8,10 +8,10 @@ import { ArrowRight } from "lucide-react";
 const variants = [
   {
     id: 1,
-    title: "Cinematic Video Hero",
+    title: "Corporate Healthcare",
     description:
-      "Full-viewport video background with floating glassmorphism stats bar, neumorphic pillars, and cinematic Apple-like feel.",
-    tags: ["Video", "Cinematic", "Stats Bar"],
+      "J&J-style corporate homepage — full-bleed hero with CEO signature, four-pillar division grid, dark impact stats, editorial newsroom row, leadership quote, and audience CTAs.",
+    tags: ["Corporate", "Annual Report", "Enterprise"],
   },
   {
     id: 2,
@@ -43,10 +43,10 @@ const variants = [
   },
   {
     id: 6,
-    title: "Corporate Healthcare",
+    title: "Cinematic Video Hero",
     description:
-      "J&J-style corporate homepage — full-bleed hero with CEO signature, four-pillar division grid, dark impact stats, editorial newsroom row, leadership quote, and audience CTAs.",
-    tags: ["Corporate", "Annual Report", "Enterprise"],
+      "Full-viewport video background with floating glassmorphism stats bar, neumorphic pillars, and cinematic Apple-like feel.",
+    tags: ["Video", "Cinematic", "Stats Bar"],
   },
   {
     id: 7,

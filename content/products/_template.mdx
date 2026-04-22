@@ -1,0 +1,131 @@
+---
+{
+  slug: "_template",
+  title: "Product Name",
+  subtitle: "Brief one-line description of the product",
+  tagline: "Compelling tagline or value proposition",
+  division: "aesthetics",
+  company: "company-slug",
+  category: "Product Category",
+  tech: [
+    "Key technology feature 1",
+    "Key technology feature 2",
+    "Key technology feature 3",
+    "Key technology feature 4"
+  ],
+  indications: [
+    "Primary indication 1",
+    "Primary indication 2",
+    "Primary indication 3",
+    "Secondary indication 1",
+    "Secondary indication 2"
+  ],
+  benefits: "Product Name offers [benefit 1], [benefit 2], [benefit 3], and [benefit 4], each contributing to meaningful improvements in ease of use, performance, and predictable outcomes for both practitioners and end users.",
+  evidence: [
+    "Author et al. (Year) - Brief description of key clinical study and results",
+    "FDA 510(k) clearance KXXXXXX - Brief description of clearance",
+    "Real-world data: X procedures with Y% outcome metric"
+  ],
+  skus: [
+    { name: "Product Name Size 1", size: "1.0cc" },
+    { name: "Product Name Size 2", size: "2.0cc" }
+  ],
+  regulatory: {
+    fda: "FDA status (e.g., FDA-cleared 510(k) for [indication])",
+    ce: "CE Mark status (e.g., CE Mark 2023)",
+    510k: "KXXXXXX"
+  },
+  regions: ["United States", "Canada", "Europe"],
+  status: "Active",
+  downloads: [
+    { label: "Product Brochure", link: "/path/to/brochure.pdf" },
+    { label: "Instructions for Use", link: "/path/to/ifu.pdf" },
+    { label: "Clinical Data Summary", link: "/path/to/clinical-data.pdf" }
+  ],
+  contacts: {
+    sales: "division.sales@tigerbiosciences.com",
+    support: "division.support@tigerbiosciences.com"
+  },
+  heroImage: "/images/05.png",
+  gallery: [],
+  overview: "Product Name is a [product type] built with [core technology] to deliver [primary benefit]. Developed by [Company Name], it provides [immediate effect] and supports [long term outcome]. The proprietary [technology] enables [mechanism], producing [clinical outcome] and [patient benefit] across [application].",
+  mechanismOfAction: "Product Name uses [core technology] to deliver [immediate effect] through [delivery method], while the [technology feature] facilitates [biological process] over [timeframe], allowing [mechanism] to create [response] that supports [clinical benefit] and a [lasting effect].",
+  clinicalValidation: "A multicenter study of [X] patients demonstrated [Y] percent satisfaction at [Z] months with low adverse events, and independent assessments reported consistent improvements in [measure 1] and [measure 2], including [X] percent achieving at least a [Y] point increase on the [Assessment Scale].",
+  regulatoryStatus: "Product Name is cleared under [regulatory pathway] for [indication] in [application], produced within an ISO certified quality system that ensures traceability, consistency, and dependable performance.",
+  intendedUse: "Product Name is indicated for [specific use case], including treatment of [indication 1] and [indication 2], and is designed to provide reliable results when used by trained professionals following standard practice.",
+  compatibleTreatments: "Product Name can be combined with [products or procedures] to support [enhanced outcomes], and is frequently paired with [complementary solutions] to help optimize treatment sequencing, durability, and overall satisfaction.",
+  technologyPlatform: "Product Name is built on [core technology] engineered to deliver [primary benefit], offering [advantage 1], [advantage 2], [advantage 3], and [advantage 4] within a unified platform that supports consistent, predictable performance.",
+  manufacturingExcellence: "Each unit is produced through controlled manufacturing processes supported by rigorous quality checks, leveraging [quality method] to ensure the product maintains its intended characteristics and performance across every batch.",
+  clinicalApplications: "Product Name is designed for [use cases] and is commonly applied in scenarios involving [application area 1], [application area 2], and [application area 3], where it supports reliable outcomes and aligns with standard workflows.",
+  treatmentProtocol: "Product Name follows a straightforward protocol that includes [preparation], application through [delivery method], timing aligned with [duration], supported by [post care], with results often becoming visible within [results timeline].",
+  clinicalEvidence: "Research consistently shows strong performance in [key outcomes], with studies demonstrating [success metrics] and confirming the product's favorable characteristics in both controlled trials and real world use.",
+  seo: {
+    description: "[FDA status] [product type] for [primary benefit]. [Key feature] with [duration/outcome] and proven clinical outcomes."
+  }
+}
+---
+
+<!--
+========================================
+PRODUCT TEMPLATE DOCUMENTATION
+========================================
+
+FRONTMATTER FIELD GUIDE:
+
+REQUIRED FIELDS:
+- slug: URL path (/products/[slug])
+- title: Product name
+- division: regentx | wound | aesthetics | international
+- company: Parent company slug
+
+BASIC INFO (Displayed in left sidebar):
+- subtitle: One-line product description
+- tagline: Marketing tagline
+- category: Product category
+- heroImage: Header image path
+
+METADATA (Used for filtering, not directly displayed):
+- tech[]: Technology features
+- indications[]: Medical indications/uses
+- evidence[]: Clinical evidence citations
+- skus[]: Product variants/sizes
+
+REGULATORY (Displayed in left sidebar):
+- regulatory.fda: FDA status
+- regulatory.ce: CE Mark status
+- regulatory.510k: 510(k) number
+- regions[]: Available regions
+- status: Active/Inactive
+
+STRUCTURED CONTENT SECTIONS (Right column):
+- overview: 2-3 sentence product introduction
+- benefits[]: Key features (format: "Title – Description")
+- mechanismOfAction: How product works scientifically
+- clinicalValidation: Summary of clinical evidence
+- regulatoryStatus: Detailed regulatory info
+- intendedUse: Official FDA indication
+- compatibleTreatments: Compatible procedures
+- technologyPlatform: { title, description, manufacturing } - Technical details
+- clinicalApplications: { title, description, applications[] } - Use cases
+- treatmentProtocol: { description, steps[] } - Procedure details
+- clinicalEvidence: Summary of efficacy data
+
+RESOURCES:
+- downloads[]: Product documents
+- contacts: Sales and support emails
+
+SEO:
+- seo.title: Page title
+- seo.description: Meta description
+
+========================================
+CONTENT GUIDELINES
+========================================
+
+ALL content should be defined in frontmatter above. Do NOT use MDX
+sections below the frontmatter, as they will render with inconsistent
+styling (large headings instead of small labels).
+
+For consistent styling across all sections, add new fields to the
+frontmatter and update the page component to render them.
+-->

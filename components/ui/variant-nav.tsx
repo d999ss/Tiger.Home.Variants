@@ -7,14 +7,14 @@ const VARIANT_IDS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const VARIANT_NAMES: Record<number, string> = {
   1: "Corporate Healthcare",
-  2: "Split Hero",
-  3: "Typography Minimal",
+  2: "Interactive Tabs",
+  3: "Patient Portal",
   4: "Product Showcase",
   5: "Dark Premium",
   6: "Cinematic Video Hero",
-  7: "Interactive Tabs",
+  7: "Split Hero",
   8: "Scroll Storytelling",
-  9: "Patient Portal",
+  9: "Typography Minimal",
   10: "Bento Grid",
 };
 

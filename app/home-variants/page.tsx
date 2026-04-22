@@ -15,17 +15,17 @@ const variants = [
   },
   {
     id: 2,
-    title: "Split Hero",
+    title: "Interactive Tabs",
     description:
-      "50/50 split layout — headline and CTAs on white, full-bleed tiger image on the right. Trust badges strip and alternating division sections.",
-    tags: ["Split Layout", "Image-Forward", "Classic"],
+      "Tabbed division explorer with animated transitions. Each tab reveals content, stats, and CTAs for a different division.",
+    tags: ["Interactive", "Tabs", "Exploratory"],
   },
   {
     id: 3,
-    title: "Typography-Forward Minimal",
+    title: "Patient Portal",
     description:
-      "No hero image. Massive typographic headline with animated underline, generous whitespace, thin dividers, text-only division cards.",
-    tags: ["Minimal", "Typography", "Ultra-Clean"],
+      "Pfizer-style patient-facing gateway with Tiger palette — audience switcher, tiger hero, service tiles, AI \"Ask Tiger\" search, conditions, impact stats, patient stories, 4-step process, insights, FAQ, and savings band.",
+    tags: ["Patient", "DTC", "Healthcare"],
   },
   {
     id: 4,
@@ -50,10 +50,10 @@ const variants = [
   },
   {
     id: 7,
-    title: "Interactive Tabs",
+    title: "Split Hero",
     description:
-      "Tabbed division explorer with animated transitions. Each tab reveals content, stats, and CTAs for a different division.",
-    tags: ["Interactive", "Tabs", "Exploratory"],
+      "50/50 split layout — headline and CTAs on white, full-bleed tiger image on the right. Trust badges strip and alternating division sections.",
+    tags: ["Split Layout", "Image-Forward", "Classic"],
   },
   {
     id: 8,
@@ -64,10 +64,10 @@ const variants = [
   },
   {
     id: 9,
-    title: "Patient Portal",
+    title: "Typography-Forward Minimal",
     description:
-      "Pfizer-style patient-facing gateway — audience switcher, bold hero with testimonial, four service tiles, AI \"Ask Tiger\" search, condition cards, savings band, and resource links.",
-    tags: ["Patient", "DTC", "Healthcare"],
+      "No hero image. Massive typographic headline with animated underline, generous whitespace, thin dividers, text-only division cards.",
+    tags: ["Minimal", "Typography", "Ultra-Clean"],
   },
   {
     id: 10,

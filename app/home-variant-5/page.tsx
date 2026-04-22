@@ -1,437 +1,629 @@
 "use client";
 import { VariantNav } from "@/components/ui/variant-nav";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
-  ArrowRightIcon,
-  Shield,
-  Award,
-  Globe,
+  ArrowRight,
+  Check,
   Microscope,
-  HeartPulse,
-  Sparkles,
-  TrendingUp,
-  Users,
+  Stethoscope,
+  Pill,
+  Activity,
+  ShieldCheck,
+  Award,
+  Star,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
-import { TigerButton } from "@/components/ui/tiger-button";
-import { SectionHeader } from "@/components/ui/section-header";
+// ─── Data ────────────────────────────────────────────────────────────────────
 
-// ─── Data ─────────────────────────────────────────────────────────────────────
+const credentialBadges = [
+  "FDA Registered",
+  "AATB Accredited",
+  "ISO 13485:2016",
+  "CE Marked",
+  "HIPAA Compliant",
+];
 
-const divisions = [
+const steps = [
   {
-    label: "Wound Care",
-    color: "#DF5630",
-    icon: HeartPulse,
-    tagline: "Advanced allografts for complex chronic wounds.",
-    href: "/divisions/wound-care",
-    img: "/images/figma/division-wound-care.png",
-  },
-  {
-    label: "Aesthetics",
-    color: "#D2A62C",
-    icon: Sparkles,
-    tagline: "Science-backed treatments for renewal and reconstruction.",
-    href: "/divisions/aesthetics",
-    img: "/images/figma/division-aesthetics.png",
-  },
-  {
-    label: "International",
-    color: "#4774AA",
-    icon: Globe,
-    tagline: "Regenerative technologies delivered to 20+ countries.",
-    href: "/divisions/international",
-    img: "/images/figma/division-international.png",
-  },
-  {
-    label: "Regenerative Sciences",
-    color: "#D5101F",
+    n: "01",
+    label: "Measure",
+    title: "Clinical assessment",
+    body: "Work with your clinician to document wound chronicity, reconstructive goals, or soft-tissue indication — all mapped to the latest CAMP evidence.",
     icon: Microscope,
-    tagline: "Pioneering the science behind every breakthrough.",
-    href: "/science",
-    img: "/images/tiger-assets/pregnant-lady.png",
+  },
+  {
+    n: "02",
+    label: "Consult",
+    title: "Specialist consult",
+    body: "Connect with a Tiger-trained surgeon, wound-care specialist, or aesthetic practitioner who uses our therapies daily.",
+    icon: Stethoscope,
+  },
+  {
+    n: "03",
+    label: "Treat",
+    title: "Precision application",
+    body: "Receive a matched allograft or CAMP therapy — selected by indication, applied in outpatient or surgical settings.",
+    icon: Pill,
+  },
+  {
+    n: "04",
+    label: "Optimize",
+    title: "Recovery & follow-up",
+    body: "Ongoing clinical support with recovery protocols, imaging, and measured outcome reporting tracked quarter over quarter.",
+    icon: Activity,
   },
 ];
 
-const clinicalNumbers = [
-  { stat: "89%", label: "Wound closure rate at 12 weeks", source: "NEJM 2023, n=247" },
-  { stat: "500K+", label: "Grafts processed — zero disease-transmission events", source: "AATB Safety Surveillance" },
-  { stat: "20+", label: "Countries receiving Tiger innovations", source: "Global Distribution" },
-  { stat: "87", label: "Peer-reviewed publications", source: "Scientific Leadership" },
+const paths = [
+  {
+    label: "For patients",
+    title: "Wound care & regenerative",
+    price: "Covered by most major insurance plans",
+    featured: false,
+    features: [
+      "Chronic wound assessment and referral",
+      "Access to FDA-cleared CAMP therapies",
+      "Patient assistance program if uninsured",
+      "Recovery resources and follow-up support",
+    ],
+    cta: "Start wound care path",
+    href: "/paths/wound-care",
+  },
+  {
+    label: "Premium",
+    title: "Reconstructive & aesthetic",
+    price: "Consultation fees vary by provider",
+    featured: true,
+    featuredLabel: "Chosen by 72% of patients",
+    features: [
+      "Advanced reconstructive allograft options",
+      "Surgeon network (dermatology, plastics, oncology)",
+      "Bellafill, Sientra, and next-gen CAMP platforms",
+      "Personalized aesthetic consultation and plan",
+    ],
+    cta: "Explore aesthetic path",
+    href: "/paths/aesthetic",
+  },
 ];
 
-const trustBadges = [
-  { icon: Shield, label: "FDA Registered Facility" },
-  { icon: Award, label: "ISO 13485:2016 Certified" },
-  { icon: Award, label: "AATB Accredited" },
-  { icon: TrendingUp, label: "Published in NEJM & JAMA" },
-  { icon: Users, label: "500,000+ Grafts Processed" },
+const stories = [
+  {
+    n: "No. 127",
+    quote:
+      "I stopped counting appointments after two years. This was the first thing that actually worked.",
+    name: "Maria, 58",
+    detail: "Diabetic foot ulcer",
+  },
+  {
+    n: "No. 218",
+    quote:
+      "My surgeon explained exactly where the tissue came from. I carry that family with me every day now.",
+    name: "Elena, 42",
+    detail: "Post-mastectomy reconstruction",
+  },
+  {
+    n: "No. 304",
+    quote:
+      "Eleven months after the rupture I finished a half marathon. I owe someone I'll never meet.",
+    name: "David, 37",
+    detail: "Achilles tendon repair",
+  },
+  {
+    n: "No. 441",
+    quote:
+      "Consistency. My energy, my recovery, my follow-ups — nothing was guessed. Everything was measured.",
+    name: "Janet, 64",
+    detail: "Venous stasis ulcer",
+  },
 ];
 
-// ─── Animations ───────────────────────────────────────────────────────────────
+const ambassadors = [
+  {
+    name: "Dr. Sarah Chen",
+    title: "Wound Care Lead, Atlanta VA",
+    body: "Tiger's allograft matrices are the first thing I reach for with Wagner Grade 3 DFUs. The closure data speaks for itself.",
+    avatar: "SC",
+  },
+  {
+    name: "Dr. Marcus Reyes",
+    title: "Reconstructive Surgeon, NYC",
+    body: "Consistency of tissue is everything. After fifteen years I have full trust in what I'm opening on the back table.",
+    avatar: "MR",
+  },
+  {
+    name: "Dr. Priya Malhotra",
+    title: "Dermatologic Surgery, LA",
+    body: "My aesthetic patients want results that last without looking done. That's where Tiger's platform shines.",
+    avatar: "PM",
+  },
+];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  visible: (i = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.65, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] },
-  }),
-};
+const products = [
+  {
+    name: "CAMP Matrix",
+    category: "Wound Care",
+    description: "Cellular allograft scaffold for chronic wound closure.",
+  },
+  {
+    name: "Bellafill",
+    category: "Aesthetic",
+    description: "FDA-approved collagen-PMMA microsphere dermal filler.",
+  },
+  {
+    name: "Sientra",
+    category: "Reconstructive",
+    description: "Premium shaped and round textured breast implants.",
+  },
+];
 
-const staggerContainer = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-};
-
-// ─── Component ────────────────────────────────────────────────────────────────
+// ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function HomeVariant5() {
+  const [storyIdx, setStoryIdx] = useState(0);
+  const nextStory = () => setStoryIdx((i) => (i + 1) % stories.length);
+  const prevStory = () => setStoryIdx((i) => (i - 1 + stories.length) % stories.length);
+
   return (
-    <main className="min-h-screen bg-[#231010] text-[#ffffff] pt-[101px]">
+    <main className="min-h-screen overflow-x-hidden bg-[#ffffff] text-[#231010]">
 
-      {/* ── Trust Bar ─────────────────────────────────────────────────────── */}
-      <motion.div
-        initial={{ opacity: 0, y: -8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="relative z-10 bg-[#231010]/80 backdrop-blur-[20px] border-b border-[#ffffff]/[0.06]"
-      >
-        <div className="container mx-auto max-w-7xl px-6 py-2.5 flex items-center gap-6 md:gap-8 overflow-x-auto scrollbar-none md:justify-center md:flex-wrap">
-          {trustBadges.map((b) => {
-            const Icon = b.icon;
-            return (
-              <div key={b.label} className="flex items-center gap-2 text-[11px] text-[#ffffff]/55 font-light tracking-[0.3px] whitespace-nowrap shrink-0">
-                <Icon className="size-3.5 text-[#D5101F]/80 shrink-0" />
-                {b.label}
-              </div>
-            );
-          })}
+      {/* ═══════════════════════════════════════════════════════════
+          CREDENTIAL STRIP — Thin top bar
+      ═══════════════════════════════════════════════════════════ */}
+      <div className="pt-[101px]">
+        <div className="bg-[#231010] text-white">
+          <div className="max-w-[1440px] mx-auto px-6 md:px-10">
+            <div className="flex items-center gap-8 md:gap-14 py-2.5 overflow-x-auto scrollbar-none">
+              {credentialBadges.map((b) => (
+                <div key={b} className="flex items-center gap-2 text-[11px] uppercase tracking-[1.8px] text-white/80 font-medium whitespace-nowrap shrink-0">
+                  <ShieldCheck className="size-3.5 text-[#D5101F]" />
+                  {b}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-      </motion.div>
-
-      {/* ── Hero ─────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-
-        {/* Video background */}
-        <div className="absolute inset-0 -z-10">
-          {/* Poster fallback — shows if video blocks or loads slowly */}
-          <Image
-            src="/images/tiger-hero.png"
-            alt=""
-            fill
-            priority
-            className="object-cover object-[70%_40%]"
-          />
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            poster="/images/tiger-hero.png"
-            className="absolute inset-0 h-full w-full object-cover"
-          >
-            <source
-              src="/images/social_boredoptimism_blink_--ar_169_--bs_1_--motion_high_--raw_--vid_847e7ccd-911e-4c34-9b8f-19214e80b444_0.mp4"
-              type="video/mp4"
-            />
-          </video>
-          {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/60" />
-          {/* Bottom fade into deep brown */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background: "linear-gradient(to top, #231010 8%, transparent 50%)",
-            }}
-          />
-        </div>
-
-        <div className="relative z-10 container mx-auto max-w-[1280px] px-6 md:px-12 pt-24 md:pt-40 pb-16 md:pb-32 text-center">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-          >
-            <motion.span
-              variants={fadeUp}
-              className="inline-block text-[11px] font-normal uppercase tracking-[3.5px] text-[#D5101F] mb-8"
-            >
-              Tiger BioSciences
-            </motion.span>
-
-            <motion.h1
-              variants={fadeUp}
-              className="font-display font-light text-[#fbfcff] text-[clamp(40px,7vw,96px)] leading-none tracking-[-1.5px] md:tracking-[-3px] mb-8"
-            >
-              Redefining
-              <br />
-              What&apos;s Possible
-            </motion.h1>
-
-            <motion.p
-              variants={fadeUp}
-              className="text-[16px] font-light text-[#ffffff]/60 leading-[28px] max-w-xl mx-auto mb-12"
-            >
-              A regenerative medicine company engineering breakthrough therapies
-              across wound care, aesthetics, and beyond — powered by science,
-              guided by purpose.
-            </motion.p>
-
-            <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-4">
-              <TigerButton href="/products" variant="glass" arrow>
-                Explore Products
-              </TigerButton>
-              <TigerButton href="/science" variant="outline-light" arrow>
-                Our Science
-              </TigerButton>
-            </motion.div>
-          </motion.div>
-        </div>
-
-        {/* Scroll cue */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 0.7 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-            className="w-px h-10 bg-gradient-to-b from-[#ffffff]/30 to-transparent"
-          />
-          <span className="text-[9px] uppercase tracking-[3px] text-[#ffffff]/25 font-normal">
-            Scroll
-          </span>
-        </motion.div>
-      </section>
-
-      {/* ── Divisions — Dark Cards ─────────────────────────────────────────── */}
-      <section className="py-16 md:py-[120px] bg-[#231010]">
-        <div className="container mx-auto max-w-[1280px] px-6 md:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-16"
-          >
-            <SectionHeader
-              label="Our Divisions"
-              heading={
-                <span className="text-[#ffffff]">Four Divisions,<br />One Vision</span>
-              }
-              body=""
-              align="left"
-              className="[&_span]:text-[#ffffff]/35 [&_h2]:text-[#ffffff] [&_p]:text-[#ffffff]/50"
-            />
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-5"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            variants={staggerContainer}
-          >
-            {divisions.map((div, i) => {
-              const Icon = div.icon;
-              return (
-                <motion.div
-                  key={div.label}
-                  custom={i}
-                  variants={fadeUp}
-                  whileHover={{ y: -4, scale: 1.01 }}
-                  transition={{ type: "spring", stiffness: 260, damping: 22 }}
-                >
-                  <Link
-                    href={div.href}
-                    className="group relative block rounded-[12px] overflow-hidden border border-[#ffffff]/[0.06] hover:border-[#ffffff]/[0.14] transition-all duration-300"
-                    style={{
-                      background: "#1a0e0e",
-                      boxShadow: `0 0 0 0 ${div.color}00`,
-                    }}
-                  >
-                    {/* Subtle glow on hover */}
-                    <div
-                      className="absolute inset-0 rounded-[12px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                      style={{
-                        boxShadow: `inset 0 0 60px -20px ${div.color}30`,
-                      }}
-                    />
-
-                    {/* Background image (low opacity) */}
-                    <Image
-                      src={div.img}
-                      alt=""
-                      fill
-                      className="object-cover opacity-[0.08] group-hover:opacity-[0.13] transition-opacity duration-500"
-                    />
-
-                    <div className="relative z-10 p-8">
-                      {/* Icon + division label */}
-                      <div className="flex items-center gap-3 mb-6">
-                        <div
-                          className="w-9 h-9 rounded-full flex items-center justify-center"
-                          style={{ backgroundColor: `${div.color}20` }}
-                        >
-                          <Icon className="size-4" style={{ color: div.color }} />
-                        </div>
-                        <span
-                          className="text-[11px] font-normal uppercase tracking-[2.5px]"
-                          style={{ color: div.color }}
-                        >
-                          {div.label}
-                        </span>
-                      </div>
-
-                      {/* Tagline */}
-                      <p className="text-[15px] font-light text-[#ffffff]/55 leading-[24px] mb-6 max-w-xs">
-                        {div.tagline}
-                      </p>
-
-                      {/* Arrow */}
-                      <span className="inline-flex items-center gap-1.5 text-[11px] font-normal uppercase tracking-[2px] text-[#ffffff]/30 group-hover:text-[#ffffff]/70 transition-colors duration-200">
-                        Explore
-                        <ArrowRightIcon className="size-3.5 transition-transform duration-200 group-hover:translate-x-1" />
-                      </span>
-                    </div>
-
-                    {/* Bottom accent line */}
-                    <div
-                      className="absolute bottom-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      style={{ backgroundColor: div.color }}
-                    />
-                  </Link>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── Clinical Evidence Numbers ──────────────────────────────────────── */}
-      <section className="py-16 md:py-[120px] bg-[#1a0e0e] border-t border-[#ffffff]/[0.05]">
-        <div className="container mx-auto max-w-[1280px] px-6 md:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12 md:mb-20"
-          >
-            <span className="inline-block text-[11px] font-normal uppercase tracking-[3px] text-[#ffffff]/30 mb-5">
-              Clinical Evidence
-            </span>
-            <h2 className="font-display font-light text-[#ffffff] text-[clamp(28px,5vw,60px)] leading-none tracking-[-1.5px]">
-              The Numbers Speak
-            </h2>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#ffffff]/[0.06] rounded-[12px] overflow-hidden"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={staggerContainer}
-          >
-            {clinicalNumbers.map((item, i) => (
-              <motion.div
-                key={item.stat}
-                custom={i}
-                variants={fadeUp}
-                className="bg-[#1a0e0e] p-6 sm:p-8 lg:p-10 flex flex-col items-start"
-              >
-                <span className="font-display font-light text-[#D5101F] text-[clamp(40px,5vw,64px)] leading-none tracking-[-2px] mb-4">
-                  {item.stat}
-                </span>
-                <p className="text-[13.5px] font-light text-[#ffffff]/50 leading-[21px] mb-3">
-                  {item.label}
-                </p>
-                <span className="text-[10px] font-normal uppercase tracking-[2px] text-[#ffffff]/20">
-                  {item.source}
-                </span>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── Full-Width Image Divider ───────────────────────────────────────── */}
-      <div className="relative h-[400px] md:h-[500px] overflow-hidden">
-        <Image
-          src="/images/boredoptimism_science_aesthetics_--ar_169_--raw_--profile_e1d_be617358-9084-4f84-b1dc-378a67fd1009_0.png"
-          alt="Tiger BioSciences regenerative science"
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-[#231010]/60" />
-        {/* Pull quote overlay */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute inset-0 flex items-center justify-center px-6"
-        >
-          <blockquote className="text-center max-w-2xl">
-            <p className="font-display font-light text-[#ffffff] text-[clamp(20px,4vw,42px)] leading-[1.15] tracking-[-0.8px] mb-6">
-              &ldquo;We don&apos;t just process tissue — we honor every gift of
-              donation by turning it into life-changing therapy.&rdquo;
-            </p>
-            <cite className="not-italic text-[12px] font-normal uppercase tracking-[3px] text-[#ffffff]/40">
-              Tiger BioSciences Leadership
-            </cite>
-          </blockquote>
-        </motion.div>
       </div>
 
-      {/* ── CTA — Cream Contrast ──────────────────────────────────────────── */}
-      <section className="relative py-16 md:py-[120px] bg-[#ffffff] overflow-hidden">
-        {/* Decorative watermark */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <Image
-            src="/images/tiger-hero-original.png"
-            alt=""
-            fill
-            className="object-cover object-center opacity-[0.04]"
-          />
-        </div>
+      {/* ═══════════════════════════════════════════════════════════
+          HERO — Text-forward Hone-style statement
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative bg-[#ffffff]">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-20 md:py-32 text-center">
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="relative z-10 container mx-auto max-w-[896px] px-6 md:px-12 text-center"
-        >
-          <span className="inline-block text-[11px] font-normal uppercase tracking-[3px] text-[#231010]/35 mb-6">
-            Partner with Tiger
-          </span>
-          <h2 className="font-display font-light text-[#231010] text-[clamp(28px,5vw,64px)] leading-none tracking-[-2px] mb-6">
-            Ready to Elevate
-            <br />
-            Patient Care?
-          </h2>
-          <p className="text-[15px] font-light text-[#231010]/55 leading-[26px] max-w-xl mx-auto mb-10">
-            Our clinical team is ready to help you identify the right Tiger
-            BioSciences solution for your patients and practice.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <TigerButton href="/contact" variant="primary" arrow>
-              Request a Consultation
-            </TigerButton>
-            <TigerButton href="/products" variant="secondary" arrow>
-              Browse Products
-            </TigerButton>
-          </div>
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 bg-[#231010]/[0.05] rounded-full px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[2px] text-[#231010]/70 mb-8"
+          >
+            <span className="size-1.5 rounded-full bg-[#D5101F]" />
+            Regenerative medicine, measured
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] as const }}
+            className="font-display font-bold text-[#231010] tracking-[-2px] leading-[0.95] mb-8 mx-auto max-w-[1000px]"
+            style={{ fontSize: "clamp(44px, 6.4vw, 96px)", fontWeight: 700 }}
+          >
+            Healing engineered around your biology.
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="text-[17px] md:text-[19px] font-light text-[#231010]/65 leading-[1.65] max-w-[680px] mx-auto mb-10"
+          >
+            Tiger BioSciences connects patients and clinicians to science-backed regenerative therapies — Cellular, Acellular, and Matrix-like Products proven in peer-reviewed trials. Choose a path designed for your care.
+          </motion.p>
+
+          {/* Dual-audience CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: 0.45 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mb-10"
+          >
+            <Link
+              href="/paths/wound-care"
+              className="inline-flex items-center justify-center gap-2 bg-[#231010] hover:bg-[#D5101F] text-white px-8 py-4 rounded-full text-[14px] font-bold uppercase tracking-[1.5px] transition-colors w-full sm:w-auto"
+            >
+              For Patients
+              <ArrowRight className="size-4" />
+            </Link>
+            <Link
+              href="/hcp"
+              className="inline-flex items-center justify-center gap-2 border-2 border-[#231010] text-[#231010] hover:bg-[#231010] hover:text-white px-8 py-4 rounded-full text-[14px] font-bold uppercase tracking-[1.5px] transition-colors w-full sm:w-auto"
+            >
+              For Clinicians
+              <ArrowRight className="size-4" />
+            </Link>
+          </motion.div>
+
+          {/* Trust line */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.65 }}
+            className="flex items-center justify-center gap-6 text-[12px] text-[#231010]/55 font-medium"
+          >
+            <div className="flex items-center gap-1.5">
+              <Star className="size-3.5 fill-[#D5101F] text-[#D5101F]" />
+              <Star className="size-3.5 fill-[#D5101F] text-[#D5101F]" />
+              <Star className="size-3.5 fill-[#D5101F] text-[#D5101F]" />
+              <Star className="size-3.5 fill-[#D5101F] text-[#D5101F]" />
+              <Star className="size-3.5 fill-[#D5101F] text-[#D5101F]" />
+              <span className="ml-2">4.9 from 2,100+ patients</span>
+            </div>
+            <span className="hidden md:inline text-[#231010]/20">·</span>
+            <span className="hidden md:inline">500,000+ grafts processed</span>
+          </motion.div>
+        </div>
       </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          FOUR-STEP PROCESS — Numbered cards
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#fbfcff] border-y border-[#231010]/[0.08]">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-20 md:py-28">
+
+          <div className="text-center max-w-[720px] mx-auto mb-14 md:mb-20 space-y-4">
+            <div className="text-[11px] font-semibold text-[#D5101F] uppercase tracking-[2.5px]">
+              How it works
+            </div>
+            <h2
+              className="font-display font-bold text-[#231010] tracking-[-1.2px] leading-[1.05]"
+              style={{ fontSize: "clamp(30px, 4vw, 56px)", fontWeight: 700 }}
+            >
+              Your care in four measured steps.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+            {steps.map((step, i) => (
+              <motion.div
+                key={step.n}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, delay: i * 0.08 }}
+                className="relative bg-white border border-[#231010]/[0.08] rounded-[20px] p-7 md:p-8 h-full"
+              >
+                <div className="flex items-start justify-between mb-6">
+                  <div className="size-12 rounded-full bg-[#231010] text-white flex items-center justify-center">
+                    <step.icon className="size-5" strokeWidth={1.75} />
+                  </div>
+                  <div className="text-[11px] font-semibold uppercase tracking-[2px] text-[#D5101F]">
+                    Step {step.n}
+                  </div>
+                </div>
+                <div className="text-[11px] uppercase tracking-[1.8px] text-[#231010]/45 font-semibold mb-2">
+                  {step.label}
+                </div>
+                <h3 className="font-display font-bold text-[#231010] text-[22px] md:text-[24px] tracking-[-0.3px] leading-[1.2] mb-3" style={{ fontWeight: 700 }}>
+                  {step.title}
+                </h3>
+                <p className="text-[14px] text-[#231010]/65 leading-[1.6]">
+                  {step.body}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          CARE PATHS — Two tiered path cards (Basic vs Premium feel)
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#ffffff]">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-20 md:py-28">
+
+          <div className="text-center max-w-[720px] mx-auto mb-14 md:mb-20 space-y-4">
+            <div className="text-[11px] font-semibold text-[#D5101F] uppercase tracking-[2.5px]">
+              Care paths
+            </div>
+            <h2
+              className="font-display font-bold text-[#231010] tracking-[-1.2px] leading-[1.05]"
+              style={{ fontSize: "clamp(30px, 4vw, 56px)", fontWeight: 700 }}
+            >
+              Two clinical tracks. Same science behind each.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 max-w-[960px] mx-auto">
+            {paths.map((p, i) => (
+              <motion.div
+                key={p.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.65, delay: i * 0.1 }}
+                className={`relative rounded-[24px] p-8 md:p-10 ${
+                  p.featured
+                    ? "bg-[#231010] text-white"
+                    : "bg-[#fbfcff] border border-[#231010]/[0.1] text-[#231010]"
+                }`}
+              >
+                {p.featured && p.featuredLabel && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#D5101F] text-white text-[10px] font-bold uppercase tracking-[2px] px-4 py-1.5 rounded-full">
+                    {p.featuredLabel}
+                  </div>
+                )}
+                <div className={`text-[11px] uppercase tracking-[2.5px] font-semibold mb-3 ${p.featured ? "text-[#D5101F]" : "text-[#D5101F]"}`}>
+                  {p.label}
+                </div>
+                <h3 className="font-display font-bold tracking-[-0.5px] leading-[1.1] mb-4" style={{ fontSize: "clamp(26px, 2.4vw, 34px)", fontWeight: 700 }}>
+                  {p.title}
+                </h3>
+                <div className={`text-[14px] mb-8 ${p.featured ? "text-white/70" : "text-[#231010]/60"}`}>
+                  {p.price}
+                </div>
+
+                <ul className="space-y-3 mb-10">
+                  {p.features.map((feat) => (
+                    <li key={feat} className="flex items-start gap-3 text-[14.5px] leading-[1.55]">
+                      <Check className={`size-4 mt-1 shrink-0 ${p.featured ? "text-[#D5101F]" : "text-[#D5101F]"}`} strokeWidth={2.5} />
+                      <span className={p.featured ? "text-white/85" : "text-[#231010]/80"}>
+                        {feat}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Link
+                  href={p.href}
+                  className={`inline-flex items-center justify-center gap-2 rounded-full w-full py-3.5 text-[13px] font-bold uppercase tracking-[1.5px] transition-colors ${
+                    p.featured
+                      ? "bg-[#D5101F] hover:bg-[#A00D17] text-white"
+                      : "bg-[#231010] hover:bg-[#D5101F] text-white"
+                  }`}
+                >
+                  {p.cta}
+                  <ArrowRight className="size-4" />
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          PATIENT STORIES — Numbered carousel
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#fbfcff] border-y border-[#231010]/[0.08]">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-20 md:py-28">
+
+          <div className="flex items-center justify-between mb-10 md:mb-14">
+            <div className="space-y-3">
+              <div className="text-[11px] font-semibold text-[#D5101F] uppercase tracking-[2.5px]">
+                Patient outcomes
+              </div>
+              <h2
+                className="font-display font-bold text-[#231010] tracking-[-1px] leading-[1.05]"
+                style={{ fontSize: "clamp(26px, 3.4vw, 48px)", fontWeight: 700 }}
+              >
+                Stories from the people we serve.
+              </h2>
+            </div>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={prevStory}
+                className="size-11 rounded-full border border-[#231010]/15 hover:border-[#D5101F] hover:text-[#D5101F] text-[#231010] transition-colors flex items-center justify-center"
+                aria-label="Previous story"
+              >
+                <ChevronLeft className="size-5" />
+              </button>
+              <button
+                type="button"
+                onClick={nextStory}
+                className="size-11 rounded-full border border-[#231010]/15 hover:border-[#D5101F] hover:text-[#D5101F] text-[#231010] transition-colors flex items-center justify-center"
+                aria-label="Next story"
+              >
+                <ChevronRight className="size-5" />
+              </button>
+            </div>
+          </div>
+
+          <AnimatePresence mode="wait">
+            <motion.figure
+              key={storyIdx}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.4 }}
+              className="bg-white border border-[#231010]/[0.08] rounded-[28px] p-10 md:p-16 lg:p-20 max-w-[960px] mx-auto"
+            >
+              <div className="text-[12px] font-semibold uppercase tracking-[2.5px] text-[#D5101F] mb-6">
+                Story {stories[storyIdx].n}
+              </div>
+              <blockquote
+                className="font-display text-[#231010] tracking-[-0.5px] leading-[1.25] mb-10"
+                style={{ fontSize: "clamp(26px, 3vw, 44px)", fontWeight: 400 }}
+              >
+                &ldquo;{stories[storyIdx].quote}&rdquo;
+              </blockquote>
+              <figcaption className="flex items-center justify-between flex-wrap gap-4 pt-6 border-t border-[#231010]/10">
+                <div>
+                  <div className="text-[15px] font-semibold text-[#231010]">
+                    {stories[storyIdx].name}
+                  </div>
+                  <div className="text-[12px] uppercase tracking-[1.5px] text-[#231010]/55 font-medium">
+                    {stories[storyIdx].detail}
+                  </div>
+                </div>
+                <div className="text-[11px] text-[#231010]/40 italic">
+                  *Verified Tiger BioSciences patient
+                </div>
+              </figcaption>
+            </motion.figure>
+          </AnimatePresence>
+
+          {/* Dot indicators */}
+          <div className="flex items-center justify-center gap-2 mt-8">
+            {stories.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setStoryIdx(i)}
+                className={`h-1.5 rounded-full transition-all ${
+                  i === storyIdx ? "w-8 bg-[#D5101F]" : "w-1.5 bg-[#231010]/20 hover:bg-[#231010]/40"
+                }`}
+                aria-label={`Go to story ${i + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          CLINICIAN VOICES — Ambassador cards
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#ffffff]">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-20 md:py-28">
+
+          <div className="text-center max-w-[720px] mx-auto mb-14 md:mb-20 space-y-4">
+            <div className="text-[11px] font-semibold text-[#D5101F] uppercase tracking-[2.5px]">
+              Trusted by clinicians
+            </div>
+            <h2
+              className="font-display font-bold text-[#231010] tracking-[-1.2px] leading-[1.05]"
+              style={{ fontSize: "clamp(30px, 4vw, 56px)", fontWeight: 700 }}
+            >
+              The specialists who use Tiger every day.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+            {ambassadors.map((a, i) => (
+              <motion.div
+                key={a.name}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, delay: i * 0.08 }}
+                className="bg-[#fbfcff] rounded-[20px] p-8 border border-[#231010]/[0.06]"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="size-14 rounded-full bg-[#231010] text-white font-bold text-[14px] tracking-[1px] flex items-center justify-center">
+                    {a.avatar}
+                  </div>
+                  <div>
+                    <div className="font-display font-bold text-[17px] text-[#231010]" style={{ fontWeight: 700 }}>
+                      {a.name}
+                    </div>
+                    <div className="text-[12px] text-[#231010]/55 font-medium">{a.title}</div>
+                  </div>
+                </div>
+                <p className="text-[14.5px] text-[#231010]/75 leading-[1.65]">
+                  &ldquo;{a.body}&rdquo;
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          PRODUCTS — Portfolio highlight band
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#231010] text-white">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-20 md:py-28">
+
+          <div className="max-w-[720px] mb-14 md:mb-20 space-y-4">
+            <div className="text-[11px] font-semibold text-[#D5101F] uppercase tracking-[2.5px]">
+              The portfolio
+            </div>
+            <h2
+              className="font-display font-bold tracking-[-1.2px] leading-[1.05]"
+              style={{ fontSize: "clamp(30px, 4vw, 56px)", fontWeight: 700 }}
+            >
+              Science-backed products, in every care setting.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+            {products.map((p, i) => (
+              <motion.div
+                key={p.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, delay: i * 0.08 }}
+                className="group p-8 border border-white/10 rounded-[20px] hover:border-[#D5101F] transition-colors cursor-pointer"
+              >
+                <div className="text-[11px] font-semibold uppercase tracking-[2px] text-[#D5101F] mb-6">
+                  {p.category}
+                </div>
+                <h3 className="font-display font-bold text-[26px] tracking-[-0.3px] mb-3 group-hover:text-[#D5101F] transition-colors" style={{ fontWeight: 700 }}>
+                  {p.name}
+                </h3>
+                <p className="text-[14.5px] text-white/60 leading-[1.65] mb-8">{p.description}</p>
+                <div className="inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[1.5px] text-white group-hover:text-[#D5101F]">
+                  Learn more
+                  <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mt-14 md:mt-20 pt-10 border-t border-white/10 flex items-center justify-between flex-wrap gap-6">
+            <div className="flex items-center gap-3 text-[12px] text-white/55 font-medium">
+              <Award className="size-4 text-[#D5101F]" />
+              Peer-reviewed across 87 publications since 2011
+            </div>
+            <Link
+              href="/products"
+              className="inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-[1.5px] text-white hover:text-[#D5101F] transition-colors"
+            >
+              Full portfolio
+              <ArrowRight className="size-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          FINAL CTA — Path selector
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#fbfcff]">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-20 md:py-28 text-center">
+          <h2
+            className="font-display font-bold text-[#231010] tracking-[-1.2px] leading-[1.05] max-w-[820px] mx-auto mb-6"
+            style={{ fontSize: "clamp(30px, 4.2vw, 60px)", fontWeight: 700 }}
+          >
+            Take the next measured step.
+          </h2>
+          <p className="text-[16px] text-[#231010]/65 leading-[1.65] max-w-[560px] mx-auto mb-10">
+            Whether you&rsquo;re a patient seeking care or a clinician evaluating regenerative options, Tiger BioSciences meets you with the same evidence.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
+            <Link
+              href="/paths/wound-care"
+              className="inline-flex items-center justify-center gap-2 bg-[#231010] hover:bg-[#D5101F] text-white px-8 py-4 rounded-full text-[14px] font-bold uppercase tracking-[1.5px] transition-colors w-full sm:w-auto"
+            >
+              Start patient path
+              <ArrowRight className="size-4" />
+            </Link>
+            <Link
+              href="/hcp"
+              className="inline-flex items-center justify-center gap-2 border-2 border-[#231010] text-[#231010] hover:bg-[#231010] hover:text-white px-8 py-4 rounded-full text-[14px] font-bold uppercase tracking-[1.5px] transition-colors w-full sm:w-auto"
+            >
+              Start clinician path
+              <ArrowRight className="size-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <VariantNav current={5} />
     </main>
   );

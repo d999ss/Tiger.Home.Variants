@@ -57,103 +57,201 @@ const CEO_QUOTE =
 export default function HomeVariant10() {
   return (
     <main className="min-h-screen bg-[#ffffff]">
-      <VariantTopNav theme="transparent" ctaLabel="Explore Products" ctaHref="/products" />
+      <VariantTopNav theme="light" ctaLabel="Explore Products" ctaHref="/products" />
 
       {/* ═══════════════════════════════════════════════════════════════
-          HERO — Short 60vh with centered text + background image
+          HERO — Bento-style asymmetric split with image card
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative isolate flex items-center justify-center overflow-hidden min-h-[500px] md:min-h-[60vh] pt-[72px]">
-        {/* Subtle background image */}
-        <div className="absolute inset-0 -z-10">
-          <Image
-            src="/images/tiger-hero-original.png"
-            alt="Tiger BioSciences hero"
-            fill
-            priority
-            className="object-cover object-[72%_30%]"
-          />
-          {/* Layered overlays for depth — stronger top gradient for legibility */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0e0606]/80 via-[#231010]/60 to-[#231010]/35" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0e0606]/70 via-[#231010]/30 to-transparent" />
-          <div className="absolute inset-0 bg-[#D5101F]/[0.05]" />
-        </div>
-
-        <div className="relative z-10 mx-auto max-w-[896px] px-6 md:px-12 py-16 md:py-32 text-center">
-          {/* Label */}
+      <section className="relative isolate bg-[#fbfcff] pt-[101px] pb-10 md:pb-14 overflow-hidden">
+        <div className="mx-auto max-w-7xl px-6 md:px-12">
+          {/* Top meta row */}
           <motion.div
-            initial={{ opacity: 0, y: -12 }}
+            initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="mb-6"
+            transition={{ duration: 0.6 }}
+            className="flex items-center justify-between pt-6 pb-10 md:pb-14 border-b border-[#231010]/10"
           >
-            <span className="inline-flex items-center gap-2 border border-white/20 bg-white/10 px-5 py-2 backdrop-blur-sm text-[10px] font-light uppercase tracking-[0.35em] text-white/75">
+            <span className="inline-flex items-center gap-2 text-[10px] font-light uppercase tracking-[0.35em] text-[#231010]/55">
               <span className="size-1.5 rounded-full bg-[#D5101F]" />
               Regenerative Medicine Leaders
             </span>
+            <span className="hidden sm:inline-block text-[10px] font-light uppercase tracking-[0.3em] text-[#231010]/40">
+              Est. · FDA Registered · 20+ Countries
+            </span>
           </motion.div>
 
-          {/* Main headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="font-display font-light text-white leading-none tracking-tight mb-6"
-            style={{ fontSize: "clamp(32px, 7vw, 88px)" }}
-          >
-            Science that<br />
-            <em className="not-italic" style={{ color: "#D5101F" }}>heals.</em>
-          </motion.h1>
+          {/* Main bento hero grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 pt-10 md:pt-14">
+            {/* Left: editorial type + CTAs */}
+            <div className="lg:col-span-7 flex flex-col justify-between min-h-[520px] md:min-h-[620px]">
+              <div>
+                <motion.h1
+                  initial={{ opacity: 0, y: 28 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.85, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                  className="font-display font-light text-[#231010] leading-[0.92] tracking-[-1.5px] md:tracking-[-3px] mb-8"
+                  style={{ fontSize: "clamp(44px, 7.5vw, 128px)" }}
+                >
+                  Science<br />
+                  <span className="text-[#231010]/45">that</span><br />
+                  <em
+                    className="not-italic"
+                    style={{
+                      backgroundImage: "linear-gradient(135deg, #D5101F, #8b0a12)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    heals.
+                  </em>
+                </motion.h1>
 
-          {/* Subtext */}
-          <motion.p
+                <motion.p
+                  initial={{ opacity: 0, y: 18 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: 0.3 }}
+                  className="text-[15px] md:text-[17px] font-light text-[#231010]/65 leading-[1.7] max-w-[520px] mb-10"
+                >
+                  Tiger BioSciences leads the world in Cellular, Acellular, and Matrix-like Products —
+                  delivering proven outcomes across Wound Care, Aesthetics, and International markets.
+                </motion.p>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.55, delay: 0.45 }}
+                  className="flex flex-col sm:flex-row gap-3"
+                >
+                  <TigerButton href="/products" variant="primary" arrow>
+                    Explore Products
+                  </TigerButton>
+                  <TigerButton href="/science" variant="secondary">
+                    Clinical Evidence
+                  </TigerButton>
+                </motion.div>
+              </div>
+
+              {/* Bottom metric strip */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.6 }}
+                className="hidden md:grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-[#231010]/10"
+              >
+                {[
+                  { value: "89%", label: "Wound closure rate" },
+                  { value: "20+", label: "Countries served" },
+                  { value: "3", label: "Clinical divisions" },
+                ].map(({ value, label }) => (
+                  <div key={label}>
+                    <div className="font-display font-light text-[#231010] text-[32px] md:text-[38px] leading-none tracking-[-1px]">
+                      {value}
+                    </div>
+                    <div className="text-[10px] font-light uppercase tracking-[0.3em] text-[#231010]/50 mt-2">
+                      {label}
+                    </div>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Right: full-bleed image card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 1.03 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:col-span-5 relative rounded-[12px] overflow-hidden bg-[#0e0606] min-h-[420px] md:min-h-[620px]"
+            >
+              <Image
+                src="/images/tigers/tiger-action.png"
+                alt="Tiger BioSciences"
+                fill
+                priority
+                className="object-cover object-[50%_40%]"
+              />
+              {/* subtle bottom gradient */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(14,6,6,0.0) 45%, rgba(14,6,6,0.55) 80%, rgba(14,6,6,0.85) 100%)",
+                }}
+              />
+              {/* top-left badge */}
+              <div className="absolute top-6 left-6 right-6 flex items-center justify-between">
+                <span className="inline-flex items-center gap-2 border border-white/25 bg-black/30 backdrop-blur-md px-4 py-2 rounded-full text-[10px] font-light uppercase tracking-[0.3em] text-white/85">
+                  <span className="size-1.5 rounded-full bg-[#D5101F]" />
+                  2026 Outlook
+                </span>
+                <span className="text-[10px] font-light uppercase tracking-[0.3em] text-white/55 hidden md:inline">
+                  01 / 06
+                </span>
+              </div>
+              {/* bottom overlay card */}
+              <div className="absolute bottom-6 left-6 right-6 backdrop-blur-md bg-black/30 border border-white/15 rounded-[8px] p-5">
+                <div className="flex items-start gap-4">
+                  <div className="size-10 rounded-full bg-[#D5101F]/90 flex items-center justify-center shrink-0">
+                    <Microscope className="size-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="font-display font-light text-white text-[17px] leading-[1.35] mb-1">
+                      A platform built on native tissue architecture.
+                    </p>
+                    <span className="text-[10px] font-light uppercase tracking-[0.3em] text-white/60">
+                      Cellular · Acellular · Matrix
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Mobile metric strip */}
+          <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, delay: 0.22, ease: "easeOut" }}
-            className="text-[15px] font-light text-white/75 leading-relaxed max-w-[560px] mx-auto mb-10"
+            transition={{ duration: 0.7, delay: 0.6 }}
+            className="md:hidden grid grid-cols-3 gap-4 mt-10 pt-8 border-t border-[#231010]/10"
           >
-            Tiger BioSciences leads the world in Cellular, Acellular, and Matrix-like Products —
-            delivering proven outcomes across Wound Care, Aesthetics, and International markets.
-          </motion.p>
-
-          {/* CTA row */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.35 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <TigerButton href="/products" variant="primary" arrow>
-              Explore Products
-            </TigerButton>
-            <TigerButton href="/science" variant="outline-light">
-              Clinical Evidence
-            </TigerButton>
+            {[
+              { value: "89%", label: "Closure" },
+              { value: "20+", label: "Countries" },
+              { value: "3", label: "Divisions" },
+            ].map(({ value, label }) => (
+              <div key={label}>
+                <div className="font-display font-light text-[#231010] text-[28px] leading-none tracking-[-1px]">
+                  {value}
+                </div>
+                <div className="text-[9px] font-light uppercase tracking-[0.25em] text-[#231010]/50 mt-1.5">
+                  {label}
+                </div>
+              </div>
+            ))}
           </motion.div>
-        </div>
 
-        {/* Trust bar overlay at bottom of hero */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-black/25 backdrop-blur-sm"
-        >
-          <div className="mx-auto max-w-7xl px-6 md:px-12">
-            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12 py-3">
+          {/* Bottom trust row */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.7, duration: 0.8 }}
+            className="mt-10 md:mt-14 pt-6 border-t border-[#231010]/10"
+          >
+            <div className="flex flex-wrap items-center justify-center md:justify-between gap-5 md:gap-10">
               {[
                 { icon: Shield, text: "FDA Registered" },
                 { icon: Award, text: "ISO 13485:2016" },
                 { icon: Award, text: "AATB Accredited" },
                 { icon: Globe, text: "20+ Countries" },
               ].map(({ icon: Icon, text }) => (
-                <div key={text} className="flex items-center gap-2 text-[10px] font-light tracking-widest text-white/60 uppercase">
+                <div key={text} className="flex items-center gap-2 text-[10px] font-light tracking-[0.3em] text-[#231010]/55 uppercase">
                   <Icon className="size-3 shrink-0" />
                   <span>{text}</span>
                 </div>
               ))}
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════

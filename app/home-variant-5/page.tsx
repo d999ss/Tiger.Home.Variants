@@ -199,7 +199,7 @@ export default function HomeVariant5() {
       <section className="relative isolate bg-[#0e0606] overflow-hidden">
         {/* Poster image fallback */}
         <Image
-          src="/images/tiger-hero.png"
+          src="/images/tigers/tiger-action.png"
           alt=""
           fill
           priority
@@ -213,7 +213,7 @@ export default function HomeVariant5() {
           muted
           playsInline
           preload="auto"
-          poster="/images/tiger-hero.png"
+          poster="/images/tigers/tiger-action.png"
           className="absolute inset-0 w-full h-full object-cover -z-10 opacity-70"
           style={{ objectPosition: "center 25%" }}
         >

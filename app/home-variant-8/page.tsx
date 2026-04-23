@@ -41,114 +41,134 @@ const fadeIn = {
 
 function HeroSection() {
   return (
-    <section className="relative isolate min-h-[88vh] flex flex-col items-center justify-center text-center px-6 pt-[72px] bg-[#ffffff] overflow-hidden">
-      {/* Background watermark image — upper-right, subtle */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <Image
-          src="/images/tiger-hero-original.png"
-          alt=""
-          fill
-          className="object-cover object-[80%_20%] opacity-[0.10]"
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 70% 60% at 50% 55%, #ffffff 30%, rgba(255,255,255,0.8) 70%, rgba(255,255,255,0.3) 100%)",
-          }}
-        />
-      </div>
-
-      {/* Background texture gradient */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 80% 60% at 50% 70%, rgba(213,16,31,0.05) 0%, transparent 65%), radial-gradient(ellipse 50% 40% at 20% 20%, rgba(210,166,44,0.04) 0%, transparent 55%)",
-        }}
-      />
-
-      {/* Fine line rule */}
+    <section className="relative isolate min-h-[100vh] bg-[#ffffff] overflow-hidden pt-[101px]">
+      {/* Top red hairline */}
       <motion.div
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
         transition={{ duration: 1.1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D5101F]/30 to-transparent origin-left"
+        className="absolute top-[101px] left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D5101F]/40 to-transparent origin-left z-10"
       />
 
-      {/* Chapter indicator */}
-      <motion.div
-        initial={{ opacity: 0, y: -8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.15 }}
-        className="flex items-center gap-3 mb-8"
-      >
-        <span className="text-[10px] uppercase tracking-[3px] text-[#D5101F] font-medium">Chapter 01</span>
-        <span className="w-8 h-[1px] bg-[#231010]/20" />
-        <span className="text-[10px] uppercase tracking-[3px] text-[#231010]/35">Six-Part Story</span>
-      </motion.div>
+      <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[calc(100vh-101px)]">
+        {/* Left: editorial type column */}
+        <div className="lg:col-span-7 flex flex-col justify-center px-6 md:px-16 lg:px-20 py-16 lg:py-0 relative">
+          {/* Chapter indicator */}
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="flex items-center gap-3 mb-10"
+          >
+            <span className="text-[10px] uppercase tracking-[3px] text-[#D5101F] font-medium">Chapter 01</span>
+            <span className="w-8 h-[1px] bg-[#231010]/20" />
+            <span className="text-[10px] uppercase tracking-[3px] text-[#231010]/35">Six-Part Story</span>
+          </motion.div>
 
-      <motion.span
-        variants={fadeUp}
-        initial="hidden"
-        animate="visible"
-        custom={0}
-        className="inline-block text-[10px] uppercase tracking-[4px] text-[#231010]/35 mb-10"
-      >
-        Tiger BioSciences · A Story of Innovation
-      </motion.span>
+          <motion.span
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={0}
+            className="inline-block text-[10px] uppercase tracking-[4px] text-[#231010]/40 mb-8"
+          >
+            Tiger BioSciences · A Story of Innovation
+          </motion.span>
 
-      <motion.h1
-        variants={fadeUp}
-        initial="hidden"
-        animate="visible"
-        custom={1}
-        className="font-display font-light text-[#231010] text-[clamp(40px,8vw,96px)] tracking-[-1px] md:tracking-[-2.5px] leading-none max-w-[860px] mb-8"
-      >
-        Every Innovation Begins with a Gift.
-      </motion.h1>
+          <motion.h1
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={1}
+            className="font-display font-light text-[#231010] text-[clamp(44px,7vw,112px)] tracking-[-1.5px] md:tracking-[-3px] leading-[0.95] mb-10 max-w-[820px]"
+          >
+            Every Innovation<br />
+            Begins with a<br />
+            <span style={{ backgroundImage: "linear-gradient(135deg, #D5101F, #a00d17)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+              Gift.
+            </span>
+          </motion.h1>
 
-      <motion.p
-        variants={fadeUp}
-        initial="hidden"
-        animate="visible"
-        custom={2}
-        className="text-[16px] md:text-[19px] font-light text-[#231010]/55 max-w-[520px] leading-[1.8] mb-14"
-      >
-        From a single act of generosity, we build therapies that heal.
-        This is the Tiger BioSciences story.
-      </motion.p>
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={2}
+            className="text-[17px] md:text-[20px] font-light text-[#231010]/60 max-w-[520px] leading-[1.7] mb-12"
+          >
+            From a single act of generosity, we build therapies that heal.
+            This is the Tiger BioSciences story.
+          </motion.p>
 
-      <motion.div
-        variants={fadeUp}
-        initial="hidden"
-        animate="visible"
-        custom={3}
-        className="flex flex-wrap gap-3 justify-center"
-      >
-        <TigerButton href="/science" variant="primary" arrow>
-          Explore Our Science
-        </TigerButton>
-        <TigerButton href="/products" variant="secondary">
-          View Products
-        </TigerButton>
-      </motion.div>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={3}
+            className="flex flex-wrap gap-3"
+          >
+            <TigerButton href="/science" variant="primary" arrow>
+              Explore Our Science
+            </TigerButton>
+            <TigerButton href="/products" variant="secondary">
+              View Products
+            </TigerButton>
+          </motion.div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 0.8 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-3"
-      >
-        <span className="text-[9px] uppercase tracking-[3px] text-[#231010]/25">Scroll to explore</span>
+          {/* Scroll indicator */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.4, duration: 0.8 }}
+            className="absolute bottom-10 left-6 md:left-16 lg:left-20 hidden sm:flex flex-col items-start gap-3"
+          >
+            <span className="text-[9px] uppercase tracking-[3px] text-[#231010]/30">Scroll to explore</span>
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+            >
+              <ArrowDown className="size-4 text-[#231010]/30" />
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Right: image panel */}
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          initial={{ opacity: 0, scale: 1.04 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          className="lg:col-span-5 relative min-h-[420px] lg:min-h-0 bg-[#231010] overflow-hidden"
         >
-          <ArrowDown className="size-4 text-[#231010]/25" />
+          <Image
+            src="/images/tigers/tiger-skin-macro.png"
+            alt="Tiger BioSciences"
+            fill
+            className="object-cover object-[60%_40%]"
+            priority
+          />
+          {/* subtle warm overlay for brand tone */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(26,8,8,0.18) 0%, rgba(26,8,8,0.0) 35%, rgba(26,8,8,0.25) 100%)",
+            }}
+          />
+          {/* chapter marker card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.9 }}
+            className="absolute bottom-10 left-10 right-10 lg:left-10 lg:right-10 backdrop-blur-md bg-black/30 border border-white/15 rounded-[4px] p-6"
+          >
+            <div className="h-px bg-[#D5101F] w-10 mb-4" />
+            <p className="font-display font-light text-white text-[18px] leading-[1.4] mb-2">
+              &ldquo;A story of science, craftsmanship, and care.&rdquo;
+            </p>
+            <span className="text-[10px] uppercase tracking-[2.5px] text-white/60">Chapter 01 — The Gift</span>
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 }

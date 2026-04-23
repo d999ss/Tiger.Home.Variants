@@ -299,7 +299,7 @@ export default function HomeVariant3() {
             >
               <div className="relative aspect-[5/4] rounded-[24px] overflow-hidden bg-[#f5f1ea] shadow-[0_24px_60px_rgba(11,31,58,0.12)]">
                 <Image
-                  src="/images/tiger-hero.png"
+                  src="/images/tigers/tiger-skin-macro.png"
                   alt="Tiger BioSciences"
                   fill
                   priority

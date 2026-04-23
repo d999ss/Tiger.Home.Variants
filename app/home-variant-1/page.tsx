@@ -116,11 +116,11 @@ export default function HomeVariant1() {
             className="relative lg:col-span-7 min-h-[58vh] lg:min-h-0"
           >
             <Image
-              src="/images/tiger-hero.png"
+              src="/images/tigers/tiger-distant.png"
               alt="Tiger BioSciences — regenerative medicine"
               fill
               priority
-              className="object-cover object-[62%_35%]"
+              className="object-cover object-center"
               sizes="(min-width: 1024px) 58vw, 100vw"
             />
             {/* Subtle dark wash for contrast on the bottom credit */}

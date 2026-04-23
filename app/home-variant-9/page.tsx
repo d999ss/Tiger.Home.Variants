@@ -208,7 +208,7 @@ export default function HomeVariant9() {
         {/* Subtle background image — reveal tiger on right third */}
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/images/tiger-hero-original.png"
+            src="/images/tiger-hero.png"
             alt=""
             fill
             className="object-cover object-[72%_30%]"
@@ -253,7 +253,7 @@ export default function HomeVariant9() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.35 }}
               className="font-display font-light text-[#231010] tracking-[-1.5px] md:tracking-[-3px] leading-[0.9]"
-              style={{ fontSize: "clamp(42px, 11vw, 152px)" }}
+              style={{ fontSize: "clamp(40px, 7vw, 104px)" }}
             >
               The Leader
             </motion.h1>
@@ -262,7 +262,7 @@ export default function HomeVariant9() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.45 }}
               className="font-display font-light text-[#231010] tracking-[-1.5px] md:tracking-[-3px] leading-[0.9]"
-              style={{ fontSize: "clamp(42px, 11vw, 152px)" }}
+              style={{ fontSize: "clamp(40px, 7vw, 104px)" }}
             >
               in{" "}
               <UnderlineWord>
@@ -283,7 +283,7 @@ export default function HomeVariant9() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.55 }}
               className="font-display font-light text-[#231010] tracking-[-1.5px] md:tracking-[-3px] leading-[0.9]"
-              style={{ fontSize: "clamp(42px, 11vw, 152px)" }}
+              style={{ fontSize: "clamp(40px, 7vw, 104px)" }}
             >
               Medicine
             </motion.h1>

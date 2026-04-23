@@ -132,12 +132,12 @@ export default function HomeVariant2() {
 
         {/* Poster image — shows before video loads or if blocked */}
         <Image
-          src="/images/tiger-hero.png"
+          src="/images/tigers/tiger-action.png"
           alt=""
           fill
           priority
           className="absolute inset-0 w-full h-full object-cover -z-20"
-          style={{ objectPosition: "70% 30%" }}
+          style={{ objectPosition: "50% 40%" }}
         />
 
         {/* Video background */}
@@ -147,7 +147,7 @@ export default function HomeVariant2() {
           muted
           playsInline
           preload="auto"
-          poster="/images/tiger-hero.png"
+          poster="/images/tigers/tiger-action.png"
           className="absolute inset-0 w-full h-full object-cover -z-10"
           style={{ objectPosition: "center 25%" }}
         >

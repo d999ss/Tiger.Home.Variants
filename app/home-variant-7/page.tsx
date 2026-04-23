@@ -107,9 +107,8 @@ export default function HomeVariant7() {
               className="font-display font-light text-[#231010] tracking-[-2px] leading-[0.93]"
               style={{ fontSize: "clamp(44px, 6vw, 88px)" }}
             >
-              The Leader
+              The Leader in
               <br />
-              in{" "}
               <span
                 className="relative inline-block"
                 style={{

@@ -83,7 +83,7 @@ export default function HomeVariant6() {
 
         {/* Poster image — plays when video is loading or blocked */}
         <Image
-          src="/images/tiger-hero.png"
+          src="/images/tigers/tiger-distant.png"
           alt=""
           fill
           priority
@@ -97,7 +97,7 @@ export default function HomeVariant6() {
           loop
           muted
           playsInline
-          poster="/images/tiger-hero.png"
+          poster="/images/tigers/tiger-distant.png"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: "center 20%" }}
         >

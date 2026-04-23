@@ -454,6 +454,180 @@ export default function HomeVariant6() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
+          CLINICAL OUTCOMES — Evidence panel
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#fbfcff] border-y border-[#231010]/[0.08] py-20 md:py-28">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-10">
+          <div className="max-w-[720px] mb-14 space-y-5">
+            <span className="inline-flex items-center gap-3 text-[11px] font-normal uppercase tracking-[3.5px] text-[#D5101F]">
+              <span className="w-6 h-[1px] bg-[#D5101F]" />
+              Clinical Outcomes
+            </span>
+            <h2
+              className="font-display font-light text-[#231010] tracking-[-1.4px] leading-[1.02]"
+              style={{ fontSize: "clamp(30px, 4vw, 56px)" }}
+            >
+              Cinematic ambition. Measured results.
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-[#231010]/10 border border-[#231010]/10 rounded-[2px] overflow-hidden">
+            {[
+              { value: "89%", label: "Wound closure at 12 weeks", note: "vs. 64% standard of care" },
+              { value: "500K+", label: "Grafts safely applied", note: "Zero disease transmission" },
+              { value: "87+", label: "Peer-reviewed publications", note: "Across every platform" },
+              { value: "20+", label: "Countries served globally", note: "CE Mark · FDA · TGA" },
+            ].map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.55, delay: i * 0.08 }}
+                className="bg-[#ffffff] p-7 md:p-9 flex flex-col gap-3 min-h-[220px]"
+              >
+                <div
+                  className="font-display font-light text-[#D5101F] leading-none tracking-[-1.5px] mt-2"
+                  style={{ fontSize: "clamp(36px, 4vw, 60px)" }}
+                >
+                  {stat.value}
+                </div>
+                <div className="text-[13px] font-normal text-[#231010] leading-[1.45] mt-1">
+                  {stat.label}
+                </div>
+                <div className="pt-4 mt-auto text-[11px] font-light text-[#231010]/55 leading-[1.55] border-t border-[#231010]/8">
+                  {stat.note}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          TIMELINE — 15 years
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#ffffff] py-20 md:py-28">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mb-14">
+            <div className="lg:col-span-5 space-y-5">
+              <span className="inline-flex items-center gap-3 text-[11px] font-normal uppercase tracking-[3.5px] text-[#D5101F]">
+                <span className="w-6 h-[1px] bg-[#D5101F]" />
+                Fifteen years
+              </span>
+              <h2
+                className="font-display font-light text-[#231010] tracking-[-1.4px] leading-[1.02]"
+                style={{ fontSize: "clamp(30px, 4vw, 56px)" }}
+              >
+                A story told frame by frame.
+              </h2>
+            </div>
+            <div className="lg:col-span-7 lg:pt-4">
+              <p className="text-[15.5px] font-light text-[#231010]/65 leading-[1.75] max-w-[640px]">
+                Tiger BioSciences has grown by compounding scientific depth. Divisions
+                and platforms have been added only when the underlying technology was
+                ready to earn a clinician&apos;s trust.
+              </p>
+            </div>
+          </div>
+          <div className="relative">
+            <div className="hidden md:block absolute left-[152px] top-0 bottom-0 w-px bg-[#231010]/10" />
+            <div className="space-y-10">
+              {[
+                { year: "2011", title: "Tiger BioSciences founded", body: "AATB accreditation earned in the first operational year. Early focus on allograft tissue processing." },
+                { year: "2015", title: "Wound Care division established", body: "First cellular allograft matrix introduced, targeting chronic wounds unresponsive to standard care." },
+                { year: "2018", title: "International expansion begins", body: "CE Mark granted. Distribution partnerships across eight European markets within eighteen months." },
+                { year: "2021", title: "Aesthetics division launched", body: "Regenerative science applied to reconstructive and aesthetic medicine. Acellular dermal matrices, injectable platforms." },
+                { year: "2024", title: "87+ peer-reviewed publications", body: "Platform evidence base referenced in major wound care and reconstructive treatment guidelines." },
+                { year: "2026", title: "20+ countries · 500K+ grafts", body: "Zero disease transmission events across the full platform history. Safety remains the operating principle." },
+              ].map((m, i) => (
+                <motion.div
+                  key={m.year}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.55, delay: i * 0.06 }}
+                  className="relative flex flex-col md:flex-row md:items-start gap-4 md:gap-10"
+                >
+                  <div className="md:w-[152px] shrink-0">
+                    <span
+                      className="font-display font-light text-[#D5101F] leading-none tracking-[-1px]"
+                      style={{ fontSize: "clamp(32px, 3vw, 44px)" }}
+                    >
+                      {m.year}
+                    </span>
+                  </div>
+                  <div className="relative md:pl-8">
+                    <div className="hidden md:block absolute left-[-5px] top-[12px] size-[10px] rounded-full bg-[#D5101F]" />
+                    <h3 className="font-display font-light text-[#231010] text-[20px] md:text-[24px] tracking-[-0.3px] leading-[1.25] mb-3">
+                      {m.title}
+                    </h3>
+                    <p className="text-[14.5px] font-light text-[#231010]/65 leading-[1.75] max-w-[640px]">
+                      {m.body}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          PUBLICATIONS
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#fbfcff] border-y border-[#231010]/[0.08] py-20 md:py-28">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-10">
+          <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
+            <div className="max-w-[620px] space-y-5">
+              <span className="inline-flex items-center gap-3 text-[11px] font-normal uppercase tracking-[3.5px] text-[#D5101F]">
+                <span className="w-6 h-[1px] bg-[#D5101F]" />
+                Published evidence
+              </span>
+              <h2
+                className="font-display font-light text-[#231010] tracking-[-1.4px] leading-[1.02]"
+                style={{ fontSize: "clamp(30px, 4vw, 52px)" }}
+              >
+                Science that peers review.
+              </h2>
+            </div>
+            <Link
+              href="/science/publications"
+              className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[2.5px] text-[#231010]/60 hover:text-[#D5101F] transition-colors border-b border-[#231010]/20 hover:border-[#D5101F] pb-1"
+            >
+              Browse publications <ChevronRight className="size-3.5" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-[1px] bg-[#231010]/10 border border-[#231010]/10 rounded-[2px] overflow-hidden">
+            {[
+              { journal: "Journal of Wound Care", year: "2024", title: "Cellular allograft matrix for diabetic foot ulcers: 12-week outcomes vs. standard of care" },
+              { journal: "Advances in Wound Care", year: "2023", title: "Decellularization protocols and extracellular matrix preservation: a comparative analysis" },
+              { journal: "Aesthetic Surgery Journal", year: "2024", title: "Regenerative injectables in facial aesthetics: long-term safety and efficacy review" },
+            ].map((pub, i) => (
+              <motion.div
+                key={pub.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.55, delay: i * 0.08 }}
+                className="bg-[#ffffff] p-7 md:p-9 flex flex-col gap-4 min-h-[240px]"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="h-px bg-[#D5101F] w-8" />
+                  <span className="text-[11px] uppercase tracking-[2.5px] text-[#231010]/45">{pub.year}</span>
+                </div>
+                <span className="text-[11px] uppercase tracking-[2.5px] text-[#D5101F]/85 font-medium">
+                  {pub.journal}
+                </span>
+                <p className="font-display font-light text-[#231010] text-[17px] leading-[1.4] tracking-[-0.2px]">
+                  {pub.title}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
           REGENERATIVE SCIENCES TEASER
       ═══════════════════════════════════════════════════════════ */}
       <TigerSection bg="white" width="narrow">

@@ -645,6 +645,126 @@ export default function HomeVariant9() {
       </TigerSection>
 
       {/* ═══════════════════════════════════════════════════════════
+          NUMBERED OUTCOMES — Minimal list
+      ═══════════════════════════════════════════════════════════ */}
+      <TigerSection bg="white" width="wide">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mb-16">
+          <div className="lg:col-span-5 space-y-5">
+            <span className="text-[11px] font-normal uppercase tracking-[4px] text-[#231010]/40">
+              Clinical Outcomes
+            </span>
+            <h2
+              className="font-display font-light text-[#231010] tracking-[-1.5px] leading-[1]"
+              style={{ fontSize: "clamp(32px, 5vw, 72px)" }}
+            >
+              Evidence,<br />not adjectives.
+            </h2>
+          </div>
+          <div className="lg:col-span-7 lg:pt-4">
+            <p className="text-[15px] font-light text-[#231010]/65 leading-[1.85] max-w-[560px]">
+              Peer-reviewed outcomes. Measured across multi-site trials. The numbers below
+              are drawn directly from published data and verified clinical registries.
+            </p>
+          </div>
+        </div>
+        <div className="border-t border-[#231010]/10">
+          {[
+            { n: "01", value: "89%", title: "Wound closure at 12 weeks", body: "Cellular allograft matrix outcomes in chronic diabetic foot ulcers vs. 64% with standard of care." },
+            { n: "02", value: "500K+", title: "Grafts processed, zero transmission", body: "Full platform history. AATB-accredited processing. Traceable end-to-end." },
+            { n: "03", value: "87+", title: "Peer-reviewed publications", body: "Across wound care, reconstructive, aesthetic, and tissue processing research." },
+            { n: "04", value: "20+", title: "Countries served", body: "Regulatory clearances across FDA, CE Mark, Health Canada, TGA, PMDA." },
+          ].map((outcome, i) => (
+            <motion.div
+              key={outcome.n}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.55, delay: i * 0.06 }}
+              className="grid grid-cols-12 gap-6 md:gap-10 py-10 md:py-14 border-b border-[#231010]/10"
+            >
+              <div className="col-span-12 md:col-span-1 text-[11px] uppercase tracking-[3px] text-[#231010]/35 pt-2">
+                {outcome.n}
+              </div>
+              <div className="col-span-12 md:col-span-3">
+                <span
+                  className="font-display font-light text-[#D5101F] leading-none tracking-[-1.5px]"
+                  style={{ fontSize: "clamp(44px, 4.5vw, 80px)" }}
+                >
+                  {outcome.value}
+                </span>
+              </div>
+              <div className="col-span-12 md:col-span-5">
+                <h3 className="font-display font-light text-[#231010] text-[22px] md:text-[28px] tracking-[-0.3px] leading-[1.15]">
+                  {outcome.title}
+                </h3>
+              </div>
+              <div className="col-span-12 md:col-span-3">
+                <p className="text-[14px] font-light text-[#231010]/60 leading-[1.75]">
+                  {outcome.body}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </TigerSection>
+
+      {/* ═══════════════════════════════════════════════════════════
+          PUBLICATIONS — Minimal list
+      ═══════════════════════════════════════════════════════════ */}
+      <TigerSection bg="white" width="wide">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mb-12">
+          <div className="lg:col-span-5 space-y-5">
+            <span className="text-[11px] font-normal uppercase tracking-[4px] text-[#231010]/40">
+              Published Evidence
+            </span>
+            <h2
+              className="font-display font-light text-[#231010] tracking-[-1.5px] leading-[1]"
+              style={{ fontSize: "clamp(32px, 5vw, 72px)" }}
+            >
+              Read the<br />record.
+            </h2>
+          </div>
+          <div className="lg:col-span-7 lg:pt-4">
+            <p className="text-[15px] font-light text-[#231010]/65 leading-[1.85] max-w-[560px]">
+              Three recent publications from the Tiger evidence library. The full catalog
+              is organized by platform, indication, and year.
+            </p>
+          </div>
+        </div>
+        <div className="border-t border-[#231010]/10">
+          {[
+            { journal: "Journal of Wound Care", year: "2024", title: "Cellular allograft matrix for diabetic foot ulcers: 12-week outcomes vs. standard of care" },
+            { journal: "Advances in Wound Care", year: "2023", title: "Decellularization protocols and extracellular matrix preservation: a comparative analysis" },
+            { journal: "Aesthetic Surgery Journal", year: "2024", title: "Regenerative injectables in facial aesthetics: long-term safety and efficacy review" },
+          ].map((pub, i) => (
+            <motion.div
+              key={pub.title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className="grid grid-cols-12 gap-6 md:gap-10 py-8 md:py-10 border-b border-[#231010]/10"
+            >
+              <div className="col-span-3 md:col-span-2 text-[11px] uppercase tracking-[3px] text-[#231010]/50 pt-2">
+                {pub.year}
+              </div>
+              <div className="col-span-9 md:col-span-8">
+                <div className="text-[11px] uppercase tracking-[2.5px] text-[#D5101F] mb-3">
+                  {pub.journal}
+                </div>
+                <p className="font-display font-light text-[#231010] text-[18px] md:text-[22px] tracking-[-0.3px] leading-[1.35]">
+                  {pub.title}
+                </p>
+              </div>
+              <div className="hidden md:flex col-span-2 items-start justify-end pt-2">
+                <ArrowUpRight className="size-5 text-[#231010]/40" />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </TigerSection>
+
+      {/* ═══════════════════════════════════════════════════════════
           FINAL CTA — Minimal, typographic
       ═══════════════════════════════════════════════════════════ */}
       <TigerSection bg="white" width="narrow">

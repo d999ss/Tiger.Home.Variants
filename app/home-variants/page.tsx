@@ -29,10 +29,10 @@ const variants = [
   },
   {
     id: 5,
-    title: "Dark Premium",
+    title: "Premium Editorial",
     description:
-      "Dark deep-brown theme with video hero, glowing division cards, large tiger-red clinical stats, and a contrasting white CTA.",
-    tags: ["Dark Mode", "Premium", "Video"],
+      "Light editorial layout with split hero, dual-audience care paths, platform technology cards, patient stories carousel, clinician voices, 15-year timeline, global footprint, publications, and FAQ.",
+    tags: ["Premium", "Editorial", "Dual-Audience"],
   },
   {
     id: 6,

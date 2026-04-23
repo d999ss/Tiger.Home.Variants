@@ -3,7 +3,7 @@ import { VariantNav } from "@/components/ui/variant-nav";
 import { VariantTopNav } from "@/components/ui/variant-top-nav";
 import { VariantFooter } from "@/components/ui/variant-footer";
 
-import { Award, Building2, Globe, Heart, CheckCircle, ArrowRight } from "lucide-react";
+import { Award, Building2, Globe, Heart, CheckCircle, ArrowRight, Quote, BookOpen } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -419,6 +419,154 @@ export default function HomeVariant7() {
           </TigerButton>
         </div>
       </TigerSection>
+
+      {/* ═══════════════════════════════════════════════════════════
+          CLINICAL OUTCOMES
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#fbfcff] border-y border-[#231010]/[0.08] py-20 md:py-28">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-10">
+          <div className="max-w-[720px] mb-14 space-y-5">
+            <span className="inline-flex items-center gap-3 text-[11px] font-normal uppercase tracking-[3.5px] text-[#D5101F]">
+              <span className="w-6 h-[1px] bg-[#D5101F]" />
+              Clinical outcomes
+            </span>
+            <h2
+              className="font-display font-light text-[#231010] tracking-[-1.4px] leading-[1.02]"
+              style={{ fontSize: "clamp(30px, 4vw, 56px)" }}
+            >
+              Numbers that matter to patients.
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-[#231010]/10 border border-[#231010]/10 rounded-[2px] overflow-hidden">
+            {[
+              { value: "89%", label: "Wound closure at 12 weeks", note: "vs. 64% standard of care" },
+              { value: "500K+", label: "Grafts safely applied", note: "Zero disease transmission" },
+              { value: "87+", label: "Peer-reviewed publications", note: "Across every platform" },
+              { value: "20+", label: "Countries served globally", note: "CE Mark · FDA · TGA" },
+            ].map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.55, delay: i * 0.08 }}
+                className="bg-[#ffffff] p-7 md:p-9 flex flex-col gap-3 min-h-[220px]"
+              >
+                <div
+                  className="font-display font-light text-[#D5101F] leading-none tracking-[-1.5px] mt-2"
+                  style={{ fontSize: "clamp(36px, 4vw, 60px)" }}
+                >
+                  {stat.value}
+                </div>
+                <div className="text-[13px] font-normal text-[#231010] leading-[1.45] mt-1">
+                  {stat.label}
+                </div>
+                <div className="pt-4 mt-auto text-[11px] font-light text-[#231010]/55 leading-[1.55] border-t border-[#231010]/8">
+                  {stat.note}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          CLINICIAN VOICES
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#ffffff] py-20 md:py-28">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-10">
+          <div className="max-w-[720px] mb-14 space-y-5">
+            <span className="inline-flex items-center gap-3 text-[11px] font-normal uppercase tracking-[3.5px] text-[#D5101F]">
+              <span className="w-6 h-[1px] bg-[#D5101F]" />
+              Voices from practice
+            </span>
+            <h2
+              className="font-display font-light text-[#231010] tracking-[-1.4px] leading-[1.02]"
+              style={{ fontSize: "clamp(30px, 4vw, 56px)" }}
+            >
+              The clinicians who use Tiger every day.
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {[
+              { quote: "Tiger's allograft matrices are the first thing I reach for in Wagner Grade 3 DFUs. The closure data speaks for itself.", name: "Dr. Sarah Chen", role: "Wound Care Lead · Atlanta VA" },
+              { quote: "Consistency of tissue is everything. After fifteen years I have full trust in what I'm opening on the back table.", name: "Dr. Marcus Reyes", role: "Reconstructive Surgeon · NYC" },
+              { quote: "My aesthetic patients want results that last without looking done. That's where Tiger's platform shines.", name: "Dr. Priya Malhotra", role: "Dermatologic Surgery · LA" },
+            ].map((v, i) => (
+              <motion.div
+                key={v.name}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="relative bg-[#fbfcff] rounded-[12px] p-8 border border-[#231010]/[0.08] flex flex-col h-full"
+              >
+                <Quote className="size-6 text-[#D5101F]/80 mb-5" />
+                <p className="font-display font-light text-[#231010] text-[17px] leading-[1.55] tracking-[-0.2px] mb-8 flex-1">
+                  &ldquo;{v.quote}&rdquo;
+                </p>
+                <div className="pt-6 border-t border-[#231010]/10">
+                  <div className="font-display font-light text-[#231010] text-[16px] leading-[1.3] mb-1">
+                    {v.name}
+                  </div>
+                  <div className="text-[11px] uppercase tracking-[2px] text-[#231010]/55 font-medium">
+                    {v.role}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          PUBLICATIONS
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#fbfcff] border-y border-[#231010]/[0.08] py-20 md:py-28">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-10">
+          <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
+            <div className="max-w-[620px] space-y-5">
+              <span className="inline-flex items-center gap-3 text-[11px] font-normal uppercase tracking-[3.5px] text-[#D5101F]">
+                <span className="w-6 h-[1px] bg-[#D5101F]" />
+                Published evidence
+              </span>
+              <h2
+                className="font-display font-light text-[#231010] tracking-[-1.4px] leading-[1.02]"
+                style={{ fontSize: "clamp(30px, 4vw, 52px)" }}
+              >
+                Science that peers review.
+              </h2>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-[1px] bg-[#231010]/10 border border-[#231010]/10 rounded-[2px] overflow-hidden">
+            {[
+              { journal: "Journal of Wound Care", year: "2024", title: "Cellular allograft matrix for diabetic foot ulcers: 12-week outcomes vs. standard of care" },
+              { journal: "Advances in Wound Care", year: "2023", title: "Decellularization protocols and extracellular matrix preservation: a comparative analysis" },
+              { journal: "Aesthetic Surgery Journal", year: "2024", title: "Regenerative injectables in facial aesthetics: long-term safety and efficacy review" },
+            ].map((pub, i) => (
+              <motion.div
+                key={pub.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.55, delay: i * 0.08 }}
+                className="bg-[#ffffff] p-7 md:p-9 flex flex-col gap-4 min-h-[240px]"
+              >
+                <div className="flex items-center justify-between">
+                  <BookOpen className="size-4 text-[#D5101F]" />
+                  <span className="text-[11px] uppercase tracking-[2.5px] text-[#231010]/45">{pub.year}</span>
+                </div>
+                <span className="text-[11px] uppercase tracking-[2.5px] text-[#D5101F]/85 font-medium">
+                  {pub.journal}
+                </span>
+                <p className="font-display font-light text-[#231010] text-[17px] leading-[1.4] tracking-[-0.2px]">
+                  {pub.title}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ═══════════════════════════════════════════════════════════
           CTA SECTION

@@ -62,7 +62,7 @@ function HeroSection() {
           >
             <span className="text-[10px] uppercase tracking-[3px] text-[#D5101F] font-medium">Chapter 01</span>
             <span className="w-8 h-[1px] bg-[#231010]/20" />
-            <span className="text-[10px] uppercase tracking-[3px] text-[#231010]/35">Six-Part Story</span>
+            <span className="text-[10px] uppercase tracking-[3px] text-[#231010]/35">Seven-Part Story</span>
           </motion.div>
 
           <motion.span
@@ -661,7 +661,222 @@ function ReachSection() {
 }
 
 // ---------------------------------------------------------------------------
-// Section 6 — The Future (CEO CTA)
+// Section 6 — The Voices
+// ---------------------------------------------------------------------------
+
+function VoicesSection() {
+  const voices = [
+    {
+      quote:
+        "Tiger's allograft matrices are the first thing I reach for in Wagner Grade 3 DFUs. The closure data carries across my whole caseload.",
+      name: "Dr. Sarah Chen",
+      role: "Wound Care Lead · Atlanta VA",
+      tag: "Clinician",
+    },
+    {
+      quote:
+        "I stopped counting appointments after two years. This was the first thing that actually worked for me.",
+      name: "Maria, 58",
+      role: "Diabetic foot ulcer patient",
+      tag: "Patient",
+    },
+    {
+      quote:
+        "Consistency of tissue is everything. After fifteen years of reconstructive work, I have full trust in what I'm opening on the back table.",
+      name: "Dr. Marcus Reyes",
+      role: "Reconstructive Surgeon · NYC",
+      tag: "Clinician",
+    },
+  ];
+
+  return (
+    <section className="relative min-h-[80vh] bg-[#fbfcff] py-16 md:py-28">
+      <div className="container mx-auto max-w-[1280px] px-6 md:px-12">
+        <motion.span
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+          custom={0}
+          className="inline-block text-[11px] uppercase tracking-[3.5px] text-[#D5101F] mb-6"
+        >
+          Chapter Five · The Voices
+        </motion.span>
+
+        <motion.h2
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+          custom={1}
+          className="font-display font-light text-[#231010] text-[clamp(32px,5vw,60px)] tracking-[-1.5px] leading-[1.02] mb-8 max-w-[820px]"
+        >
+          From those who carry this story forward.
+        </motion.h2>
+
+        <motion.p
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+          custom={2}
+          className="text-[15px] font-light text-[#231010]/65 leading-[28px] max-w-[620px] mb-14"
+        >
+          A platform is only as real as the outcomes it produces. Here are three voices —
+          a wound care specialist, a patient who found her way back to mobility, and a
+          reconstructive surgeon — each describing what Tiger has meant to them.
+        </motion.p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {voices.map((voice, i) => (
+            <motion.div
+              key={voice.name}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              custom={i + 3}
+              className="relative bg-[#ffffff] rounded-[12px] p-8 border border-[#231010]/8 flex flex-col h-full"
+            >
+              <Quote className="size-7 text-[#D5101F]/80 mb-5" />
+              <p className="font-display font-light text-[#231010] text-[17px] md:text-[18px] leading-[1.5] tracking-[-0.2px] mb-8 flex-1">
+                &ldquo;{voice.quote}&rdquo;
+              </p>
+              <div className="pt-6 border-t border-[#231010]/10">
+                <span className="text-[10px] uppercase tracking-[2.5px] text-[#D5101F] font-medium">
+                  {voice.tag}
+                </span>
+                <div className="font-display font-light text-[#231010] text-[16px] leading-[1.3] mt-2 mb-1">
+                  {voice.name}
+                </div>
+                <div className="text-[11px] uppercase tracking-[2px] text-[#231010]/50">
+                  {voice.role}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Section 7 — The Covenant (Publications & Evidence)
+// ---------------------------------------------------------------------------
+
+function CovenantSection() {
+  const publications = [
+    {
+      journal: "Journal of Wound Care",
+      year: "2024",
+      title: "Cellular allograft matrix for diabetic foot ulcers: 12-week outcomes vs. standard of care",
+    },
+    {
+      journal: "Advances in Wound Care",
+      year: "2023",
+      title: "Decellularization protocols and extracellular matrix preservation: a comparative analysis",
+    },
+    {
+      journal: "Aesthetic Surgery Journal",
+      year: "2024",
+      title: "Regenerative injectables in facial aesthetics: long-term safety and efficacy review",
+    },
+  ];
+
+  return (
+    <section className="relative min-h-[80vh] bg-[#ffffff] py-16 md:py-28">
+      <div className="container mx-auto max-w-[1280px] px-6 md:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-14">
+          <div>
+            <motion.span
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              custom={0}
+              className="inline-block text-[11px] uppercase tracking-[3.5px] text-[#D5101F] mb-6"
+            >
+              Chapter Six · The Covenant
+            </motion.span>
+
+            <motion.h2
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              custom={1}
+              className="font-display font-light text-[#231010] text-[clamp(32px,5vw,60px)] tracking-[-1.5px] leading-[1.02] mb-6"
+            >
+              Evidence that peers review.
+            </motion.h2>
+          </div>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+            custom={2}
+            className="lg:pt-4"
+          >
+            <p className="text-[15px] font-light text-[#231010]/65 leading-[28px] max-w-[560px]">
+              Every chapter of the Tiger story is held to one standard: what appears in
+              peer-reviewed journals. Eighty-seven publications and counting, spanning
+              wound care, reconstructive medicine, and tissue processing. These are three
+              recent selections.
+            </p>
+          </motion.div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[1px] bg-[#231010]/10 border border-[#231010]/10 rounded-[2px] overflow-hidden">
+          {publications.map((pub, i) => (
+            <motion.div
+              key={pub.title}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-40px" }}
+              custom={i + 3}
+              className="bg-[#fbfcff] p-7 md:p-9 flex flex-col gap-4 min-h-[240px]"
+            >
+              <div className="flex items-center justify-between">
+                <div className="h-px bg-[#D5101F] w-8" />
+                <span className="text-[11px] uppercase tracking-[2.5px] text-[#231010]/45">
+                  {pub.year}
+                </span>
+              </div>
+              <span className="text-[11px] uppercase tracking-[2.5px] text-[#D5101F]/85 font-medium">
+                {pub.journal}
+              </span>
+              <p className="font-display font-light text-[#231010] text-[17px] leading-[1.4] tracking-[-0.2px]">
+                {pub.title}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-40px" }}
+          custom={6}
+          className="mt-10 pt-6 border-t border-[#231010]/10 flex items-center justify-between flex-wrap gap-4"
+        >
+          <div className="text-[12px] font-light text-[#231010]/55">
+            87+ peer-reviewed publications referenced across current clinical guidelines.
+          </div>
+          <TigerButton href="/science/publications" variant="secondary" arrow>
+            Browse the library
+          </TigerButton>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Section 8 — The Future (CEO CTA)
 // ---------------------------------------------------------------------------
 
 function FutureSection() {
@@ -685,7 +900,7 @@ function FutureSection() {
           custom={0}
           className="inline-block text-[11px] uppercase tracking-[3.5px] text-[#D5101F] mb-10"
         >
-          Chapter Five · The Future
+          Chapter Seven · The Future
         </motion.span>
 
         <motion.div
@@ -801,6 +1016,8 @@ export default function HomeVariant8() {
       <ScienceSection />
       <ImpactSection />
       <ReachSection />
+      <VoicesSection />
+      <CovenantSection />
       <FutureSection />
       <VariantFooter theme="cream" tagline="Every innovation begins with a gift. A six-chapter story, told over fifteen years." />
       <VariantNav current={8} />

@@ -279,13 +279,13 @@ export default function HomeVariant3() {
                   <ArrowRight className="size-4" />
                 </Link>
                 <Link
-                  href="/stories/fernando"
+                  href="/stories/sofia"
                   className="inline-flex items-center gap-3 text-[14px] font-semibold text-[#231010] hover:text-[#D5101F] transition-colors"
                 >
                   <span className="size-10 rounded-full bg-[#231010] text-white flex items-center justify-center">
                     <Play className="size-4 fill-white ml-0.5" />
                   </span>
-                  Watch Fernando&rsquo;s story
+                  Watch Sofia&rsquo;s story
                 </Link>
               </motion.div>
             </div>

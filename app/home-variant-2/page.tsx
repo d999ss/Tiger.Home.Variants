@@ -6,7 +6,7 @@ import { VariantFooter } from "@/components/ui/variant-footer";
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Activity, Globe, Sparkles, CheckCircle, FlaskConical } from "lucide-react";
+import { Activity, Globe, Sparkles, CheckCircle, FlaskConical, Layers, Dna, Shield, Quote, MapPin, Award, BookOpen } from "lucide-react";
 
 import { TigerButton } from "@/components/ui/tiger-button";
 import { TigerSection } from "@/components/ui/tiger-section";
@@ -349,6 +349,101 @@ export default function HomeVariant2() {
       </section>
 
       {/* ------------------------------------------------------------------ */}
+      {/* PLATFORM TECHNOLOGY — CAMP                                           */}
+      {/* ------------------------------------------------------------------ */}
+      <section className="bg-[#ffffff] py-20 md:py-28 border-t border-[#231010]/5">
+        <div className="container mx-auto max-w-[1280px] px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
+            className="max-w-[720px] mb-14"
+          >
+            <span className="inline-block text-[11px] uppercase tracking-[3.5px] text-[#D5101F] mb-6">
+              Platform Technology · CAMP
+            </span>
+            <h2 className="font-display font-light text-[#231010] text-[clamp(28px,4.5vw,52px)] tracking-[-1px] leading-[1.02] mb-6">
+              Three Platforms.<br />One Regenerative Framework.
+            </h2>
+            <p className="text-[15px] md:text-[16px] font-light text-[#231010]/65 leading-[1.75]">
+              Tiger&apos;s proprietary CAMP portfolio — Cellular, Acellular, and Matrix-like Products —
+              gives clinicians a full spectrum of regenerative tools, each engineered for a different
+              therapeutic need. We own every step from donor recovery through final packaging.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {[
+              {
+                icon: Dna,
+                tag: "Cellular",
+                title: "Living Cell Therapies",
+                body: "Viable cellular allografts that preserve native growth factors and regenerative signaling. Engineered for wounds that demand more than a passive scaffold.",
+                metric: "Viable cells retained",
+                color: "#D5101F",
+              },
+              {
+                icon: Layers,
+                tag: "Acellular",
+                title: "Decellularized Matrices",
+                body: "Proprietary decellularization protocols preserve the native extracellular matrix while removing cellular antigens — ready to integrate with host tissue.",
+                metric: "Proprietary protocols",
+                color: "#DF5630",
+              },
+              {
+                icon: Shield,
+                tag: "Matrix-like",
+                title: "Structured Scaffolds",
+                body: "Bio-engineered matrices combining architecture of native tissue with predictable handling. Built for surgical workflows that demand consistency.",
+                metric: "Surgeon-ready",
+                color: "#D2A62C",
+              },
+            ].map((platform, i) => {
+              const Icon = platform.icon;
+              return (
+                <motion.div
+                  key={platform.tag}
+                  initial={{ opacity: 0, y: 32 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                  className="group relative bg-[#fbfcff] rounded-[12px] p-8 border border-[#231010]/8 hover:shadow-[0_16px_48px_rgba(0,0,0,0.06)] transition-all duration-500"
+                >
+                  <div
+                    className="absolute top-0 left-0 right-0 h-[3px] rounded-t-[12px]"
+                    style={{ backgroundColor: platform.color }}
+                  />
+                  <div
+                    className="size-12 rounded-full flex items-center justify-center mb-6"
+                    style={{ backgroundColor: `${platform.color}12` }}
+                  >
+                    <Icon className="size-5" style={{ color: platform.color }} />
+                  </div>
+                  <span
+                    className="inline-block text-[10px] uppercase tracking-[2.5px] mb-3 font-medium"
+                    style={{ color: platform.color }}
+                  >
+                    {platform.tag}
+                  </span>
+                  <h3 className="font-display font-light text-[#231010] text-[24px] leading-[1.1] tracking-[-0.5px] mb-4">
+                    {platform.title}
+                  </h3>
+                  <p className="text-[14px] font-light text-[#231010]/65 leading-[1.7] mb-6">
+                    {platform.body}
+                  </p>
+                  <div className="pt-5 border-t border-[#231010]/8 flex items-center gap-2">
+                    <CheckCircle className="size-3.5" style={{ color: platform.color }} />
+                    <span className="text-[11px] uppercase tracking-[2px] text-[#231010]/50">{platform.metric}</span>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------------ */}
       {/* THE GIFT OF DONATION                                                 */}
       {/* ------------------------------------------------------------------ */}
       <TigerSection bg="white" width="wide">
@@ -427,6 +522,96 @@ export default function HomeVariant2() {
       </TigerSection>
 
       {/* ------------------------------------------------------------------ */}
+      {/* TIMELINE / MILESTONES                                                */}
+      {/* ------------------------------------------------------------------ */}
+      <section className="bg-[#fbfcff] py-20 md:py-28 border-t border-[#231010]/5">
+        <div className="container mx-auto max-w-[1280px] px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
+            className="max-w-[720px] mb-16"
+          >
+            <span className="inline-block text-[11px] uppercase tracking-[3.5px] text-[#D5101F] mb-6">
+              Fifteen Years · Sustained Innovation
+            </span>
+            <h2 className="font-display font-light text-[#231010] text-[clamp(28px,4.5vw,52px)] tracking-[-1px] leading-[1.02] mb-6">
+              A Platform Built Deliberately.
+            </h2>
+            <p className="text-[15px] md:text-[16px] font-light text-[#231010]/65 leading-[1.75]">
+              Tiger BioSciences has grown by compounding scientific depth — adding divisions,
+              platforms, and markets only when the underlying technology was ready.
+            </p>
+          </motion.div>
+
+          <div className="relative">
+            {/* Vertical rule */}
+            <div className="hidden md:block absolute left-[140px] top-0 bottom-0 w-px bg-[#231010]/10" />
+
+            <div className="space-y-10">
+              {[
+                {
+                  year: "2009",
+                  title: "Tiger BioSciences founded",
+                  body: "Launched with a focus on allograft tissue processing and AATB accreditation from day one.",
+                },
+                {
+                  year: "2014",
+                  title: "Wound Care division established",
+                  body: "Introduced first cellular allograft matrix targeting chronic wounds that standard care could not close.",
+                },
+                {
+                  year: "2018",
+                  title: "International expansion",
+                  body: "Reached 10 countries through strategic distribution partnerships; CE Mark granted for European markets.",
+                },
+                {
+                  year: "2021",
+                  title: "Aesthetics division launched",
+                  body: "Brought regenerative science to aesthetic medicine with acellular dermal matrices and injectable platforms.",
+                },
+                {
+                  year: "2024",
+                  title: "87+ peer-reviewed publications",
+                  body: "Clinical evidence base crossed a threshold — Tiger products referenced in major wound care treatment guidelines.",
+                },
+                {
+                  year: "2026",
+                  title: "20+ countries · 500K+ grafts processed",
+                  body: "Zero disease transmission events across the full platform history. The standard continues to be safety first.",
+                },
+              ].map((milestone, i) => (
+                <motion.div
+                  key={milestone.year}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                  className="relative flex flex-col md:flex-row md:items-start gap-4 md:gap-10"
+                >
+                  <div className="flex items-center gap-4 md:w-[140px] shrink-0">
+                    <span className="font-display font-light text-[#D5101F] text-[32px] md:text-[40px] leading-none tracking-[-1px]">
+                      {milestone.year}
+                    </span>
+                  </div>
+                  <div className="relative md:pl-8">
+                    <div className="hidden md:block absolute left-[-5px] top-[10px] size-[10px] rounded-full bg-[#D5101F]" />
+                    <h3 className="font-display font-light text-[#231010] text-[20px] md:text-[22px] leading-[1.25] tracking-[-0.3px] mb-2">
+                      {milestone.title}
+                    </h3>
+                    <p className="text-[14px] font-light text-[#231010]/65 leading-[1.7] max-w-[560px]">
+                      {milestone.body}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------------ */}
       {/* CLINICAL EVIDENCE STATS ROW                                          */}
       {/* ------------------------------------------------------------------ */}
       <section className="bg-[#231010] py-20">
@@ -466,6 +651,226 @@ export default function HomeVariant2() {
                 </span>
                 <span className="text-[13px] font-light text-[#fbfcff] leading-[20px]">{stat.label}</span>
                 <span className="text-[11px] text-[#fbfcff]/35 leading-[17px]">{stat.note}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------------ */}
+      {/* VOICES — TESTIMONIALS                                                */}
+      {/* ------------------------------------------------------------------ */}
+      <section className="bg-[#fbfcff] py-20 md:py-28">
+        <div className="container mx-auto max-w-[1280px] px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
+            className="max-w-[720px] mb-14"
+          >
+            <span className="inline-block text-[11px] uppercase tracking-[3.5px] text-[#D5101F] mb-6">
+              Voices from the Field
+            </span>
+            <h2 className="font-display font-light text-[#231010] text-[clamp(28px,4.5vw,52px)] tracking-[-1px] leading-[1.02] mb-6">
+              The Perspective of Clinicians &amp; Partners.
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {[
+              {
+                quote: "The consistency of Tiger's cellular allografts has changed what I can offer patients whose wounds were previously unresponsive to standard care.",
+                author: "Dr. Marcus Hale, MD",
+                role: "Wound Care Specialist · Academic Medical Center",
+                color: "#DF5630",
+              },
+              {
+                quote: "Their decellularization protocols are genuinely class-leading. We reviewed the peer-reviewed evidence base and it held up to scrutiny every time.",
+                author: "Prof. Lina Okafor, PhD",
+                role: "Tissue Engineering Researcher",
+                color: "#D5101F",
+              },
+              {
+                quote: "A rare partner: rigorous on science, respectful of donors, and operationally serious about international markets and regulatory diligence.",
+                author: "Nikolai Petrov",
+                role: "Regional Distribution Director · EMEA",
+                color: "#4774AA",
+              },
+            ].map((voice, i) => (
+              <motion.div
+                key={voice.author}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="relative bg-[#ffffff] rounded-[12px] p-8 border border-[#231010]/8 flex flex-col h-full"
+              >
+                <Quote className="size-7 mb-5" style={{ color: voice.color, opacity: 0.8 }} />
+                <p className="font-display font-light text-[#231010] text-[18px] md:text-[19px] leading-[1.5] tracking-[-0.2px] mb-8 flex-1">
+                  &ldquo;{voice.quote}&rdquo;
+                </p>
+                <div className="pt-6 border-t border-[#231010]/8">
+                  <div
+                    className="h-px w-10 mb-4"
+                    style={{ backgroundColor: voice.color }}
+                  />
+                  <div className="font-display font-light text-[#231010] text-[15px] leading-[1.3] mb-1">
+                    {voice.author}
+                  </div>
+                  <div className="text-[11px] uppercase tracking-[2px] text-[#231010]/50">
+                    {voice.role}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------------ */}
+      {/* GLOBAL FOOTPRINT                                                     */}
+      {/* ------------------------------------------------------------------ */}
+      <section className="bg-[#ffffff] py-20 md:py-28 border-t border-[#231010]/5">
+        <div className="container mx-auto max-w-[1280px] px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6 }}
+              className="lg:col-span-5"
+            >
+              <span className="inline-block text-[11px] uppercase tracking-[3.5px] text-[#4774AA] mb-6">
+                Global Footprint
+              </span>
+              <h2 className="font-display font-light text-[#231010] text-[clamp(28px,4.5vw,52px)] tracking-[-1px] leading-[1.02] mb-6">
+                Present in the Markets That Matter.
+              </h2>
+              <p className="text-[15px] md:text-[16px] font-light text-[#231010]/65 leading-[1.75] mb-8">
+                Tiger BioSciences partners with distributors and health systems in more than
+                twenty countries, adapting regulatory approach market by market while holding
+                a single quality standard across the platform.
+              </p>
+              <div className="flex flex-col gap-3">
+                {[
+                  { icon: Award, label: "FDA Registered · United States" },
+                  { icon: Award, label: "CE Mark · European Economic Area" },
+                  { icon: Award, label: "Health Canada Licensed" },
+                  { icon: Award, label: "TGA Australia · PMDA Japan" },
+                ].map((cert) => {
+                  const Icon = cert.icon;
+                  return (
+                    <div key={cert.label} className="flex items-center gap-3">
+                      <Icon className="size-4 text-[#4774AA] shrink-0" />
+                      <span className="text-[13px] font-light text-[#231010]/70">{cert.label}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="lg:col-span-7"
+            >
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-[1px] bg-[#231010]/8 rounded-[12px] overflow-hidden">
+                {[
+                  { region: "North America", countries: "3", note: "HQ · Core Market" },
+                  { region: "Europe", countries: "11", note: "CE Mark Active" },
+                  { region: "Asia-Pacific", countries: "5", note: "Strategic Growth" },
+                  { region: "Middle East", countries: "2", note: "Emerging" },
+                  { region: "Latin America", countries: "3", note: "Partnership Model" },
+                  { region: "Africa", countries: "1", note: "Access Initiative" },
+                ].map((region, i) => (
+                  <motion.div
+                    key={region.region}
+                    initial={{ opacity: 0, scale: 0.96 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.5, delay: i * 0.06 }}
+                    className="bg-[#fbfcff] p-6 flex flex-col gap-2"
+                  >
+                    <MapPin className="size-4 text-[#4774AA] mb-1" />
+                    <span className="font-display font-light text-[#231010] text-[22px] leading-none tracking-[-0.5px]">
+                      {region.countries}
+                    </span>
+                    <span className="text-[12px] font-normal text-[#231010]/80 leading-[1.3]">
+                      {region.region}
+                    </span>
+                    <span className="text-[10px] uppercase tracking-[2px] text-[#231010]/40">
+                      {region.note}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------------ */}
+      {/* PUBLICATIONS / EVIDENCE HIGHLIGHT                                    */}
+      {/* ------------------------------------------------------------------ */}
+      <section className="bg-[#231010] py-20 md:py-28">
+        <div className="container mx-auto max-w-[1280px] px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12"
+          >
+            <div className="max-w-[620px]">
+              <span className="inline-block text-[11px] uppercase tracking-[3.5px] text-[#D5101F] mb-5">
+                Published Evidence
+              </span>
+              <h2 className="font-display font-light text-[#fbfcff] text-[clamp(28px,4.5vw,48px)] tracking-[-1px] leading-[1.05]">
+                Science That Peers Review.
+              </h2>
+            </div>
+            <TigerButton href="/science" variant="outline-light" arrow>
+              Browse Publications
+            </TigerButton>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-[1px] bg-[#fbfcff]/8 rounded-[12px] overflow-hidden">
+            {[
+              {
+                journal: "Journal of Wound Care",
+                year: "2024",
+                title: "Cellular allograft matrix for diabetic foot ulcers: 12-week outcomes vs. standard of care",
+              },
+              {
+                journal: "Advances in Wound Care",
+                year: "2023",
+                title: "Decellularization protocols and extracellular matrix preservation: a comparative analysis",
+              },
+              {
+                journal: "Aesthetic Surgery Journal",
+                year: "2024",
+                title: "Regenerative injectables in facial aesthetics: long-term safety and efficacy review",
+              },
+            ].map((pub, i) => (
+              <motion.div
+                key={pub.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.55, delay: i * 0.08 }}
+                className="bg-[#231010] p-7 flex flex-col gap-4"
+              >
+                <div className="flex items-center justify-between">
+                  <BookOpen className="size-4 text-[#D5101F]" />
+                  <span className="text-[11px] uppercase tracking-[2.5px] text-[#fbfcff]/40">{pub.year}</span>
+                </div>
+                <span className="text-[11px] uppercase tracking-[2.5px] text-[#D5101F]/85">{pub.journal}</span>
+                <p className="font-display font-light text-[#fbfcff] text-[17px] leading-[1.4] tracking-[-0.2px]">
+                  {pub.title}
+                </p>
               </motion.div>
             ))}
           </div>

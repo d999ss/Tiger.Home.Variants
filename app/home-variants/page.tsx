@@ -14,13 +14,6 @@ const variants = [
     tags: ["Corporate", "Annual Report", "Enterprise"],
   },
   {
-    id: 2,
-    title: "Interactive Tabs",
-    description:
-      "Tabbed division explorer with animated transitions. Each tab reveals content, stats, and CTAs for a different division.",
-    tags: ["Interactive", "Tabs", "Exploratory"],
-  },
-  {
     id: 3,
     title: "Patient Portal",
     description:
@@ -47,6 +40,13 @@ const variants = [
     description:
       "Full-viewport video background with floating glassmorphism stats bar, neumorphic pillars, and cinematic Apple-like feel.",
     tags: ["Video", "Cinematic", "Stats Bar"],
+  },
+  {
+    id: 2,
+    title: "Interactive Tabs",
+    description:
+      "Tabbed division explorer with animated transitions, platform technology breakdown, timeline of milestones, clinician testimonials, global footprint, and featured publications.",
+    tags: ["Interactive", "Tabs", "Exploratory"],
   },
   {
     id: 7,

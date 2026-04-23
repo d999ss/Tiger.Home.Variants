@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Grid3X3 } from "lucide-react";
 
-const VARIANT_IDS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const VARIANT_IDS = [1, 3, 4, 5, 6, 2, 7, 8, 9, 10];
 
 const VARIANT_NAMES: Record<number, string> = {
   1: "Corporate Healthcare",

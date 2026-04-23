@@ -6,7 +6,7 @@ import { VariantFooter } from "@/components/ui/variant-footer";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight, FlaskConical, ShieldCheck, Globe2, Leaf, HeartHandshake, Microscope, TrendingUp, BookOpen, MapPin, Building2, Award } from "lucide-react";
 
 import { TigerButton } from "@/components/ui/tiger-button";
 
@@ -295,6 +295,96 @@ export default function HomeVariant1() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
+          SCIENCE PIPELINE — Research in flight
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#ffffff]">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-20 md:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mb-14 md:mb-20">
+            <div className="lg:col-span-5 space-y-6">
+              <div className="flex items-center gap-3 text-[10px] uppercase tracking-[3.5px] text-[#D5101F] font-medium">
+                <span className="w-6 h-[1px] bg-[#D5101F]" />
+                Science & Innovation
+              </div>
+              <h2
+                className="font-display font-light text-[#231010] tracking-[-1.4px] leading-[1]"
+                style={{ fontSize: "clamp(32px, 4vw, 56px)" }}
+              >
+                A pipeline measured in peer-reviewed results.
+              </h2>
+            </div>
+            <div className="lg:col-span-7 lg:pt-3 space-y-6">
+              <p className="text-[15.5px] font-light text-[#231010]/70 leading-[1.75] max-w-[640px]">
+                Tiger BioSciences operates its own regenerative sciences labs in the U.S. and
+                Europe. Research moves from discovery to bedside through a process that is
+                disciplined, transparent, and — above all — held to the standard of
+                published evidence.
+              </p>
+              <Link
+                href="/science/publications"
+                className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[2.5px] text-[#231010]/60 hover:text-[#D5101F] transition-colors border-b border-[#231010]/20 hover:border-[#D5101F] pb-1"
+              >
+                Publications library <ArrowRight className="size-3.5" />
+              </Link>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-[1px] bg-[#231010]/10 border border-[#231010]/10 rounded-[2px] overflow-hidden">
+            {[
+              {
+                icon: FlaskConical,
+                phase: "Discovery",
+                title: "Next-generation CAMPs",
+                body: "12 programs in preclinical, targeting refractory chronic wounds, surgical reconstruction, and dermal regeneration.",
+                note: "12 active programs",
+              },
+              {
+                icon: Microscope,
+                phase: "Clinical",
+                title: "Trials in progress",
+                body: "Seven multi-site Phase II / Phase III studies across the U.S. and EU, with investigator-initiated arms at academic centers.",
+                note: "7 trials · 18 sites",
+              },
+              {
+                icon: BookOpen,
+                phase: "Evidence",
+                title: "Peer-reviewed base",
+                body: "87+ publications spanning wound care, aesthetics, and tissue processing. Referenced in current clinical guidelines.",
+                note: "87+ publications",
+              },
+            ].map(({ icon: Icon, phase, title, body, note }, i) => (
+              <motion.div
+                key={title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, delay: i * 0.08 }}
+                className="bg-[#ffffff] p-8 md:p-10 flex flex-col gap-5 min-h-[280px]"
+              >
+                <div className="flex items-center justify-between">
+                  <Icon className="size-5 text-[#D5101F]" />
+                  <span className="text-[10px] uppercase tracking-[3px] text-[#231010]/40">
+                    {phase}
+                  </span>
+                </div>
+                <h3
+                  className="font-display font-light text-[#231010] tracking-[-0.4px] leading-[1.15]"
+                  style={{ fontSize: "clamp(22px, 1.8vw, 28px)" }}
+                >
+                  {title}
+                </h3>
+                <p className="text-[14px] font-light text-[#231010]/65 leading-[1.7] flex-1">
+                  {body}
+                </p>
+                <div className="pt-5 border-t border-[#231010]/10 text-[11px] uppercase tracking-[2.5px] text-[#231010]/55">
+                  {note}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
           IMPACT STATS — Large numbers, corporate report feel
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative bg-[#231010] text-[#fbfcff]">
@@ -344,6 +434,160 @@ export default function HomeVariant1() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          GLOBAL FOOTPRINT — Where we operate
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#ffffff]">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-20 md:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+            <div className="lg:col-span-5 space-y-6">
+              <div className="flex items-center gap-3 text-[10px] uppercase tracking-[3.5px] text-[#4774AA] font-medium">
+                <span className="w-6 h-[1px] bg-[#4774AA]" />
+                Global footprint
+              </div>
+              <h2
+                className="font-display font-light text-[#231010] tracking-[-1.4px] leading-[1]"
+                style={{ fontSize: "clamp(32px, 4vw, 56px)" }}
+              >
+                Operational presence, not just reach.
+              </h2>
+              <p className="text-[15px] font-light text-[#231010]/70 leading-[1.75] max-w-[480px]">
+                Tiger BioSciences operates processing facilities, sales organizations, and
+                regulatory teams across four continents. The same quality standard applies
+                to every shipment, every market.
+              </p>
+              <div className="pt-4 flex flex-col gap-3">
+                {[
+                  { icon: Building2, label: "Four owned processing facilities" },
+                  { icon: ShieldCheck, label: "FDA · CE Mark · Health Canada · TGA" },
+                  { icon: HeartHandshake, label: "Partnerships with 400+ hospital systems" },
+                ].map(({ icon: Icon, label }) => (
+                  <div key={label} className="flex items-center gap-3">
+                    <Icon className="size-4 text-[#4774AA] shrink-0" />
+                    <span className="text-[13px] font-light text-[#231010]/75">{label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="lg:col-span-7">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-[1px] bg-[#231010]/10 border border-[#231010]/10 rounded-[2px] overflow-hidden">
+                {[
+                  { count: "3", region: "United States", note: "HQ · Core market" },
+                  { count: "11", region: "Europe", note: "CE Mark active" },
+                  { count: "5", region: "Asia-Pacific", note: "Strategic growth" },
+                  { count: "2", region: "Middle East", note: "Emerging markets" },
+                  { count: "3", region: "Latin America", note: "Partnership model" },
+                  { count: "1", region: "Africa", note: "Access initiative" },
+                ].map((region, i) => (
+                  <motion.div
+                    key={region.region}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.5, delay: i * 0.06 }}
+                    className="bg-[#fbfcff] p-6 md:p-7 flex flex-col gap-2 min-h-[160px]"
+                  >
+                    <MapPin className="size-4 text-[#4774AA] mb-1" />
+                    <span
+                      className="font-display font-light text-[#231010] leading-none tracking-[-0.6px]"
+                      style={{ fontSize: "clamp(28px, 2.2vw, 40px)" }}
+                    >
+                      {region.count}
+                    </span>
+                    <span className="text-[13px] font-normal text-[#231010] leading-[1.3]">
+                      {region.region}
+                    </span>
+                    <span className="text-[10px] uppercase tracking-[2px] text-[#231010]/45">
+                      {region.note}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          MANUFACTURING INTEGRITY — Vertical integration
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#fbfcff] border-y border-[#231010]/[0.08]">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-20 md:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+            <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-32">
+              <div className="flex items-center gap-3 text-[10px] uppercase tracking-[3.5px] text-[#D5101F] font-medium">
+                <span className="w-6 h-[1px] bg-[#D5101F]" />
+                Manufacturing integrity
+              </div>
+              <h2
+                className="font-display font-light text-[#231010] tracking-[-1.4px] leading-[1]"
+                style={{ fontSize: "clamp(32px, 4vw, 56px)" }}
+              >
+                Vertically integrated. Never outsourced.
+              </h2>
+              <p className="text-[15px] font-light text-[#231010]/70 leading-[1.75]">
+                From donor recovery through final release, Tiger owns every step of the
+                process. It is a deliberate choice — one that lets us guarantee traceability,
+                sterility, and clinical consistency.
+              </p>
+              <Link
+                href="/company/facilities"
+                className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[2.5px] text-[#231010]/60 hover:text-[#D5101F] transition-colors border-b border-[#231010]/20 hover:border-[#D5101F] pb-1"
+              >
+                Facility tour <ArrowRight className="size-3.5" />
+              </Link>
+            </div>
+            <div className="lg:col-span-7 space-y-[1px] bg-[#231010]/10 border border-[#231010]/10 rounded-[2px] overflow-hidden">
+              {[
+                {
+                  step: "01",
+                  title: "Donor recovery",
+                  body: "Partner tissue banks work under AATB-accredited protocols. Every recovery is documented, auditable, and consent-verified.",
+                },
+                {
+                  step: "02",
+                  title: "Processing & decellularization",
+                  body: "Proprietary protocols preserve extracellular matrix architecture. Bioburden reduction without compromising native biology.",
+                },
+                {
+                  step: "03",
+                  title: "Quality & release testing",
+                  body: "Every lot undergoes sterility, endotoxin, residual reagent, and functional testing before release to clinical use.",
+                },
+                {
+                  step: "04",
+                  title: "Distribution & cold chain",
+                  body: "Validated cold-chain logistics across 20+ countries. Real-time temperature monitoring. Zero disease transmission events on record.",
+                },
+              ].map((stage, i) => (
+                <motion.div
+                  key={stage.step}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.6, delay: i * 0.08 }}
+                  className="bg-[#ffffff] p-8 md:p-10 flex flex-col md:flex-row md:items-start gap-4 md:gap-8"
+                >
+                  <div className="flex md:flex-col md:items-start gap-3 md:gap-2 md:w-[120px] shrink-0">
+                    <span className="font-display font-light text-[#D5101F] text-[32px] md:text-[40px] leading-none tracking-[-1px]">
+                      {stage.step}
+                    </span>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-display font-light text-[#231010] text-[22px] md:text-[24px] tracking-[-0.3px] leading-[1.2] mb-3">
+                      {stage.title}
+                    </h3>
+                    <p className="text-[14.5px] font-light text-[#231010]/65 leading-[1.75]">
+                      {stage.body}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -456,6 +700,287 @@ export default function HomeVariant1() {
                 Read the full letter <ArrowRight className="size-3.5" />
               </Link>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          OUR COMMITMENTS — ESG / responsibility
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#ffffff]">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-20 md:py-28">
+          <div className="flex items-end justify-between flex-wrap gap-6 mb-14 md:mb-20">
+            <div className="max-w-[640px] space-y-4">
+              <div className="flex items-center gap-3 text-[10px] uppercase tracking-[3.5px] text-[#D5101F] font-medium">
+                <span className="w-6 h-[1px] bg-[#D5101F]" />
+                Our commitments
+              </div>
+              <h2
+                className="font-display font-light text-[#231010] tracking-[-1.4px] leading-[1]"
+                style={{ fontSize: "clamp(32px, 4vw, 56px)" }}
+              >
+                Four commitments that shape every decision.
+              </h2>
+            </div>
+            <Link
+              href="/company/responsibility"
+              className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[2.5px] text-[#231010]/60 hover:text-[#D5101F] transition-colors border-b border-[#231010]/20 hover:border-[#D5101F] pb-1"
+            >
+              Responsibility report <ArrowRight className="size-3.5" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+            {[
+              {
+                icon: HeartHandshake,
+                title: "Honoring the donor's gift",
+                body: "Every graft begins with a family's decision. Our consent, traceability, and stewardship protocols are designed to honor that decision at every step — from recovery through patient use.",
+                tag: "Donor respect",
+              },
+              {
+                icon: ShieldCheck,
+                title: "Patient-first clinical evidence",
+                body: "We publish. We disclose. We do not market what has not been proven. Peer-reviewed evidence sits at the center of how our platforms reach clinical practice.",
+                tag: "Evidence discipline",
+              },
+              {
+                icon: Leaf,
+                title: "Sustainable, ethical sourcing",
+                body: "Tissue sourcing partnerships are audited annually. Our packaging, cold chain, and facility operations are measured against published sustainability targets.",
+                tag: "Environmental stewardship",
+              },
+              {
+                icon: Award,
+                title: "Workforce and community",
+                body: "We invest in the scientists, technicians, and clinical partners who make regenerative medicine possible. Our community grant programs reach 40+ academic partners each year.",
+                tag: "People and community",
+              },
+            ].map((commitment, i) => {
+              const Icon = commitment.icon;
+              return (
+                <motion.div
+                  key={commitment.title}
+                  initial={{ opacity: 0, y: 28 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.65, delay: i * 0.08 }}
+                  className="group relative bg-[#fbfcff] border border-[#231010]/[0.08] hover:border-[#231010]/[0.18] p-8 md:p-10 transition-colors duration-500"
+                >
+                  <div className="flex items-start justify-between mb-6">
+                    <Icon className="size-6 text-[#D5101F]" />
+                    <span className="text-[10px] uppercase tracking-[3px] text-[#231010]/40">
+                      {commitment.tag}
+                    </span>
+                  </div>
+                  <h3
+                    className="font-display font-light text-[#231010] tracking-[-0.4px] leading-[1.15] mb-4"
+                    style={{ fontSize: "clamp(22px, 2vw, 30px)" }}
+                  >
+                    {commitment.title}
+                  </h3>
+                  <p className="text-[14.5px] font-light text-[#231010]/65 leading-[1.75]">
+                    {commitment.body}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          TIMELINE — 15 years of milestones
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#fbfcff] border-y border-[#231010]/[0.08]">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-20 md:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mb-14 md:mb-16">
+            <div className="lg:col-span-5 space-y-6">
+              <div className="flex items-center gap-3 text-[10px] uppercase tracking-[3.5px] text-[#D5101F] font-medium">
+                <span className="w-6 h-[1px] bg-[#D5101F]" />
+                Fifteen years
+              </div>
+              <h2
+                className="font-display font-light text-[#231010] tracking-[-1.4px] leading-[1]"
+                style={{ fontSize: "clamp(32px, 4vw, 56px)" }}
+              >
+                A company built deliberately, year by year.
+              </h2>
+            </div>
+            <div className="lg:col-span-7 lg:pt-4">
+              <p className="text-[15.5px] font-light text-[#231010]/70 leading-[1.75] max-w-[640px]">
+                Tiger BioSciences has grown by compounding scientific depth. Divisions,
+                platforms, and markets have been added only when the underlying technology
+                was ready to earn a clinician's trust.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="hidden md:block absolute left-[152px] top-0 bottom-0 w-px bg-[#231010]/10" />
+            <div className="space-y-10">
+              {[
+                {
+                  year: "2011",
+                  title: "Tiger BioSciences founded",
+                  body: "AATB accreditation earned in the first operational year. Early focus on allograft tissue processing.",
+                },
+                {
+                  year: "2015",
+                  title: "Wound Care division established",
+                  body: "First cellular allograft matrix introduced, targeting chronic wounds unresponsive to standard care.",
+                },
+                {
+                  year: "2018",
+                  title: "International expansion begins",
+                  body: "CE Mark granted. Distribution partnerships formed across eight European markets within eighteen months.",
+                },
+                {
+                  year: "2021",
+                  title: "Aesthetics division launched",
+                  body: "Regenerative science applied to reconstructive and aesthetic medicine. Acellular dermal matrices, injectable platforms.",
+                },
+                {
+                  year: "2024",
+                  title: "87+ peer-reviewed publications",
+                  body: "Platform evidence base referenced in major wound care and reconstructive treatment guidelines.",
+                },
+                {
+                  year: "2026",
+                  title: "18 countries · 500K+ grafts",
+                  body: "Zero disease transmission events across the full platform history. Safety remains the operating principle.",
+                },
+              ].map((milestone, i) => (
+                <motion.div
+                  key={milestone.year}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.55, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] as const }}
+                  className="relative flex flex-col md:flex-row md:items-start gap-4 md:gap-10"
+                >
+                  <div className="md:w-[152px] shrink-0">
+                    <span
+                      className="font-display font-light text-[#D5101F] leading-none tracking-[-1px]"
+                      style={{ fontSize: "clamp(32px, 3vw, 44px)" }}
+                    >
+                      {milestone.year}
+                    </span>
+                  </div>
+                  <div className="relative md:pl-8">
+                    <div className="hidden md:block absolute left-[-5px] top-[12px] size-[10px] rounded-full bg-[#D5101F]" />
+                    <h3 className="font-display font-light text-[#231010] text-[20px] md:text-[24px] tracking-[-0.3px] leading-[1.25] mb-3">
+                      {milestone.title}
+                    </h3>
+                    <p className="text-[14.5px] font-light text-[#231010]/65 leading-[1.75] max-w-[640px]">
+                      {milestone.body}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          FINANCIAL HIGHLIGHTS — Investor snapshot
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#ffffff]">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-20 md:py-28">
+          <div className="flex items-end justify-between flex-wrap gap-6 mb-14 md:mb-16">
+            <div className="max-w-[620px] space-y-4">
+              <div className="flex items-center gap-3 text-[10px] uppercase tracking-[3.5px] text-[#D5101F] font-medium">
+                <span className="w-6 h-[1px] bg-[#D5101F]" />
+                Performance
+              </div>
+              <h2
+                className="font-display font-light text-[#231010] tracking-[-1.4px] leading-[1]"
+                style={{ fontSize: "clamp(32px, 4vw, 56px)" }}
+              >
+                Disciplined growth, reinvested in science.
+              </h2>
+            </div>
+            <Link
+              href="/investors"
+              className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[2.5px] text-[#231010]/60 hover:text-[#D5101F] transition-colors border-b border-[#231010]/20 hover:border-[#D5101F] pb-1"
+            >
+              Investor relations <ArrowRight className="size-3.5" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-[#231010]/10 border border-[#231010]/10 rounded-[2px] overflow-hidden">
+            {[
+              {
+                value: "22%",
+                label: "Revenue CAGR",
+                note: "Five-year compounded growth",
+                icon: TrendingUp,
+              },
+              {
+                value: "17%",
+                label: "R&D reinvestment",
+                note: "Share of operating revenue · 2026",
+                icon: FlaskConical,
+              },
+              {
+                value: "4",
+                label: "Divisions profitable",
+                note: "Standalone P&L discipline",
+                icon: Building2,
+              },
+              {
+                value: "A-",
+                label: "Credit quality",
+                note: "Private rating · stable outlook",
+                icon: Award,
+              },
+            ].map((metric, i) => {
+              const Icon = metric.icon;
+              return (
+                <motion.div
+                  key={metric.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.55, delay: i * 0.08 }}
+                  className="bg-[#fbfcff] p-8 md:p-10 flex flex-col gap-4 min-h-[260px]"
+                >
+                  <Icon className="size-5 text-[#D5101F]" />
+                  <div
+                    className="font-display font-light text-[#231010] leading-none tracking-[-1.5px] mt-2"
+                    style={{ fontSize: "clamp(44px, 4.5vw, 72px)" }}
+                  >
+                    {metric.value}
+                  </div>
+                  <div className="text-[13px] uppercase tracking-[2px] text-[#231010]/85 font-medium">
+                    {metric.label}
+                  </div>
+                  <div className="text-[12px] font-light text-[#231010]/55 leading-[1.6]">
+                    {metric.note}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-10 pt-8 border-t border-[#231010]/10 flex items-center justify-between flex-wrap gap-4"
+          >
+            <p className="text-[12px] font-light text-[#231010]/50 max-w-[640px] leading-[1.6]">
+              Tiger BioSciences is privately held. Metrics above are drawn from the 2026
+              Annual Report. Audited financials available to accredited institutional partners.
+            </p>
+            <Link
+              href="/investors/annual-report"
+              className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[2.5px] text-[#231010]/60 hover:text-[#D5101F] transition-colors border-b border-[#231010]/20 hover:border-[#D5101F] pb-1"
+            >
+              2026 annual report <ArrowUpRight className="size-3.5" />
+            </Link>
           </motion.div>
         </div>
       </section>

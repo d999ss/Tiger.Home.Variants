@@ -571,10 +571,10 @@ export default function HomeVariant5() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.65, delay: i * 0.1 }}
-                className={`relative rounded-[12px] p-8 md:p-10 ${
+                className={`relative rounded-[12px] p-8 md:p-10 bg-[#ffffff] text-[#231010] ${
                   p.featured
-                    ? "bg-[#231010] text-white"
-                    : "bg-[#fbfcff] border border-[#231010]/[0.1] text-[#231010]"
+                    ? "border-2 border-[#D5101F] shadow-[0_16px_48px_rgba(213,16,31,0.08)]"
+                    : "border border-[#231010]/[0.1]"
                 }`}
               >
                 {p.featured && p.featuredLabel && (
@@ -591,7 +591,7 @@ export default function HomeVariant5() {
                 >
                   {p.title}
                 </h3>
-                <div className={`text-[14px] font-light mb-8 ${p.featured ? "text-white/70" : "text-[#231010]/60"}`}>
+                <div className="text-[14px] font-light text-[#231010]/60 mb-8">
                   {p.price}
                 </div>
 
@@ -602,9 +602,7 @@ export default function HomeVariant5() {
                       className="flex items-start gap-3 text-[14.5px] font-light leading-[1.55]"
                     >
                       <Check className="size-4 mt-1 shrink-0 text-[#D5101F]" strokeWidth={2.5} />
-                      <span className={p.featured ? "text-white/85" : "text-[#231010]/80"}>
-                        {feat}
-                      </span>
+                      <span className="text-[#231010]/80">{feat}</span>
                     </li>
                   ))}
                 </ul>
@@ -614,7 +612,7 @@ export default function HomeVariant5() {
                   className={`inline-flex items-center justify-center gap-2 rounded-full w-full py-3.5 text-[12px] font-medium uppercase tracking-[2.5px] transition-colors ${
                     p.featured
                       ? "bg-[#D5101F] hover:bg-[#A00D17] text-white"
-                      : "bg-[#231010] hover:bg-[#D5101F] text-white"
+                      : "border border-[#231010]/20 text-[#231010] hover:bg-[#D5101F] hover:border-[#D5101F] hover:text-white"
                   }`}
                 >
                   {p.cta}

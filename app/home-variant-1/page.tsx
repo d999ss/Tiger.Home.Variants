@@ -194,11 +194,11 @@ export default function HomeVariant1() {
               >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-[#231010]/5 border border-[#231010]/10 flex items-center justify-center text-[10px] font-medium tracking-[1px] text-[#231010]/60">
-                    TB
+                    OB
                   </div>
                   <div>
-                    <div className="text-[12px] font-medium text-[#231010]">Scott Madden</div>
-                    <div className="text-[10px] uppercase tracking-[2px] text-[#231010]/45">CEO · Tiger BioSciences</div>
+                    <div className="text-[12px] font-medium text-[#231010]">Oliver Burckhardt</div>
+                    <div className="text-[10px] uppercase tracking-[2px] text-[#231010]/45">Co-Founder &amp; Co-CEO</div>
                   </div>
                 </div>
                 <span className="text-[10px] uppercase tracking-[2px] text-[#231010]/40">Est. 2011</span>
@@ -675,7 +675,7 @@ export default function HomeVariant1() {
           >
             <div className="flex items-center gap-3 text-[10px] uppercase tracking-[3.5px] text-[#D5101F] font-medium mb-6">
               <span className="w-6 h-[1px] bg-[#D5101F]" />
-              A letter from the CEO
+              A letter from the Co-CEO
             </div>
             <blockquote
               className="font-display font-light text-[#231010] tracking-[-1px] leading-[1.15]"
@@ -686,11 +686,11 @@ export default function HomeVariant1() {
             <div className="mt-10 pt-6 border-t border-[#231010]/15 flex items-center justify-between flex-wrap gap-4">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-[#231010]/5 border border-[#231010]/10 flex items-center justify-center text-[11px] font-medium tracking-[1px] text-[#231010]/60">
-                  SM
+                  OB
                 </div>
                 <div>
-                  <div className="text-[13px] font-medium text-[#231010]">Scott Madden</div>
-                  <div className="text-[11px] uppercase tracking-[2px] text-[#231010]/45">CEO · Tiger BioSciences</div>
+                  <div className="text-[13px] font-medium text-[#231010]">Oliver Burckhardt</div>
+                  <div className="text-[11px] uppercase tracking-[2px] text-[#231010]/45">Co-Founder &amp; Co-CEO · Tiger BioSciences</div>
                 </div>
               </div>
               <Link
@@ -699,6 +699,96 @@ export default function HomeVariant1() {
               >
                 Read the full letter <ArrowRight className="size-3.5" />
               </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          EXECUTIVE LEADERSHIP — Oliver Burckhardt
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#ffffff]">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-20 md:py-28">
+          <div className="flex items-end justify-between flex-wrap gap-6 mb-14 md:mb-16">
+            <div className="max-w-[620px] space-y-4">
+              <div className="flex items-center gap-3 text-[10px] uppercase tracking-[3.5px] text-[#D5101F] font-medium">
+                <span className="w-6 h-[1px] bg-[#D5101F]" />
+                Executive Leadership
+              </div>
+              <h2
+                className="font-display font-light text-[#231010] tracking-[-1.4px] leading-[1]"
+                style={{ fontSize: "clamp(32px, 4vw, 56px)" }}
+              >
+                The people behind the platform.
+              </h2>
+            </div>
+            <Link
+              href="/company/leadership"
+              className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[2.5px] text-[#231010]/60 hover:text-[#D5101F] transition-colors border-b border-[#231010]/20 hover:border-[#D5101F] pb-1"
+            >
+              All leadership <ArrowRight className="size-3.5" />
+            </Link>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.7 }}
+            className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start border border-[#231010]/10 rounded-[2px] p-8 md:p-12 bg-[#fbfcff]"
+          >
+            <div className="lg:col-span-4">
+              <div className="aspect-[4/5] relative rounded-[2px] overflow-hidden bg-[#231010]/8 flex items-center justify-center">
+                <div className="font-display font-light text-[#231010]/25 text-[120px] leading-none tracking-[-4px]">
+                  OB
+                </div>
+                <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#D5101F]" />
+              </div>
+            </div>
+
+            <div className="lg:col-span-8 space-y-6">
+              <div>
+                <h3
+                  className="font-display font-light text-[#231010] tracking-[-1px] leading-[1.05] mb-2"
+                  style={{ fontSize: "clamp(28px, 3.4vw, 44px)" }}
+                >
+                  Oliver Burckhardt
+                </h3>
+                <div className="text-[12px] uppercase tracking-[3px] text-[#D5101F] font-medium">
+                  Co-Chief Executive Officer, Co-Founder &amp; Co-Owner
+                </div>
+              </div>
+
+              <p className="text-[15.5px] font-light text-[#231010]/75 leading-[1.8]">
+                As Co-Founder and Co-CEO, Oliver Burckhardt is one of the key driving forces behind the vision of and growth at Tiger BioSciences. He is actively involved in all aspects of the company from product innovation and market expansion to supporting strategic business partners. His over two decades of experience in the tissue and medical device industry serves as a foundation for his corporate strategy and entrepreneurial nature. At his core he is committed to advancing patient care and providing better solutions to clinicians and advancing science.
+              </p>
+
+              <div className="pt-6 border-t border-[#231010]/10 flex items-center justify-between flex-wrap gap-4">
+                <div className="flex items-center gap-6 flex-wrap">
+                  <div>
+                    <div className="text-[10px] uppercase tracking-[2.5px] text-[#231010]/45 mb-1">
+                      Tenure
+                    </div>
+                    <div className="font-display font-light text-[#231010] text-[18px] tracking-[-0.3px]">
+                      Co-Founder · 2011
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-[2.5px] text-[#231010]/45 mb-1">
+                      Experience
+                    </div>
+                    <div className="font-display font-light text-[#231010] text-[18px] tracking-[-0.3px]">
+                      20+ years in tissue &amp; medical devices
+                    </div>
+                  </div>
+                </div>
+                <Link
+                  href="/company/leadership/oliver-burckhardt"
+                  className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[2.5px] text-[#231010]/70 hover:text-[#D5101F] transition-colors border-b border-[#231010]/20 hover:border-[#D5101F] pb-1"
+                >
+                  View full profile <ArrowUpRight className="size-3.5" />
+                </Link>
+              </div>
             </div>
           </motion.div>
         </div>

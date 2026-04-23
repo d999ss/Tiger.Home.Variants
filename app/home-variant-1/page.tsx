@@ -185,24 +185,6 @@ export default function HomeVariant1() {
                 </Link>
               </motion.div>
 
-              {/* Signature cluster */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.7, delay: 0.85 }}
-                className="pt-8 border-t border-[#231010]/10 flex items-center justify-between"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#231010]/5 border border-[#231010]/10 flex items-center justify-center text-[10px] font-medium tracking-[1px] text-[#231010]/60">
-                    OB
-                  </div>
-                  <div>
-                    <div className="text-[12px] font-medium text-[#231010]">Oliver Burckhardt</div>
-                    <div className="text-[10px] uppercase tracking-[2px] text-[#231010]/45">Co-Founder &amp; Co-CEO</div>
-                  </div>
-                </div>
-                <span className="text-[10px] uppercase tracking-[2px] text-[#231010]/40">Est. 2011</span>
-              </motion.div>
             </div>
           </div>
         </div>

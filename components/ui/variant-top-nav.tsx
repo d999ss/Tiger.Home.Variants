@@ -112,8 +112,8 @@ interface VariantTopNavProps {
 }
 
 const defaultLinks = [
-  { label: "Company", href: "/company" },
-  { label: "Expertise", href: "/expertise" },
+  { label: "Company", href: "/company/overview" },
+  { label: "Science", href: "/science" },
   { label: "Products", href: "/products" },
   { label: "People", href: "/people" },
   { label: "Press Room", href: "/press" },
